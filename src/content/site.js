@@ -334,5 +334,3 @@ export const PARTNERS = [
   { name: "Capza", logo: "/img/partenaires/capza.png" },
 ];
 
-// Film de présentation (site actuel). Lecteur chargé uniquement au clic (CNIL).
-export const FILM = { youtubeId: "xoQ6_YI0S0o", mp4: null };

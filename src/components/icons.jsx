@@ -3,7 +3,6 @@ export const IconArrow = () => (<svg {...base}><path d="M5 12h14M13 6l6 6-6 6" /
 export const IconMenu = () => (<svg {...base}><path d="M4 8h16M4 16h16" /></svg>);
 export const IconClose = () => (<svg {...base}><path d="M6 6l12 12M18 6L6 18" /></svg>);
 export const IconPause = () => (<svg {...base}><path d="M9 6v12M15 6v12" /></svg>);
-export const IconPlay = () => (<svg {...base}><path d="M8 5.5v13l11-6.5z" /></svg>);
 export const IconPhone = () => (<svg {...base}><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg>);
 export const IconMail = () => (<svg {...base}><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>);
 export const IconPin = () => (<svg {...base}><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" /></svg>);

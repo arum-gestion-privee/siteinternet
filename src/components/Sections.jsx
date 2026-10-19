@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import LiquidButton from "./LiquidButton.jsx";
-import { IconArrow, IconPlay, IconClose } from "./icons.jsx";
-import { DIFFERENCE, OBJECTIVES, NEWS, FIGURES, AGREMENTS, PARTNERS, FILM, REGULATORY } from "../content/site.js";
+import { IconArrow } from "./icons.jsx";
+import { DIFFERENCE, OBJECTIVES, NEWS, FIGURES, AGREMENTS, PARTNERS, REGULATORY } from "../content/site.js";
 
 export function Kicker({ children, light = false }) {
   return <p className={"kicker" + (light ? " kicker--light" : "")}>{children}</p>;
@@ -157,46 +156,6 @@ export function Partners() {
         </li>
       ))}
     </ul>
-  );
-}
-
-/**
- * Film de présentation : le lecteur (YouTube en confidentialité renforcée, ou MP4 hébergé
- * par le site si FILM.mp4 est renseigné) n'est chargé qu'au clic du visiteur (CNIL).
- */
-export function Film({ poster = "/img/equipe/anne-laure.webp" }) {
-  const [open, setOpen] = useState(false);
-  const yt = `https://www.youtube-nocookie.com/embed/${FILM.youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
-  return (
-    <div className={"film" + (open ? " is-open" : "")}>
-      {open ? (
-        <>
-          {FILM.mp4 ? (
-            <video className="film__player" src={FILM.mp4} controls autoPlay playsInline />
-          ) : (
-            <iframe
-              className="film__player"
-              src={yt}
-              title="Film de présentation ARUM Gestion Privée"
-              allow="autoplay; encrypted-media; fullscreen"
-              allowFullScreen
-              referrerPolicy="strict-origin-when-cross-origin"
-              sandbox="allow-scripts allow-same-origin allow-presentation"
-            />
-          )}
-          <button type="button" className="film__close" onClick={() => setOpen(false)} aria-label="Fermer le film">
-            <IconClose />
-          </button>
-        </>
-      ) : (
-        <button type="button" className="film__launch" onClick={() => setOpen(true)} aria-label="Lire le film de présentation">
-          <img src={poster} alt="" loading="lazy" />
-          <span className="film__play">
-            <IconPlay />
-          </span>
-        </button>
-      )}
-    </div>
   );
 }
 

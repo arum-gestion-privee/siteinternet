@@ -479,3 +479,8 @@
 .hcta__phone svg {
   color: #fff;
 }
+
+/* Actualités sur fond bleu nuit : les cartes restent blanches, titres en bleu nuit */
+.hsec--navy .news__item h3 {
+  color: var(--navy);
+}

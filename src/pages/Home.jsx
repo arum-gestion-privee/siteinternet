@@ -64,9 +64,6 @@ function Unique() {
           </h2>
           <p className="hbody">{HOME.introBis}</p>
           <p className="hbody">{HOME.strategy}</p>
-          <Link className="pill pill--glass hsec__cta" to="/contact">
-            Nous contacter <IconArrow />
-          </Link>
         </div>
         <Portrait {...HOME_PEOPLE.duo} cta={null} className="reveal" />
       </div>
@@ -90,9 +87,6 @@ function Difference() {
           <p className="hsign__who">
             <strong>{p.names}</strong> · {p.roles}
           </p>
-          <Link className="pill pill--glass pill--sm" to="/contact">
-            Nous contacter <IconArrow />
-          </Link>
         </div>
       </div>
     </section>
@@ -117,11 +111,8 @@ function KeyFigures() {
                 {marie.roles}
               </span>
             </figcaption>
-            <Link className="pill pill--outline pill--sm" to="/contact">
-              Nous contacter <IconArrow />
-            </Link>
           </figure>
-          <Portrait {...sandrine} className="portrait--wide reveal" />
+          <Portrait {...sandrine} cta={null} className="portrait--wide reveal" />
         </div>
       </div>
     </section>
@@ -157,7 +148,7 @@ function Licences() {
 
 function News() {
   return (
-    <section className="hsec">
+    <section className="hsec hsec--navy">
       <div className="shell">
         <header className="hhead hhead--split">
           <h2>Actualités</h2>

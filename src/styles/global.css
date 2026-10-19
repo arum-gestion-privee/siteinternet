@@ -13,7 +13,7 @@
   --line: #e6dfd6;
 
   /* Fond bleu nuit de référence (bandeau des pages, ex. « Nous connaître ») */
-  --navy-bg: radial-gradient(120% 90% at 85% 0%, #1d2a5c 0%, #121c40 60%, #121c40 100%);
+  --navy-bg: #121c40; /* un seul bleu nuit, uni, partout */
   /* Dégradé orange des blocs de mise en avant */
   /* Dégradé de la charte (#D29965 → #FB190A, fondu dans le bleu nuit), relevé sur les visuels ARUM */
   --orange-grad: linear-gradient(180deg, #d29965 0%, #b76d52 16%, #934640 36%, #6e2a37 56%, #4c1e38 72%, #2b1c3d 88%, #121c40 100%);
@@ -1158,76 +1158,6 @@ a.objective__card:hover {
   }
 }
 
-/* --- film --- */
-.film {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  border-radius: 28px;
-  overflow: hidden;
-  background: var(--navy-bg);
-}
-.film__launch {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  display: grid;
-  place-items: center;
-}
-.film__launch img {
-  position: absolute;
-  right: 12%;
-  bottom: 0;
-  height: 92%;
-  width: auto;
-  -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent 100%);
-  mask-image: linear-gradient(180deg, #000 80%, transparent 100%);
-}
-.film__play {
-  position: relative;
-  z-index: 1;
-  width: 92px;
-  height: 92px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--copper);
-  color: #fff;
-  box-shadow: 0 0 0 14px rgba(200, 88, 47, 0.25);
-  transition: transform var(--dur-base) var(--ease-out-expo);
-}
-.film__launch:hover .film__play {
-  transform: scale(1.06);
-}
-.film__play svg {
-  width: 30px;
-  height: 30px;
-  fill: #fff;
-  stroke: none;
-  margin-left: 4px;
-}
-.film__player {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-.film.is-open {
-  background: #000;
-}
-.film__close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.55);
-  color: #fff;
-}
-
 /* --- équipe : un bandeau par personne --- */
 .member-band {
   padding-block: clamp(3.5rem, 7vw, 6rem);
@@ -1314,9 +1244,9 @@ a.objective__card:hover {
   color: var(--ink) !important;
 }
 
-/* --- bandeau de contact : dégradé orange --- */
+/* --- bandeau de contact : dégradé orange, fondu depuis le bleu nuit en haut (dégradé inversé) --- */
 .cta {
-  background: var(--orange-grad) !important;
+  background: linear-gradient(180deg, #121c40 0%, #2b1c3d 7%, #6e2a37 18%, #b76d52 30%, #d29965 38%, #b76d52 50%, #934640 60%, #6e2a37 72%, #4c1e38 82%, #2b1c3d 92%, #121c40 100%) !important;
   color: var(--ink);
 }
 .cta h2 {
@@ -1430,4 +1360,49 @@ a.objective__card:hover {
   height: 5px;
   border-radius: 50%;
   background: var(--copper);
+}
+
+/* ===========================================================================
+   Boutons : même verre dépoli que la liquid bar (fond, bordure, reflet, flou)
+   =========================================================================== */
+.liquid-btn--copper,
+.liquid-btn--ghost,
+.cta .liquid-btn--copper,
+.pill--copper,
+.pill--outline,
+.pill-cta,
+.hcta__btn {
+  --btn-fg: #fff;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 20px 50px -30px rgba(8, 14, 40, 0.7);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  backdrop-filter: blur(18px) saturate(1.4);
+}
+.liquid-btn--copper:hover,
+.liquid-btn--ghost:hover,
+.cta .liquid-btn--copper:hover,
+.pill--copper:hover,
+.pill--outline:hover,
+.pill-cta:hover,
+.hcta__btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+/* Sur fond clair, le verre blanc serait invisible : même verre, teinté bleu nuit */
+.section:not(.section--navy) .liquid-btn--copper,
+.section:not(.section--navy) .liquid-btn--ghost {
+  --btn-fg: var(--navy);
+  color: var(--navy);
+  background: rgba(18, 28, 64, 0.06);
+  border-color: rgba(18, 28, 64, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 20px 50px -30px rgba(8, 14, 40, 0.45);
+}
+.section:not(.section--navy) .liquid-btn--copper:hover,
+.section:not(.section--navy) .liquid-btn--ghost:hover {
+  color: var(--navy);
+  background: rgba(18, 28, 64, 0.1);
+  border-color: rgba(18, 28, 64, 0.3);
 }
