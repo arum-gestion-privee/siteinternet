@@ -1,6 +1,6 @@
 import Seo from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
-import { Kicker, Objectives, Agrements, Partners, Portrait, CtaBand } from "../components/Sections.jsx";
+import { Agrements, Partners, Portrait, CtaBand } from "../components/Sections.jsx";
 import { APPROACH } from "../content/site.js";
 
 export default function AgirEnConfiance() {
@@ -57,14 +57,6 @@ export default function AgirEnConfiance() {
         </div>
       </section>
 
-      <section className="section section--navy">
-        <div className="shell">
-          <div className="section__head reveal">
-            <Kicker>Vos objectifs</Kicker>
-          </div>
-          <Objectives />
-        </div>
-      </section>
       <CtaBand />
     </>
   );
