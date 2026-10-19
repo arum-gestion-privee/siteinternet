@@ -44,6 +44,10 @@ La clé d'accès (jeton « fine-grained », droit *Contents : Read and write* su
 dans le trousseau macOS pour ce dossier seulement (`git config credential.helper osxkeychain`).
 Sur un autre poste : `git clone https://github.com/arum-gestion-privee/siteinternet.git && npm install`.
 Ne jamais coller la clé dans une commande visible ni la transmettre à Claude.
+**Aperçu en ligne** (public, non indexé) : https://arum-gestion-privee.github.io/siteinternet/ — republié
+automatiquement à chaque envoi sur `main` (`.github/workflows/pages.yml`, `BASE_PATH=/siteinternet/`, `scripts/pages.mjs`).
+Réglage GitHub requis : Settings → Pages → Source = « GitHub Actions ». L'utilisateur a demandé que chaque
+modification validée y parte directement.
 
 ## Où modifier quoi
 | Sujet | Fichier |

@@ -8,12 +8,14 @@ import Actualites from "./pages/Actualites.jsx";
 import Contact from "./pages/Contact.jsx";
 import LegalPage from "./pages/LegalPage.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import RouteError from "./pages/RouteError.jsx";
 import { MENTIONS, PRIVACY } from "./content/legal.js";
 
 export const routes = [
   {
     path: "/",
     element: <App />,
+    errorElement: <RouteError />,
     entry: "src/App.jsx",
     children: [
       { index: true, element: <Home /> },
