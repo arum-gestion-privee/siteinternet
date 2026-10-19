@@ -1423,3 +1423,8 @@ a.objective__card:hover {
   border-color: transparent;
   color: #fff;
 }
+
+/* deux sections bleues qui se suivent : un seul espacement entre elles */
+.section--navy + .section--navy:not(.member-band) {
+  padding-top: 0;
+}

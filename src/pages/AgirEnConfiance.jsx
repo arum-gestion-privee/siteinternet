@@ -14,7 +14,7 @@ export default function AgirEnConfiance() {
       />
       <PageHero kicker="Agir en confiance" title="Agir en confiance" lead={APPROACH.lead[0]} />
 
-      <section className="section">
+      <section className="section section--navy">
         <div className="shell split split--text">
           <p className="body reveal">{APPROACH.lead[1]}</p>
           <p className="lead reveal">{APPROACH.familyOffice}</p>
@@ -33,7 +33,7 @@ export default function AgirEnConfiance() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--navy">
         <div className="shell">
           <ol className="steps">
             {APPROACH.steps.map((s) => (
@@ -62,7 +62,7 @@ export default function AgirEnConfiance() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--navy">
         <div className="shell">
           <div className="section__head reveal">
             <Kicker>Vos objectifs</Kicker>
