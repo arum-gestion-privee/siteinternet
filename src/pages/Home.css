@@ -539,3 +539,7 @@
 .hsec--glass .portrait--wide .portrait__frame {
   background: radial-gradient(55% 65% at 50% 70%, rgba(210, 153, 101, 0.22), transparent 70%), rgba(255, 255, 255, 0.06) !important;
 }
+/* Actualités : espace réduit avant le bandeau « Nous contacter » */
+.hsec--news {
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}

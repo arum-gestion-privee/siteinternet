@@ -7,7 +7,6 @@ import {
   Comparison,
   Objectives,
   Figures,
-  Agrements,
 } from "../components/Sections.jsx";
 import { HOME, DIFFERENCE, HOME_PEOPLE, TEAM, CONTACT, fr } from "../content/site.js";
 import { FAQ } from "../content/faq.js";
@@ -128,23 +127,10 @@ function Goals() {
   );
 }
 
-function Licences() {
-  return (
-    <section className="hsec hsec--navy">
-      <div className="shell">
-        <header className="hhead">
-          <h2>Nos agréments</h2>
-        </header>
-        <Agrements />
-      </div>
-    </section>
-  );
-}
-
 // Invitation vers la page Actualités (textes repris de cette page).
 function News() {
   return (
-    <section className="hsec hsec--navy">
+    <section className="hsec hsec--navy hsec--news">
       <div className="shell">
         <Link className="hnews reveal" to="/actualites">
           <div>
@@ -201,7 +187,6 @@ export default function Home() {
       <Goals />
       <News />
       <Cta />
-      <Licences />
     </>
   );
 }
