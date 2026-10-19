@@ -484,3 +484,42 @@
 .hsec--navy .news__item h3 {
   color: var(--navy);
 }
+
+/* Actualités : simple invitation vers la page, dans le même verre que la liquid bar */
+.hnews {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: background-color var(--dur-base), border-color var(--dur-base);
+}
+.hnews:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+.hnews h2 {
+  font-size: clamp(2.1rem, 1.5rem + 2.6vw, 3.6rem);
+  line-height: 1.08;
+}
+.hnews p {
+  margin-top: var(--space-md);
+  max-width: 34rem;
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--on-navy-dim);
+}
+.hnews:hover .pill--glass {
+  background: rgba(255, 255, 255, 0.22);
+}
+.hsec--navy .portrait figcaption {
+  color: var(--on-navy-dim);
+}
+/* deux sections bleues qui se suivent : un seul espacement entre elles */
+.hsec--navy + .hsec--navy {
+  padding-top: 0;
+}

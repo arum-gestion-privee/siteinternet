@@ -8,9 +8,8 @@ import {
   Objectives,
   Figures,
   Agrements,
-  NewsList,
 } from "../components/Sections.jsx";
-import { HOME, DIFFERENCE, HOME_PEOPLE, TEAM, CONTACT, NEWS_ARCHIVE, fr } from "../content/site.js";
+import { HOME, DIFFERENCE, HOME_PEOPLE, TEAM, CONTACT, fr } from "../content/site.js";
 import { FAQ } from "../content/faq.js";
 import "./Home.css";
 
@@ -92,7 +91,7 @@ function Difference() {
 function KeyFigures() {
   const { marie, sandrine } = HOME_PEOPLE;
   return (
-    <section className="hsec">
+    <section className="hsec hsec--navy">
       <div className="shell">
         <Figures />
         <div className="hduo">
@@ -142,17 +141,20 @@ function Licences() {
   );
 }
 
+// Invitation vers la page Actualités (textes repris de cette page).
 function News() {
   return (
     <section className="hsec hsec--navy">
       <div className="shell">
-        <header className="hhead hhead--split">
-          <h2>Actualités</h2>
-          <a className="pill pill--outline pill--sm" href={NEWS_ARCHIVE} target="_blank" rel="noopener noreferrer">
+        <Link className="hnews reveal" to="/actualites">
+          <div>
+            <h2>Actualités</h2>
+            <p>{fr("Fiscalité, transmission, statut du dirigeant, immobilier : nos analyses de l’actualité juridique et financière.")}</p>
+          </div>
+          <span className="pill pill--glass">
             Toutes les actualités <IconArrow />
-          </a>
-        </header>
-        <NewsList limit={4} />
+          </span>
+        </Link>
       </div>
     </section>
   );
