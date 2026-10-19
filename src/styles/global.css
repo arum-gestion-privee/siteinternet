@@ -1244,7 +1244,7 @@ a.objective__card:hover {
   color: var(--ink) !important;
 }
 
-/* --- bandeau de contact : bleu nuit uni (dégradé seulement sur « Nous connaître », voir plus bas) --- */
+/* --- bandeau de contact : bleu nuit uni --- */
 .cta {
   background: var(--navy) !important;
   color: var(--ink);
@@ -1407,12 +1407,13 @@ a.objective__card:hover {
   border-color: rgba(18, 28, 64, 0.3);
 }
 
-/* « Nous connaître » : fondu élargi sur les deux derniers bandeaux (recrutement → contact) */
-.section--navy.member-band.member-band--fade {
-  background: linear-gradient(180deg, #121c40 0%, #121c40 30%, #2b1c3d 70%, #4c1e38 100%);
+/* « Nous connaître » : bandeau de contact en bleu nuit uni, séparé du recrutement par un filet */
+.member-band + .cta {
+  padding-top: 0;
 }
-.member-band--fade + .cta {
-  background: linear-gradient(180deg, #4c1e38 0%, #6e2a37 12%, #934640 24%, #b76d52 34%, #d29965 44%, #b76d52 56%, #934640 66%, #6e2a37 76%, #4c1e38 85%, #2b1c3d 93%, #121c40 100%) !important;
+.member-band + .cta > .shell {
+  padding-top: clamp(4rem, 8vw, 6rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Accueil, haut de page : « Nous contacter » dans le dégradé orange de la charte (cuivre → brique) */

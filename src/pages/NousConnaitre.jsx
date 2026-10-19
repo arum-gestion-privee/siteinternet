@@ -73,7 +73,7 @@ export default function NousConnaitre() {
         </section>
       ))}
 
-      <section className="section section--navy member-band member-band--fade">
+      <section className="section section--navy member-band">
         <div className="shell join reveal">
           <h2>{TEAM_PAGE.join}</h2>
           <LiquidButton as="a" href={CONTACT.jobs} target="_blank" rel="noopener noreferrer" variant="copper" iconRight={<IconArrow />}>
