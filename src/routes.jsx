@@ -9,7 +9,9 @@ import Contact from "./pages/Contact.jsx";
 import LegalPage from "./pages/LegalPage.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import RouteError from "./pages/RouteError.jsx";
+import Article from "./pages/Article.jsx";
 import { MENTIONS, PRIVACY } from "./content/legal.js";
+import { NEWS } from "./content/site.js";
 
 export const routes = [
   {
@@ -25,6 +27,7 @@ export const routes = [
       { path: "valeurs", element: <Valeurs /> },
       { path: "actualites", element: <Actualites /> },
       { path: "contact", element: <Contact /> },
+      ...NEWS.filter((n) => n.local).map((n) => ({ path: `articles/${n.slug}`, element: <Article article={n} /> })),
       { path: "mentions-legales", element: <LegalPage doc={MENTIONS} /> },
       { path: "confidentialite", element: <LegalPage doc={PRIVACY} /> },
       { path: "404", element: <NotFound /> },

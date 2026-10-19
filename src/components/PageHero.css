@@ -37,3 +37,8 @@
     opacity: 0.25;
   }
 }
+/* page article : titres longs, taille réduite */
+.phero--article h1 {
+  font-size: var(--step-4);
+  max-width: 28ch;
+}

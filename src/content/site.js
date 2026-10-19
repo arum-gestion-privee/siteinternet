@@ -279,34 +279,61 @@ export const VALUES = {
   ),
 };
 
-// Actualités : les articles restent pour l'instant sur le site actuel (28 pages d'archives).
+// Actualités : un article dont le texte est repris (champ `quote`) a sa page sur ce site, à la même
+// adresse que sur l'ancien (/articles/…) ; les autres pointent encore vers l'ancien site.
 const OLD = "https://www.arumgestionprivee.com/articles/";
 export const NEWS = [
   {
     date: "2026-09-21",
     title: "Assurance-vie souscrite à 86 ans : peut-elle être requalifiée de donation indirecte ? Le juge tranche…",
     summary: "Le 28 juillet 2026, la CA de Pau s'est prononcée sur la requalification d'une assurance-vie souscrite à 86 ans en donation indirecte et sur le caractère manifestement exagéré des primes versées.",
-    href: OLD + "assurance-vie-souscrite-a-86-ans-peut-elle-etre-requalifiee-de-donation-indirecte-le-juge-tranche",
+    slug: "assurance-vie-souscrite-a-86-ans-peut-elle-etre-requalifiee-de-donation-indirecte-le-juge-tranche",
+    image: "/img/articles/palais-de-justice.webp",
+    quote: "Une femme âgée de 86 ans avait souscrit en 2010 un contrat d'assurance-vie désignant son fils cadet comme seul bénéficiaire, et y avait versé 55 000 € entre 2010 et 2012, dont 50 000 € à 88 ans issus de la vente d'une maison familiale. Les deux autres enfants, s'estimant lésés dans leurs droits réservataires, avaient demandé la requalification du contrat en donation indirecte et, subsidiairement, le rapport des primes pour caractère manifestement exagéré. Sur le premier fondement, la cour rappelle qu'une donation indirecte suppose la réunion cumulative d'un dépouillement irrévocable, d'une intention libérale et de l'acceptation du bénéficiaire du vivant du souscripteur (art. 894 du Code civil). Aucune de ces trois conditions n'était ici caractérisée : l'aléa restait intact, la faculté de rachat et de modification de la clause bénéficiaire demeurait ouverte, et le fils n'avait jamais accepté le bénéfice du contrat. Sur le second fondement, l'exagération d'une prime s'apprécie au regard de l'âge, de la situation familiale, du rapport entre le montant versé et le patrimoine du souscripteur, et de l'utilité du contrat pour lui (art. L. 132-13 du Code des assurances). Le versement de 50 000 € correspondait au réemploi d'une rentrée exceptionnelle, sans compromettre le train de vie de l'assurée, qui conservait plus de 33 000 € d'épargne disponible. L'âge avancé du souscripteur ne suffit donc pas, à lui seul, à emporter la requalification du contrat : son utilité économique s'apprécie au regard d'un faisceau d'indices propre à la situation personnelle de l'assuré.",
   },
   {
     date: "2026-09-14",
     title: "Attributions gratuites d'actions (AGA) : l'administration fiscale actualise (enfin) sa doctrine, sans trancher les management packages",
     summary: "Le 21 mai 2026, le BOFiP a mis à jour sa doctrine sur les attributions gratuites d'actions (AGA), intégrant les réformes de 2018 à 2023 et comblant près de dix ans de retard.",
-    href: OLD + "attributions-gratuites-dactions-aga-ladministration-fiscale-actualise-enfin-sa-doctrine-sans-trancher-les-management-packages",
+    slug: "attributions-gratuites-dactions-aga-ladministration-fiscale-actualise-enfin-sa-doctrine-sans-trancher-les-management-packages",
+    image: "/img/articles/toits-de-paris.webp",
+    quote: "Sur le plan fiscal, l'avantage résultant de l'acquisition définitive des actions suit désormais des règles différenciées selon la date d'autorisation de l'attribution par l'assemblée générale extraordinaire (AGE), le régime le plus favorable étant réservé aux plans antérieurs au 31 décembre 2016. Sur le plan des seuils, la loi relative au partage de la valeur a relevé les plafonds d'attribution prévus par l'article L. 225-197-1 du Code de commerce : 15 % du capital social dans le cas général, 20 % pour certaines PME au sens du droit de l'Union, 30 % en cas d'attribution à une large proportion des salariés, et jusqu'à 40 % lorsqu'elle bénéficie à l'ensemble du personnel. Le plafond individuel de 10 % est désormais apprécié sur les seuls titres détenus depuis moins de sept ans, consacrant un mécanisme de « rechargement ». À noter : cette mise à jour ne crée pas un régime fiscal unique. Elle confirme que les règles applicables demeurent tributaires de la « génération » du plan, c'est-à-dire de la date de l'AGE d'attribution. Autre point de vigilance : le BOFiP reste silencieux sur la réforme des management packages issue de la loi de finances pour 2025 et aménagée par la loi de finances pour 2026 (article 163 bis H du CGI), qui devra pourtant être combinée avec cette doctrine pour sécuriser pleinement les opérations sur titres gratuits. Cette actualisation illustre l'importance de bien identifier le régime applicable à chaque plan d'attribution et de se faire accompagner pour sécuriser ces opérations, notamment en cas de cession, de donation ou de transfert de résidence.",
   },
   {
     date: "2026-07-28",
     title: "Dirigeant de SASU à l'IR non rémunéré : quid du traitement social pour les bénéfices ?",
     summary: "Les bénéfices d'une SASU à l'IR, imposés à l'associé unique non rémunéré, relèvent des prélèvements sociaux sur les revenus du patrimoine à 18,6 %, si non soumis aux cotisations sociales d'activité.",
-    href: OLD + "dirigeant-de-sasu-a-lir-non-remunere-quid-du-traitement-social-pour-les-benefices",
+    slug: "dirigeant-de-sasu-a-lir-non-remunere-quid-du-traitement-social-pour-les-benefices",
+    image: "/img/articles/immeuble-haussmannien.webp",
+    quote: "Depuis l’été 2025, l’administration fiscale a réalisé de nombreux contrôles fiscaux visant les dirigeants de SASU ayant pris cette option à l’IR, afin de soumettre les bénéfices imposés de leur SASU aux prélèvements sociaux, les assimilant à des revenus du patrimoine. Dans une réponse ministérielle du 2 juin 2026 (RM Bergantz, JOAN, 2 juin 2026, n° 12673), le Gouvernement confirme cette analyse. Par conséquent, les bénéfices non soumis aux contributions sociales sur les revenus d’activité entrent définitivement dans le champ des prélèvements sociaux sur les revenus du patrimoine, dont le taux global s’élève à 18,6 % depuis le1er janvier 2026. Vous êtes dirigeant d’une SASU ayant opté pour l’IR ? Cette réponse ministérielle invite à vérifier votre situation déclarative et votre stratégie de rémunération, afin d’anticiper un éventuel risque de redressement !",
   },
   {
     date: null,
     title: "Apport d'usufruit temporaire à une SCI : quelle fiscalité pour le cédant, IR ou impôt sur la plus-value ?",
     summary: "Dans une décision du 30 mars 2026, le Conseil d'État confirme la position de l'administration fiscale, qui retient une acception large de la notion de cession pour y intégrer l'apport d'un usufruit temporaire de parts sociales.",
-    href: OLD + "apport-dusufruit-temporaire-a-une-sci-quelle-fiscalite-pour-le-cedant-ir-ou-impot-sur-la-plus-value",
+    slug: "apport-dusufruit-temporaire-a-une-sci-quelle-fiscalite-pour-le-cedant-ir-ou-impot-sur-la-plus-value",
+    image: "/img/articles/fronton-lion.webp",
+    quote: "Dans une décision du 30 mars 2026 (CE, 8e-3e ch. réunies, 30 mars 2026, n° 502243), le Conseil d’État confirme la position de l’administration fiscale, qui retient une acception large de la notion de cession pour y intégrer l’apport d’un usufruit temporaire de parts sociales, y compris en l’absence de liquidités dégagées par la cession. Par conséquent, l’attribution de parts sociales en rémunération de l’apport est soumise à l’impôt sur le revenu entre les mains du cédant, ce qui appelle une vigilance particulière dans les opérations patrimoniales d’apport d’usufruit temporaire, le cédant étant dès lors soumis imposition immédiate sans pouvoir bénéficier des mécanismes avantageux propres au régime des plus-values (abattements pour durée de détention, report ou sursis) !",
   },
-].map((n) => ({ ...n, title: fr(n.title), summary: fr(n.summary) }));
+  {
+    date: null,
+    title: "Cessions de parts de sociétés à prépondérance immobilière : un formalisme désormais obligatoire à peine de nullité",
+    slug: "cessions-de-parts-de-societes-a-preponderance-immobiliere-un-formalisme-desormais-obligatoire-a-peine-de-nullite",
+    image: "/img/articles/palais-de-justice.webp",
+    quote: "L'article 68 de la loi n° 2026-534 du 25 juin 2026 relative à la lutte contre les fraudes sociales et fiscales impose un formalisme strict aux cessions de titres de sociétés à prépondérance immobilière (SPI), dont les SCI, en vue de faire intervenir un professionnel soumis aux obligations de vigilance LCB-FT. Au sens de l'article 726, I-2° du CGI, est à prépondérance immobilière toute personne morale non cotée dont l'actif est, ou a été au cours de l'année précédant la cession, composé à plus de 50 % d'immeubles ou de droits immobiliers situés en France, ou de participations dans d'autres structures elles-mêmes à prépondérance immobilière. Le champ d'application dépasse ainsi très largement les seules SCI. Nouvellement codifié à l'article 1865-1 du Code civil, le texte prévoit qu'à peine de nullité, la cession de parts ou d'actions d'une SPI doit désormais être constatée par un acte authentique reçu par notaire, un acte contresigné par un avocat, ou un acte sous signature privée rédigé par un expert-comptable, dès lors que cette cession s'inscrit dans le prolongement direct de sa mission principale auprès de la société. Cette obligation s'applique aux cessions intervenant à compter du 27 juin 2026, sans rétroactivité à ce jour. Concrètement, une cession constatée par un simple acte sous seing privé n'est plus valable et ne pourra faire l'objet d'un enregistrement. Il est donc essentiel de s'entourer d'un professionnel habilité en amont de toute opération de ce type !",
+  },
+  {
+    date: null,
+    title: "Contribution différentielle sur les hauts revenus (CDHR) : l'administration fiscale confirme les règles du jeu",
+    slug: "contribution-differentielle-sur-les-hauts-revenus-cdhr-ladministration-fiscale-confirme-les-regles-du-jeu",
+    quote: "La CDHR, codifiée à l'article 224 du CGI, vise à garantir une imposition minimale de 20 % au titre de l'impôt sur le revenu pour les foyers dont le revenu fiscal de référence excède 250 000 € (personne seule) ou 500 000 € (couple soumis à imposition commune), et dont le taux moyen d'imposition est inférieur à 20 % de ce revenu de référence. Les commentaires publiés précisent notamment les règles de territorialité applicables à cet impôt, en cas de résidence ou de transfert de résidence à l'étranger, ainsi que les revenus entrant dans l'assiette de calcul. Les revenus exceptionnels, c'est-à-dire ceux excédant la moyenne des trois années précédentes, ne sont retenus qu'à hauteur d'un quart de leur montant, afin d'éviter qu'un gain ponctuel ne déclenche une forte imposition. Particularité du dispositif : un acompte de 95 % doit être versé entre le 1er et le 15 décembre de l'année d'imposition, sous peine d'une majoration de 20 % en cas d'omission ou d'erreur d'estimation supérieure à 20 %. Cette contribution s'ajoute aux impôts déjà existants comme la CEHR, renforçant la nécessité pour les contribuables concernés d'anticiper leur niveau de revenus annuel. Cette actualité illustre l'importance d'anticiper sa situation fiscale et d'être bien accompagné pour déterminer son entrée dans le champ d'application de la CDHR et sécuriser sa déclaration !",
+  },
+].map((n) => ({
+  ...n,
+  title: fr(n.title),
+  ...(n.summary ? { summary: fr(n.summary) } : {}),
+  ...(n.quote ? { quote: fr(n.quote), href: "/articles/" + n.slug, local: true } : {}),
+}));
 
 export const NEWS_ARCHIVE = "https://www.arumgestionprivee.com/blog";
 

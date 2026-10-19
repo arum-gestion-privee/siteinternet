@@ -1,9 +1,9 @@
 import "./PageHero.css";
 
 /** Bandeau navy des pages intérieures (la nav liquide flotte par-dessus). */
-export default function PageHero({ kicker, title, lead, children }) {
+export default function PageHero({ kicker, title, lead, className = "", children }) {
   return (
-    <section className="phero">
+    <section className={"phero " + className}>
       <img className="phero__motif" src="/brand/motif.png" alt="" aria-hidden="true" />
       <div className="shell phero__inner">
         {kicker && <p className="kicker">{kicker}</p>}
