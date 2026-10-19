@@ -1244,9 +1244,9 @@ a.objective__card:hover {
   color: var(--ink) !important;
 }
 
-/* --- bandeau de contact : dégradé orange, fondu depuis le bleu nuit en haut (dégradé inversé) --- */
+/* --- bandeau de contact : bleu nuit uni (dégradé seulement sur « Nous connaître », voir plus bas) --- */
 .cta {
-  background: linear-gradient(180deg, #121c40 0%, #2b1c3d 7%, #6e2a37 18%, #b76d52 30%, #d29965 38%, #b76d52 50%, #934640 60%, #6e2a37 72%, #4c1e38 82%, #2b1c3d 92%, #121c40 100%) !important;
+  background: var(--navy) !important;
   color: var(--ink);
 }
 .cta h2 {
@@ -1405,4 +1405,12 @@ a.objective__card:hover {
   color: var(--navy);
   background: rgba(18, 28, 64, 0.1);
   border-color: rgba(18, 28, 64, 0.3);
+}
+
+/* « Nous connaître » : fondu élargi sur les deux derniers bandeaux (recrutement → contact) */
+.section--navy.member-band.member-band--fade {
+  background: linear-gradient(180deg, #121c40 0%, #121c40 30%, #2b1c3d 70%, #4c1e38 100%);
+}
+.member-band--fade + .cta {
+  background: linear-gradient(180deg, #4c1e38 0%, #6e2a37 12%, #934640 24%, #b76d52 34%, #d29965 44%, #b76d52 56%, #934640 66%, #6e2a37 76%, #4c1e38 85%, #2b1c3d 93%, #121c40 100%) !important;
 }
