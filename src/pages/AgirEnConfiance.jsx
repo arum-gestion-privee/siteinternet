@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
 import Seo from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
-import { IconArrow } from "../components/icons.jsx";
 import { Kicker, Objectives, Agrements, Partners, Portrait, CtaBand } from "../components/Sections.jsx";
 import { APPROACH } from "../content/site.js";
 
@@ -25,9 +23,6 @@ export default function AgirEnConfiance() {
         <div className="shell split">
           <div className="reveal">
             <h2>{APPROACH.offerTitle}</h2>
-            <Link className="pill-cta" to="/contact">
-              Nous contacter <IconArrow />
-            </Link>
           </div>
           <Portrait photo={APPROACH.offerPhoto.photo} names={APPROACH.offerPhoto.names} cta={null} className="reveal" />
         </div>
