@@ -200,8 +200,8 @@ export default function Home() {
       <KeyFigures />
       <Goals />
       <News />
-      <Licences />
       <Cta />
+      <Licences />
     </>
   );
 }
