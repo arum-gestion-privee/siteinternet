@@ -37,6 +37,14 @@ node scripts/logo.mjs "<LOGO VERTICAL FOND BLANC.jpg>"   # régénère les logos
 ```
 Node ≥ 22.12. Aperçu dans l'app Claude : configuration `arum-dist` (port 4174).
 
+## Code sur GitHub
+Dépôt privé **https://github.com/arum-gestion-privee/siteinternet** (branche `main`), compte GitHub `arum-gestion-privee`.
+Envoyer les modifications : `git add -A && git commit -m "…" && git push`.
+La clé d'accès (jeton « fine-grained », droit *Contents : Read and write* sur `siteinternet` uniquement) est enregistrée
+dans le trousseau macOS pour ce dossier seulement (`git config credential.helper osxkeychain`).
+Sur un autre poste : `git clone https://github.com/arum-gestion-privee/siteinternet.git && npm install`.
+Ne jamais coller la clé dans une commande visible ni la transmettre à Claude.
+
 ## Où modifier quoi
 | Sujet | Fichier |
 |---|---|
