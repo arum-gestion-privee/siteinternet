@@ -1415,10 +1415,10 @@ a.objective__card:hover {
   background: linear-gradient(180deg, #4c1e38 0%, #6e2a37 12%, #934640 24%, #b76d52 34%, #d29965 44%, #b76d52 56%, #934640 66%, #6e2a37 76%, #4c1e38 85%, #2b1c3d 93%, #121c40 100%) !important;
 }
 
-/* Accueil, haut de page : « Nous contacter » reste en brique pleine (orange de la charte) */
+/* Accueil, haut de page : « Nous contacter » dans le dégradé orange de la charte (cuivre → brique) */
 .hhero .pill--copper,
 .hhero .pill--copper:hover {
-  background: var(--copper);
-  border-color: var(--copper);
+  background: linear-gradient(135deg, #d29965 0%, #b76d52 50%, #9a4c37 100%);
+  border-color: transparent;
   color: #fff;
 }
