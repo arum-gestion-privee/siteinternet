@@ -1498,3 +1498,8 @@ a.objective__card:hover {
 .article__back {
   margin-top: var(--space-xl);
 }
+
+/* légendes de portraits sur fond bleu nuit : fonction lisible */
+.section--navy .portrait figcaption {
+  color: var(--on-navy-dim);
+}
