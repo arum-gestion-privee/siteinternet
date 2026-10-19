@@ -191,7 +191,7 @@ export function CtaBand({ title = "Nous contacter", text }) {
       <div className="shell cta__inner">
         <div>
           <h2>{title}</h2>
-          <p>{text || "82 avenue Marceau, 75008 Paris · (+33) 1 75 43 66 50"}</p>
+          {text !== false && <p>{text || "82 avenue Marceau, 75008 Paris · (+33) 1 75 43 66 50"}</p>}
         </div>
         <div className="cta__actions">
           <LiquidButton as="link" to="/contact" variant="copper" size="lg" iconRight={<IconArrow />}>

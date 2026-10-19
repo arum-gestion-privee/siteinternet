@@ -81,7 +81,7 @@ export default function NousConnaitre() {
           </LiquidButton>
         </div>
       </section>
-      <CtaBand />
+      <CtaBand text={false} />
     </>
   );
 }
