@@ -6,7 +6,7 @@
   justify-content: center;
   gap: 0.5em;
   padding: 0.82em 1.4em;
-  border-radius: 10px;
+  border-radius: var(--radius-pill); /* arrondi complet, comme la liquid bar */
   font-family: var(--font-text);
   font-weight: 600;
   font-size: var(--step--1);
