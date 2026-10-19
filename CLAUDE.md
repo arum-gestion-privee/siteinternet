@@ -65,8 +65,7 @@ modification validée y parte directement.
 1. **Bloquant avant la bascule du domaine** : 6 des 28 articles sont repris (pages `/articles/<slug>`, même adresse
    que l'ancien site, texte fourni par l'utilisateur, champ `quote` de `NEWS` dans `src/content/site.js`, photos dans
    `public/img/articles`). Restent 22 articles ; l'ancien site n'est pas accessible depuis la session cloud
-   (réseau bloqué) : l'utilisateur colle les textes. Article CDHR sans photo (Notre-Dame à fournir en fichier) ;
-   articles Cessions SPI et CDHR sans date ni résumé.
+   (réseau bloqué) : l'utilisateur colle les textes. Articles Cessions SPI et CDHR sans date ni résumé.
 2. Statut **MIF2** (conseil indépendant ou non : le site évite le mot « indépendant »), **n° de TVA**,
    document d'entrée en relation : la lettre d'entrée en relation de janvier 2026 est dans `~/Downloads`.
 3. Siège fixé au 82 avenue Marceau (choix de l'utilisateur) : vérifier le Kbis.
