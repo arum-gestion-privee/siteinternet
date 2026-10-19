@@ -9,6 +9,8 @@ process.env.VITE_SITE_ORIGIN = (
 ).replace(/\/+$/, "");
 
 export default defineConfig({
+  // Sous-dossier éventuel (aperçu GitHub Pages : BASE_PATH=/siteinternet/) ; « / » en production.
+  base: process.env.BASE_PATH || "/",
   plugins: [react()],
   build: { assetsInlineLimit: 0 }, // aucun data: URI : la CSP reste stricte
   ssgOptions: { dirStyle: "nested", formatting: "none" },

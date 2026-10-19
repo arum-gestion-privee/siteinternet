@@ -8,4 +8,4 @@ import "@fontsource/playfair-display/latin-500.css";
 import "@fontsource-variable/inter/wght.css";
 import "./styles/global.css";
 
-export const createRoot = ViteReactSSG({ routes });
+export const createRoot = ViteReactSSG({ routes, basename: import.meta.env.BASE_URL });
