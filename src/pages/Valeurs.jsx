@@ -14,7 +14,7 @@ export default function Valeurs() {
       />
       <PageHero kicker="Des valeurs de famille" title="Des valeurs de famille" />
 
-      <section className="section">
+      <section className="section section--navy">
         <div className="shell split">
           <figure className="lead-quote reveal">
             <blockquote>
@@ -47,7 +47,7 @@ export default function Valeurs() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--navy">
         <div className="shell split">
           <p className="lead reveal">{VALUES.professionalism}</p>
           <Portrait {...VALUES.professionalismPhoto} className="reveal" />

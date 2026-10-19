@@ -14,9 +14,9 @@ export default function SurMesure() {
       />
       <PageHero kicker="Le sur-mesure" title="Le sur-mesure" />
 
-      <section className="section">
+      <section className="section section--navy">
         <div className="shell">
-          <Quote text={BESPOKE.quote} name={al.name} role={al.role} photo={al.photo} />
+          <Quote text={BESPOKE.quote} name={al.name} role={al.role} photo={al.photo} light />
         </div>
       </section>
 
@@ -30,7 +30,7 @@ export default function SurMesure() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--navy">
         <div className="shell split">
           <div className="reveal">
             <h2>{BESPOKE.generations}</h2>

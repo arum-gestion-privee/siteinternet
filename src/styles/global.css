@@ -1428,3 +1428,31 @@ a.objective__card:hover {
 .section--navy + .section--navy:not(.member-band) {
   padding-top: 0;
 }
+
+/* --- citation d'ouverture (valeurs) sur fond bleu nuit --- */
+.section--navy .lead-quote blockquote p,
+.section--navy .lead-quote figcaption strong {
+  color: #fff;
+}
+.section--navy .lead-quote figcaption {
+  color: var(--on-navy-dim);
+}
+
+/* --- actualités sur fond bleu nuit : cartes en verre translucide --- */
+.section--navy .news__item a {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+.section--navy .news__item a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: none;
+}
+.section--navy .news__item h3,
+.section--navy .news__more {
+  color: #fff;
+}
+.section--navy .news__meta time,
+.section--navy .news__sum {
+  color: var(--on-navy-dim);
+}
