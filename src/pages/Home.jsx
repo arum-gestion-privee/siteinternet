@@ -91,7 +91,7 @@ function Difference() {
 function KeyFigures() {
   const { marie, sandrine } = HOME_PEOPLE;
   return (
-    <section className="hsec hsec--navy">
+    <section className="hsec hsec--navy hsec--glass">
       <div className="shell">
         <Figures />
         <div className="hduo">

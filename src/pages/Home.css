@@ -523,3 +523,19 @@
 .hsec--navy + .hsec--navy {
   padding-top: 0;
 }
+
+/* Chiffres, citation et portrait : verre translucide sur le bleu nuit, au lieu du dégradé orange */
+.hsec--glass .figs__item,
+.hsec--glass .hquote,
+.hsec--glass .portrait--wide .portrait__frame {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+}
+.hsec--glass .figs__item .picto {
+  background: var(--copper-light);
+}
+/* lueur cuivrée discrète derrière le portrait, pour détacher la silhouette du bleu nuit */
+.hsec--glass .portrait--wide .portrait__frame {
+  background: radial-gradient(55% 65% at 50% 70%, rgba(210, 153, 101, 0.22), transparent 70%), rgba(255, 255, 255, 0.06) !important;
+}
