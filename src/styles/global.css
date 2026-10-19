@@ -1414,3 +1414,11 @@ a.objective__card:hover {
 .member-band--fade + .cta {
   background: linear-gradient(180deg, #4c1e38 0%, #6e2a37 12%, #934640 24%, #b76d52 34%, #d29965 44%, #b76d52 56%, #934640 66%, #6e2a37 76%, #4c1e38 85%, #2b1c3d 93%, #121c40 100%) !important;
 }
+
+/* Accueil, haut de page : « Nous contacter » reste en brique pleine (orange de la charte) */
+.hhero .pill--copper,
+.hhero .pill--copper:hover {
+  background: var(--copper);
+  border-color: var(--copper);
+  color: #fff;
+}

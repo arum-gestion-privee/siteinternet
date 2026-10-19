@@ -72,7 +72,6 @@ function Unique() {
 }
 
 function Difference() {
-  const p = HOME_PEOPLE.partners;
   return (
     <section className="hsec hsec--navy">
       <div className="shell">
@@ -84,9 +83,6 @@ function Difference() {
         <Comparison />
         <div className="hsign reveal">
           <p className="hsign__tag">{fr(DIFFERENCE.tagline)}</p>
-          <p className="hsign__who">
-            <strong>{p.names}</strong> · {p.roles}
-          </p>
         </div>
       </div>
     </section>
