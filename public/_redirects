@@ -1,0 +1,8 @@
+# Anciennes adresses du site Webflow → nouvelles pages (301 : le référencement acquis est conservé).
+/se-connaitre        /nous-connaitre   301
+/notre-equipe        /nous-connaitre   301
+
+# Les pages /agir-en-confiance, /sur-mesure, /valeurs et /mentions-legales gardent la même adresse.
+/blog                /actualites       301
+/blog/*              /actualites       301
+/index.html          /                 301

@@ -1,0 +1,39 @@
+.phero {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-bg);
+  color: var(--on-navy);
+  padding-top: clamp(8.5rem, 16vw, 12rem);
+  padding-bottom: clamp(3.5rem, 7vw, 6rem);
+}
+.phero__motif {
+  position: absolute;
+  right: clamp(-4rem, -2vw, 0rem);
+  top: 50%;
+  height: 135%;
+  width: auto;
+  transform: translateY(-42%);
+  opacity: 0.55;
+  pointer-events: none;
+}
+.phero__inner {
+  position: relative;
+  max-width: calc(var(--shell-max));
+}
+.phero h1 {
+  color: #fff;
+  font-size: var(--step-5);
+  max-width: 16ch;
+}
+.phero__lead {
+  margin-top: var(--space-lg);
+  max-width: 54ch;
+  font-size: var(--step-1);
+  line-height: 1.55;
+  color: var(--on-navy-dim);
+}
+@media (max-width: 720px) {
+  .phero__motif {
+    opacity: 0.25;
+  }
+}
