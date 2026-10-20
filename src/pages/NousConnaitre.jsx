@@ -2,7 +2,6 @@ import Seo, { SITE_ORIGIN, ORG_ID } from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
 import LiquidButton from "../components/LiquidButton.jsx";
 import { IconArrow, IconLinkedIn } from "../components/icons.jsx";
-import { CtaBand } from "../components/Sections.jsx";
 import { TEAM, TEAM_PAGE, CONTACT } from "../content/site.js";
 
 const TEAM_LD = TEAM.map((m) => ({
@@ -74,15 +73,23 @@ export default function NousConnaitre() {
         </section>
       ))}
 
+      {/* Deux appels côte à côte, dans le même verre : recrutement et contact */}
       <section className="section section--navy member-band">
-        <div className="shell join reveal">
-          <h2>{TEAM_PAGE.join}</h2>
-          <LiquidButton as="a" href={CONTACT.jobs} target="_blank" rel="noopener noreferrer" variant="copper" iconRight={<IconArrow />}>
-            Rejoignez-nous !
-          </LiquidButton>
+        <div className="shell duo-cta">
+          <div className="panel duo-cta__card reveal">
+            <h2>{TEAM_PAGE.join}</h2>
+            <LiquidButton as="a" href={CONTACT.jobs} target="_blank" rel="noopener noreferrer" variant="copper" iconRight={<IconArrow />}>
+              Rejoignez-nous !
+            </LiquidButton>
+          </div>
+          <div className="panel duo-cta__card reveal">
+            <h2>Nous contacter</h2>
+            <LiquidButton as="link" to="/contact" variant="copper" iconRight={<IconArrow />}>
+              Nous contacter
+            </LiquidButton>
+          </div>
         </div>
       </section>
-      <CtaBand text={false} />
     </>
   );
 }

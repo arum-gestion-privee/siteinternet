@@ -13,10 +13,13 @@ export default function AgirEnConfiance() {
       <PageHero className="phero--accent" kicker="Agir en confiance" title="Agir en confiance" lead={APPROACH.lead[0]} />
 
       <section className="section section--navy">
-        <div className="shell intro reveal">
-          <p className="intro__lead">{APPROACH.familyOffice}</p>
-          <div className="intro__body">
-            <p>{APPROACH.lead[1]}</p>
+        <div className="shell">
+          <div className="panel reveal">
+            <p className="panel__lead">{APPROACH.familyOffice}</p>
+            <span className="panel__bar" aria-hidden="true" />
+            <div className="panel__body">
+              <p>{APPROACH.lead[1]}</p>
+            </div>
           </div>
         </div>
       </section>

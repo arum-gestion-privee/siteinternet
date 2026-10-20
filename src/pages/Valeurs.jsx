@@ -40,12 +40,13 @@ export default function Valeurs() {
             <Kicker>{VALUES.kicker}</Kicker>
             <h2>{fr(VALUES.title)}</h2>
           </div>
-          {/* le constat à gauche, l'engagement qui en découle mis en avant à droite */}
-          <div className="intro intro--flip reveal">
-            <div className="intro__body">
+          {/* le constat, puis l'engagement qui en découle, mis en avant */}
+          <div className="panel reveal">
+            <div className="panel__body">
               <p>{VALUES.mindset[0]}</p>
             </div>
-            <div className="intro__lead">
+            <span className="panel__bar" aria-hidden="true" />
+            <div className="panel__lead">
               {VALUES.mindset.slice(1).map((p) => (
                 <p key={p}>{p}</p>
               ))}
@@ -62,12 +63,14 @@ export default function Valeurs() {
       </section>
 
       <section className="section section--navy">
-        {/* titre à gauche ; à droite, la première phrase en exergue puis la suite du texte */}
-        <div className="shell intro reveal">
-          <h2 className="intro__title">{fr(VALUES.freedomTitle)}</h2>
-          <div>
-            <p className="intro__lead">{freedomFirst}.</p>
-            <div className="intro__body">
+        <div className="shell">
+          <div className="section__head reveal">
+            <h2>{fr(VALUES.freedomTitle)}</h2>
+          </div>
+          <div className="panel reveal">
+            <p className="panel__lead">{freedomFirst}.</p>
+            <span className="panel__bar" aria-hidden="true" />
+            <div className="panel__body">
               <p>{freedomRest}</p>
             </div>
           </div>
