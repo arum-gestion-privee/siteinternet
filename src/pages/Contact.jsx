@@ -13,7 +13,7 @@ export default function Contact() {
         title="Parlons de votre patrimoine"
         lead="Un premier échange, sans engagement, pour comprendre votre situation, vos projets et vos objectifs."
       />
-      <section className="section">
+      <section className="section section--navy">
         <div className="shell contact">
           <a className="contact__card reveal" href={CONTACT.phoneHref}>
             <IconPhone />

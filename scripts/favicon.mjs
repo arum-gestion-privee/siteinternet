@@ -29,3 +29,28 @@ for (const [size, pad, bold] of [[32, 1, true], [192, 8, false]]) {
     .toFile(`public/favicon-${size}.png`);
 }
 console.log("favicons régénérés");
+
+// favicon.ico (16, 32, 48 px) : format attendu par certains navigateurs (Safari, anciens Edge).
+const icoSizes = [16, 32, 48];
+const pngs = await Promise.all(
+  icoSizes.map((n) => sharp("public/favicon-192.png").resize(n, n).png({ compressionLevel: 9 }).toBuffer()),
+);
+const header = Buffer.alloc(6);
+header.writeUInt16LE(0, 0);
+header.writeUInt16LE(1, 2);
+header.writeUInt16LE(pngs.length, 4);
+let offset = 6 + 16 * pngs.length;
+const entries = pngs.map((png, i) => {
+  const e = Buffer.alloc(16);
+  e.writeUInt8(icoSizes[i] % 256, 0);
+  e.writeUInt8(icoSizes[i] % 256, 1);
+  e.writeUInt16LE(1, 4);
+  e.writeUInt16LE(32, 6);
+  e.writeUInt32LE(png.length, 8);
+  e.writeUInt32LE(offset, 12);
+  offset += png.length;
+  return e;
+});
+const { writeFileSync } = await import("node:fs");
+writeFileSync("public/favicon.ico", Buffer.concat([header, ...entries, ...pngs]));
+console.log("favicon.ico régénéré");

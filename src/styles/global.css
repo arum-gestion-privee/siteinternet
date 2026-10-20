@@ -1562,3 +1562,20 @@ a.objective__card:hover {
   font-size: var(--step-2);
   line-height: 1.4;
 }
+
+/* --- page contact sur fond bleu nuit : cartes en verre translucide --- */
+.section--navy .contact__card {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+.section--navy a.contact__card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: none;
+}
+.section--navy .contact__card strong {
+  color: #fff;
+}
+.section--navy .contact__label {
+  color: var(--on-navy-dim);
+}

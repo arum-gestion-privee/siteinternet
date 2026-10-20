@@ -34,6 +34,7 @@ npm run build     # dist/ + sitemap, robots (robots IA autorisés), llms.txt, em
 npm run serve     # aperçu de dist/ avec les en-têtes de sécurité : http://localhost:4174
 npm run images    # convertit les photos PNG de public/img/equipe en WebP
 node scripts/logo.mjs "<LOGO VERTICAL FOND BLANC.jpg>"   # régénère les logos détourés (public/brand)
+node scripts/favicon.mjs   # régénère favicon.ico + PNG (puis changer ?v=… dans index.html)
 ```
 Node ≥ 22.12. Aperçu dans l'app Claude : configuration `arum-dist` (port 4174).
 
