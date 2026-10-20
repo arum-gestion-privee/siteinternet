@@ -28,12 +28,13 @@ export default function NousConnaitre() {
       <PageHero kicker="Nous connaître" title={TEAM_PAGE.title} lead={TEAM_PAGE.lead} />
 
       <section className="section section--navy">
-        <div className="shell prose-cols reveal">
-          {TEAM_PAGE.text.map((p) => (
-            <p key={p} className="body">
-              {p}
-            </p>
-          ))}
+        <div className="shell intro reveal">
+          <p className="intro__lead">{TEAM_PAGE.text[0]}</p>
+          <div className="intro__body">
+            {TEAM_PAGE.text.slice(1).map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+          </div>
         </div>
       </section>
 

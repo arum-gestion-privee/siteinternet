@@ -543,3 +543,12 @@
 .hsec--news {
   padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
 }
+
+/* Grands titres blancs de l'accueil : même police que le titre du haut (Playfair) */
+.hsec--navy .hhead h2,
+.hnews h2,
+.hcta h2 {
+  font-family: var(--font-accent);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}

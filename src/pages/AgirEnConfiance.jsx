@@ -13,9 +13,11 @@ export default function AgirEnConfiance() {
       <PageHero kicker="Agir en confiance" title="Agir en confiance" lead={APPROACH.lead[0]} />
 
       <section className="section section--navy">
-        <div className="shell split split--text">
-          <p className="body reveal">{APPROACH.lead[1]}</p>
-          <p className="lead reveal">{APPROACH.familyOffice}</p>
+        <div className="shell intro reveal">
+          <p className="intro__lead">{APPROACH.familyOffice}</p>
+          <div className="intro__body">
+            <p>{APPROACH.lead[1]}</p>
+          </div>
         </div>
       </section>
 

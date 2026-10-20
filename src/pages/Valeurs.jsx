@@ -2,10 +2,13 @@ import Seo from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
 import { IconLinkedIn } from "../components/icons.jsx";
 import { Kicker, Portrait, CtaBand } from "../components/Sections.jsx";
-import { VALUES, TEAM } from "../content/site.js";
+import { VALUES, TEAM, fr } from "../content/site.js";
 
 export default function Valeurs() {
   const al = TEAM.find((m) => m.slug.startsWith("anne-laure"));
+  const cut = VALUES.freedom.indexOf(". ");
+  const freedomFirst = VALUES.freedom.slice(0, cut);
+  const freedomRest = VALUES.freedom.slice(cut + 2);
   return (
     <>
       <Seo
@@ -35,14 +38,18 @@ export default function Valeurs() {
         <div className="shell">
           <div className="section__head reveal">
             <Kicker>{VALUES.kicker}</Kicker>
-            <h2>{VALUES.title}</h2>
+            <h2>{fr(VALUES.title)}</h2>
           </div>
-          <div className="prose-cols reveal">
-            {VALUES.mindset.map((p) => (
-              <p key={p} className="body">
-                {p}
-              </p>
-            ))}
+          {/* le constat à gauche, l'engagement qui en découle mis en avant à droite */}
+          <div className="intro intro--flip reveal">
+            <div className="intro__body">
+              <p>{VALUES.mindset[0]}</p>
+            </div>
+            <div className="intro__lead">
+              {VALUES.mindset.slice(1).map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -55,10 +62,14 @@ export default function Valeurs() {
       </section>
 
       <section className="section section--navy">
-        <div className="shell">
-          <div className="section__head reveal">
-            <h2>{VALUES.freedomTitle}</h2>
-            <p className="body">{VALUES.freedom}</p>
+        {/* titre à gauche ; à droite, la première phrase en exergue puis la suite du texte */}
+        <div className="shell intro reveal">
+          <h2 className="intro__title">{fr(VALUES.freedomTitle)}</h2>
+          <div>
+            <p className="intro__lead">{freedomFirst}.</p>
+            <div className="intro__body">
+              <p>{freedomRest}</p>
+            </div>
           </div>
         </div>
       </section>
