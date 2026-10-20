@@ -48,7 +48,8 @@ export default function Seo({ title, description = DEFAULT_DESC, noindex = false
 
   return (
     <Head>
-      <title>{full}</title>
+      {/* Onglet du navigateur : uniquement le nom du cabinet (choix de l'utilisateur) */}
+      <title>{BASE}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
       {noindex && <meta name="robots" content="noindex" />}
