@@ -40,16 +40,16 @@ export default function Valeurs() {
             <Kicker>{VALUES.kicker}</Kicker>
             <h2>{fr(VALUES.title)}</h2>
           </div>
-          {/* le constat, puis l'engagement qui en découle, mis en avant */}
+          {/* l'engagement mis en avant, puis le constat qui le fonde */}
           <div className="panel reveal">
-            <div className="panel__body">
-              <p>{VALUES.mindset[0]}</p>
-            </div>
-            <span className="panel__bar" aria-hidden="true" />
             <div className="panel__lead">
               {VALUES.mindset.slice(1).map((p) => (
                 <p key={p}>{p}</p>
               ))}
+            </div>
+            <span className="panel__bar" aria-hidden="true" />
+            <div className="panel__body">
+              <p>{VALUES.mindset[0]}</p>
             </div>
           </div>
         </div>

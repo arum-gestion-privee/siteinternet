@@ -24,16 +24,13 @@ export default function NousConnaitre() {
         description="Une équipe de 7 personnes dédiée à l'organisation de votre patrimoine : découvrez les femmes et les hommes d'ARUM Gestion Privée."
         jsonLd={TEAM_LD}
       />
-      <PageHero className="phero--accent" kicker="Nous connaître" title={TEAM_PAGE.title} lead={TEAM_PAGE.lead} />
+      <PageHero className="phero--accent" kicker="Nous connaître" title={TEAM_PAGE.title} lead={TEAM_PAGE.text[0]} />
 
       <section className="section section--navy">
-        <div className="shell intro reveal">
-          <p className="intro__lead">{TEAM_PAGE.text[0]}</p>
-          <div className="intro__body">
-            {TEAM_PAGE.text.slice(1).map((p) => (
-              <p key={p}>{p}</p>
-            ))}
-          </div>
+        {/* introduction à la présentation de l'équipe : centrée, avant les portraits */}
+        <div className="shell team-intro reveal">
+          <p>{TEAM_PAGE.text[1]}</p>
+          <span className="panel__bar" aria-hidden="true" />
         </div>
       </section>
 
