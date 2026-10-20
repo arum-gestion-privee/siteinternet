@@ -1579,3 +1579,7 @@ a.objective__card:hover {
 .section--navy .contact__label {
   color: var(--on-navy-dim);
 }
+/* contact : cases remontées, plus proches du bandeau de titre */
+.section--contact {
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+}
