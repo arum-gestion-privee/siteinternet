@@ -1672,3 +1672,18 @@ a.objective__card:hover {
 .team-intro .panel__bar {
   margin-bottom: 0;
 }
+
+/* pages légales sur fond bleu nuit */
+.section--navy .legal h2 {
+  color: #fff;
+}
+.section--navy .legal p {
+  color: var(--on-navy-dim);
+}
+
+/* Toutes les pages sont sur fond bleu nuit : le fond général aussi (pas de bande claire sous le pied
+   de page sur grand écran, ni au rebond du défilement sur Mac et iPhone) */
+html,
+body {
+  background: var(--navy);
+}

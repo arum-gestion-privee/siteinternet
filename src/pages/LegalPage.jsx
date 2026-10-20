@@ -6,7 +6,7 @@ export default function LegalPage({ doc }) {
     <>
       <Seo title={doc.title} />
       <PageHero kicker="Informations" title={doc.title} />
-      <section className="section">
+      <section className="section section--navy">
         <div className="shell legal">
           {doc.sections.map((s) => (
             <section key={s.title}>
