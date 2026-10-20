@@ -25,7 +25,7 @@ export default function NousConnaitre() {
         description="Une équipe de 7 personnes dédiée à l'organisation de votre patrimoine : découvrez les femmes et les hommes d'ARUM Gestion Privée."
         jsonLd={TEAM_LD}
       />
-      <PageHero kicker="Nous connaître" title={TEAM_PAGE.title} lead={TEAM_PAGE.lead} />
+      <PageHero className="phero--accent" kicker="Nous connaître" title={TEAM_PAGE.title} lead={TEAM_PAGE.lead} />
 
       <section className="section section--navy">
         <div className="shell intro reveal">

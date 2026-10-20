@@ -10,7 +10,7 @@ export default function AgirEnConfiance() {
         title="Agir en confiance"
         description="Expertise, approche transversale, sur-mesure : l'offre en trois temps d'ARUM Gestion Privée, votre family-office."
       />
-      <PageHero kicker="Agir en confiance" title="Agir en confiance" lead={APPROACH.lead[0]} />
+      <PageHero className="phero--accent" kicker="Agir en confiance" title="Agir en confiance" lead={APPROACH.lead[0]} />
 
       <section className="section section--navy">
         <div className="shell intro reveal">

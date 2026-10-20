@@ -1583,3 +1583,13 @@ a.objective__card:hover {
 .section--contact {
   padding-top: clamp(1.5rem, 3vw, 2.5rem);
 }
+
+/* Titres blancs des pages intérieures (Nous connaître, Agir en confiance, Le sur-mesure, Valeurs, Actualités) :
+   même police que le titre de l'accueil (Playfair) */
+.phero--accent h1,
+.section--navy h2,
+.cta h2 {
+  font-family: var(--font-accent);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}

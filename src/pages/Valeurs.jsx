@@ -15,7 +15,7 @@ export default function Valeurs() {
         title="Des valeurs de famille"
         description="L'intérêt du client, le professionnalisme et l'honnêteté : un cabinet libre en droit, libre d'esprit."
       />
-      <PageHero kicker="Des valeurs de famille" title="Des valeurs de famille" />
+      <PageHero className="phero--accent" kicker="Des valeurs de famille" title="Des valeurs de famille" />
 
       <section className="section section--navy">
         <div className="shell split">
