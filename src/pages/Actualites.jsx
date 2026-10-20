@@ -1,9 +1,6 @@
 import Seo from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
-import LiquidButton from "../components/LiquidButton.jsx";
-import { IconArrow } from "../components/icons.jsx";
 import { NewsList, CtaBand } from "../components/Sections.jsx";
-import { NEWS_ARCHIVE } from "../content/site.js";
 
 export default function Actualites() {
   return (
@@ -17,11 +14,6 @@ export default function Actualites() {
       <section className="section section--navy">
         <div className="shell">
           <NewsList />
-          <p className="center">
-            <LiquidButton as="a" href={NEWS_ARCHIVE} target="_blank" rel="noopener noreferrer" variant="ghost" iconRight={<IconArrow />}>
-              Toutes les archives
-            </LiquidButton>
-          </p>
         </div>
       </section>
       <CtaBand />
