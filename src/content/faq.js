@@ -43,8 +43,8 @@ export const FAQ = [
       "Nos bureaux sont situés au 82 avenue Marceau, dans le 8e arrondissement de Paris.",
     ],
     [
-      "Que faire en cas de réclamation ?",
-      "Adressez votre réclamation par lettre recommandée au siège du cabinet. Les délais de réponse et les coordonnées des médiateurs (AMF, CMAP) sont précisés dans nos mentions légales.",
+      "Comment se déroule le premier échange ?",
+      "C'est un premier échange, sans engagement, pour comprendre votre situation, vos projets et vos objectifs.",
     ],
   ]),
 ];
