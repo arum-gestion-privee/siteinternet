@@ -31,21 +31,23 @@ function Hero() {
     <section className="hhero">
       <div className="hhero__sky" aria-hidden="true" />
       {/* Film « Je suis ARUM Gestion Privée » en fond, muet, en boucle, sous un voile bleu nuit */}
-      <video
-        className="hhero__video"
-        poster="/video/arum-film-poster.webp"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        aria-hidden="true"
-        tabIndex={-1}
-      >
-        <source src="/video/arum-film.mp4" type="video/mp4" />
-        <source src="/video/arum-film.webm" type="video/webm" />
-      </video>
-      <div className="hhero__tint" aria-hidden="true" />
+      <div className="hhero__film" aria-hidden="true">
+        <video
+          className="hhero__video"
+          poster="/video/arum-film-poster.webp"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          tabIndex={-1}
+        >
+          <source src="/video/arum-film.mp4" type="video/mp4" />
+          <source src="/video/arum-film.webm" type="video/webm" />
+        </video>
+        <div className="hhero__tint" aria-hidden="true" />
+      </div>
       <div className="shell hhero__grid">
         <div className="hhero__copy">
           <h1>

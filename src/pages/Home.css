@@ -610,44 +610,44 @@
   margin-inline: auto;
 }
 
-/* Film sur le côté droit du haut de l'accueil (le titre reste sur fond bleu nuit, à gauche),
-   teinté bleu nuit comme sur le site d'ERNEST 1895 et fondu dans le fond sur ses bords */
-.hhero__video {
+/* Film sur le côté droit du haut de l'accueil, cadre 16/9 entier (sous-titres visibles), teinté bleu nuit
+   comme sur le site d'ERNEST 1895 ; seul le bord gauche se fond dans le fond, derrière le titre */
+.hhero__film {
   position: absolute;
-  top: 0;
+  z-index: -1;
   right: 0;
-  bottom: 0;
-  z-index: -2;
-  width: 62%;
+  top: 50%;
+  width: min(60%, 1100px);
+  aspect-ratio: 16 / 9;
+  transform: translateY(-42%);
+  /* bords fondus : à gauche (derrière le titre) et légèrement en haut et en bas, sous-titres préservés */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%), linear-gradient(180deg, transparent 0%, #000 7%, #000 95%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 18%), linear-gradient(180deg, transparent 0%, #000 7%, #000 95%, transparent 100%);
+  mask-composite: intersect;
+}
+.hhero__video {
+  display: block;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(0.35) brightness(1.05);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%), linear-gradient(180deg, #000 75%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(90deg, transparent 0%, #000 30%), linear-gradient(180deg, #000 75%, transparent 100%);
-  mask-composite: intersect;
+  filter: grayscale(0.35) brightness(1.1);
 }
 .hhero__tint {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  width: 62%;
-  background: rgba(40, 62, 130, 0.3);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%);
-  mask-image: linear-gradient(90deg, transparent 0%, #000 30%);
+  inset: 0;
+  background: rgba(40, 62, 130, 0.28);
 }
 @media (max-width: 860px) {
-  /* téléphone : le film passe sous le texte, plus sombre */
-  .hhero__video,
-  .hhero__tint {
+  /* téléphone : le film passe sous le texte, en entier en bas du bloc */
+  .hhero__film {
+    top: auto;
+    bottom: 0;
     width: 100%;
-    -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
-    mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
-  }
-  .hhero__tint {
-    background: rgba(18, 28, 64, 0.7);
+    transform: none;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 25%);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 25%);
+    opacity: 0.6;
   }
 }
 /* Mouvement réduit demandé : image fixe (l'affiche) à la place du film */
