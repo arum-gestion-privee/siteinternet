@@ -88,26 +88,35 @@ function Difference() {
   );
 }
 
+/** Citation d'un membre de l'équipe, avec sa photo, son nom et sa fonction. */
+function QuoteCard({ quote, photo, names, roles }) {
+  return (
+    <figure className="hquote reveal">
+      <blockquote>
+        <p>« {quote} »</p>
+      </blockquote>
+      <figcaption>
+        <img src={photo} alt="" loading="lazy" />
+        <span>
+          <strong>{names}</strong>
+          {roles}
+        </span>
+      </figcaption>
+    </figure>
+  );
+}
+
 function KeyFigures() {
   const { marie, sandrine } = HOME_PEOPLE;
+  // citation de Sandrine : celle de sa présentation (page Nous connaître)
+  const sandrineQuote = TEAM.find((m) => m.slug.startsWith("sandrine")).quote;
   return (
     <section className="hsec hsec--navy hsec--glass">
       <div className="shell">
         <Figures />
         <div className="hduo">
-          <figure className="hquote reveal">
-            <blockquote>
-              <p>« {marie.quote} »</p>
-            </blockquote>
-            <figcaption>
-              <img src={marie.photo} alt="" loading="lazy" />
-              <span>
-                <strong>{marie.names}</strong>
-                {marie.roles}
-              </span>
-            </figcaption>
-          </figure>
-          <Portrait {...sandrine} cta={null} className="portrait--wide reveal" />
+          <QuoteCard {...marie} />
+          <QuoteCard {...sandrine} quote={sandrineQuote} />
         </div>
       </div>
     </section>
