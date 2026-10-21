@@ -2,7 +2,7 @@ import Seo from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
 import { IconLinkedIn } from "../components/icons.jsx";
 import { Kicker, Portrait, CtaBand } from "../components/Sections.jsx";
-import { VALUES, TEAM, fr } from "../content/site.js";
+import { VALUES, TEAM, HOME_PEOPLE, fr } from "../content/site.js";
 
 export default function Valeurs() {
   const al = TEAM.find((m) => m.slug.startsWith("anne-laure"));
@@ -30,7 +30,8 @@ export default function Valeurs() {
               </a>
             </figcaption>
           </figure>
-          <Portrait photo={VALUES.leadPhoto} names={al.name} roles={al.role} cta={null} className="reveal" />
+          {/* la photo du haut de l'accueil, en grand */}
+          <img className="valeurs__duo reveal" src={HOME_PEOPLE.partners.photo} alt={`${HOME_PEOPLE.partners.names}, ${HOME_PEOPLE.partners.roles}`} width="600" height="899" />
         </div>
       </section>
 

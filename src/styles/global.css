@@ -1741,13 +1741,16 @@ h3,
 /* Logo de fond des pages intérieures : entier, plus petit, jamais coupé */
 .phero__motif {
   top: clamp(6.5rem, 12vw, 8.5rem);
-  bottom: clamp(1.5rem, 3vw, 2.5rem);
   right: var(--shell-pad);
-  height: auto;
-  max-height: calc(100% - clamp(8rem, 15vw, 11rem));
+  height: clamp(13rem, 22vw, 19rem); /* même taille sur toutes les pages */
+  max-height: none;
   width: auto;
   transform: none;
   opacity: 0.5;
+}
+/* bandeau assez haut pour montrer le logo en entier, même avec un titre court */
+.phero {
+  min-height: calc(clamp(6.5rem, 12vw, 8.5rem) + clamp(13rem, 22vw, 19rem) + clamp(2rem, 4vw, 3rem));
 }
 
 /* partenaire sans logo (en attente du fichier) : nom en toutes lettres */
@@ -1766,4 +1769,14 @@ h3,
 }
 .cta .panel.cta__inner {
   padding: clamp(1.75rem, 4vw, 3rem) clamp(1.75rem, 5vw, 4rem);
+}
+
+/* Valeurs : photo d'Anne-Laure et Patrick (celle du haut de l'accueil), en grand */
+.valeurs__duo {
+  justify-self: center;
+  width: auto;
+  height: clamp(380px, 46vw, 640px);
+  -webkit-mask-image: linear-gradient(180deg, #000 78%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 78%, transparent 100%);
+  filter: drop-shadow(0 30px 60px rgba(10, 18, 48, 0.35));
 }
