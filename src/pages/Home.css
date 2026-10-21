@@ -610,49 +610,78 @@
   margin-inline: auto;
 }
 
-/* Haut de l'accueil en deux colonnes : texte à gauche, film entier à droite (aucun chevauchement,
-   sous-titres et noms incrustés visibles), teinté bleu nuit comme sur le site d'ERNEST 1895 */
-.hhero .hhero__grid {
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  grid-template-rows: 1fr;
-  align-items: center;
-  gap: clamp(2rem, 4vw, 4rem);
-}
-.hhero .hhero__copy {
-  grid-column: 1;
-}
-.hhero h1 {
-  font-size: clamp(2rem, 1.3rem + 2.2vw, 3.4rem);
-}
+/* Film en plein fond du haut de l'accueil, teinté bleu nuit (comme le site d'ERNEST 1895).
+   Les noms incrustés du film sont dans son tiers gauche-milieu et les sous-titres en bas au centre :
+   le texte tient dans une colonne étroite à gauche, sur la partie assombrie, sans les recouvrir. */
 .hhero__film {
-  position: relative;
-  grid-column: 2;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 40px 80px -40px rgba(4, 8, 24, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
 }
 .hhero__video {
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: left center; /* les noms incrustés sont à gauche : on recadre plutôt à droite */
   filter: grayscale(0.3) brightness(1.1);
 }
 .hhero__tint {
   position: absolute;
   inset: 0;
-  background: rgba(40, 62, 130, 0.25);
-  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(18, 28, 64, 0.92) 0%, rgba(18, 28, 64, 0.85) 24%, rgba(18, 28, 64, 0.25) 36%, rgba(18, 28, 64, 0.15) 100%),
+    linear-gradient(180deg, rgba(18, 28, 64, 0.5) 0%, rgba(18, 28, 64, 0) 18%, rgba(18, 28, 64, 0) 88%, #121c40 100%),
+    rgba(40, 62, 130, 0.22);
+}
+.hhero .hhero__grid {
+  grid-template-columns: 1fr minmax(0, 440px);
+  grid-template-rows: auto 1fr auto;
+  min-height: min(100svh, 1000px);
+  padding-top: clamp(7.5rem, 14vh, 10rem);
+}
+.hhero__title {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  max-width: 21ch;
+  font-size: clamp(1.9rem, 1.3rem + 1.8vw, 3.1rem) !important;
+}
+.hhero__side {
+  grid-column: 2;
+  grid-row: 3;
+  text-align: right;
+  /* au-dessus de la ligne des sous-titres du film (bas de l'image) */
+  margin-bottom: clamp(5rem, 14vh, 9rem);
+}
+.hhero__side p {
+  font-size: clamp(0.98rem, 0.94rem + 0.2vw, 1.1rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+}
+.hhero__side .hhero__actions {
+  justify-content: flex-end;
+}
+/* voile : sombre en haut à gauche (titre) et en bas à droite (texte), léger ailleurs */
+.hhero__tint {
+  background:
+    radial-gradient(70% 60% at 0% 0%, rgba(18, 28, 64, 0.92) 0%, rgba(18, 28, 64, 0.6) 45%, rgba(18, 28, 64, 0) 75%),
+    radial-gradient(55% 55% at 100% 100%, rgba(18, 28, 64, 0.9) 0%, rgba(18, 28, 64, 0.55) 45%, rgba(18, 28, 64, 0) 75%),
+    linear-gradient(180deg, rgba(18, 28, 64, 0.35) 0%, rgba(18, 28, 64, 0) 20%, rgba(18, 28, 64, 0) 92%, #121c40 100%),
+    rgba(40, 62, 130, 0.22) !important;
 }
 @media (max-width: 960px) {
   .hhero .hhero__grid {
     grid-template-columns: 1fr;
   }
-  .hhero__film {
+  .hhero__side {
     grid-column: 1;
+    text-align: left;
+    margin-bottom: 0;
+  }
+  .hhero__side .hhero__actions {
+    justify-content: flex-start;
+  }
+  .hhero__tint {
+    background: rgba(18, 28, 64, 0.72) !important;
   }
 }
 /* Mouvement réduit demandé : image fixe (l'affiche) à la place du film */

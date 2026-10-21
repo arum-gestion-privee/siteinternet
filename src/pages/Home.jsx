@@ -30,11 +30,31 @@ function Hero() {
   return (
     <section className="hhero">
       <div className="hhero__sky" aria-hidden="true" />
+      {/* Film « Je suis ARUM Gestion Privée » en fond, muet, en boucle, sous un voile bleu nuit ; texte en colonne étroite à gauche pour laisser voir noms et sous-titres */}
+      <div className="hhero__film" aria-hidden="true">
+        <video
+          className="hhero__video"
+          poster="/video/arum-film-poster.webp"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          tabIndex={-1}
+        >
+          <source src="/video/arum-film.mp4" type="video/mp4" />
+          <source src="/video/arum-film.webm" type="video/webm" />
+        </video>
+        <div className="hhero__tint" aria-hidden="true" />
+      </div>
       <div className="shell hhero__grid">
-        <div className="hhero__copy">
-          <h1>
-            {HOME.title} <span className="accent">{HOME.titleEnd}</span>
-          </h1>
+        {/* Disposition du site d'ERNEST 1895 : titre en haut à gauche, texte et boutons en bas à droite,
+            pour laisser libres les noms (bas-gauche du film) et les sous-titres (bas, au centre). */}
+        <h1 className="hhero__title">
+          {HOME.title} <span className="accent">{HOME.titleEnd}</span>
+        </h1>
+        <div className="hhero__side">
           <p>{HOME.intro}</p>
           <div className="hhero__actions">
             <Link className="pill pill--copper pill--inline" to="/contact">
@@ -44,24 +64,6 @@ function Hero() {
               Notre approche <IconArrow />
             </Link>
           </div>
-        </div>
-        {/* Film « Je suis ARUM Gestion Privée » à droite du texte, en entier (sous-titres visibles), muet, en boucle, sous un voile bleu nuit */}
-        <div className="hhero__film" aria-hidden="true">
-          <video
-            className="hhero__video"
-            poster="/video/arum-film-poster.webp"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            aria-hidden="true"
-            tabIndex={-1}
-          >
-            <source src="/video/arum-film.mp4" type="video/mp4" />
-            <source src="/video/arum-film.webm" type="video/webm" />
-          </video>
-          <div className="hhero__tint" aria-hidden="true" />
         </div>
       </div>
     </section>
