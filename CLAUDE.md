@@ -19,7 +19,7 @@ Rien n'est publié : l'ancien site Webflow reste en ligne.
   brique `#9A4C37`, **éclaircie en `#B85C42` sur le site** (seul orange pour les textes et boutons), fond clair `#F6F9FC`,
   dégradé `#D29965 → #FB190A` fondu dans le bleu nuit (`--orange-grad`).
   Polices de la charte : Playfair Display + Montserrat ; le site utilise **Playfair pour tous les titres et
-  sous-titres, la liquid bar et le menu mobile, Inter pour le texte** (choix de l'utilisateur).
+  sous-titres et le menu mobile ; Inter pour le texte et la liquid bar** (choix de l'utilisateur).
 - **Toutes les pages sur fond bleu nuit** ; blocs en verre translucide (`.panel`) ; dégradé orange réservé aux
   cartes objectifs, étapes, colonne ARUM du comparatif et cadres des portraits. Pas de cartes blanches.
 - Boutons translucides = **même verre que la liquid bar** : `rgba(255,255,255,.14)`, bordure `.32`, `blur(18px)`.
