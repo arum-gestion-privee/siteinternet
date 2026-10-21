@@ -54,8 +54,12 @@ export default function SiteFooter() {
             <IconLinkedIn />
             <span>LinkedIn</span>
           </a>
-          <NewsSignup />
         </div>
+      </div>
+
+      {/* « Recevez notre actualité » : une ligne horizontale sous toutes les colonnes */}
+      <div className="shell">
+        <NewsSignup />
       </div>
 
       <FooterFaq />
