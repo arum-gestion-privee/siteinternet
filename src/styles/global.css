@@ -1759,3 +1759,11 @@ h3,
   text-align: center;
   color: #fff;
 }
+
+/* Bandeau « Nous contacter » dans un cadre en verre */
+.cta {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+.cta .panel.cta__inner {
+  padding: clamp(1.75rem, 4vw, 3rem) clamp(1.75rem, 5vw, 4rem);
+}

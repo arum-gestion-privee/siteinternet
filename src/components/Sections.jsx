@@ -200,15 +200,18 @@ export function NewsList({ limit }) {
 export function CtaBand({ title = "Nous contacter", text }) {
   return (
     <section className="cta">
-      <div className="shell cta__inner">
-        <div>
-          <h2>{title}</h2>
-          {text !== false && <p>{text || "82 avenue Marceau, 75008 Paris · (+33) 1 75 43 66 50"}</p>}
-        </div>
-        <div className="cta__actions">
-          <LiquidButton as="link" to="/contact" variant="copper" size="lg" iconRight={<IconArrow />}>
-            Nous contacter
-          </LiquidButton>
+      {/* cadre en verre translucide, comme les autres blocs du site */}
+      <div className="shell">
+        <div className="panel cta__inner">
+          <div>
+            <h2>{title}</h2>
+            {text !== false && <p>{text || "82 avenue Marceau, 75008 Paris · (+33) 1 75 43 66 50"}</p>}
+          </div>
+          <div className="cta__actions">
+            <LiquidButton as="link" to="/contact" variant="copper" size="lg" iconRight={<IconArrow />}>
+              Nous contacter
+            </LiquidButton>
+          </div>
         </div>
       </div>
     </section>
