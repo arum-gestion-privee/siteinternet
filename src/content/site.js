@@ -64,7 +64,6 @@ export const DIFFERENCE = {
 };
 
 export const HOME_PEOPLE = {
-  president: { photo: "/img/equipe/anne-laure.webp", names: "Anne-Laure Boccon-Gibod", roles: "Présidente" },
   duo: { photo: "/img/equipe/al-genevieve.webp", names: "Anne-Laure Boccon-Gibod & Geneviève Werner", roles: "Présidente et Directrice Associée" },
   sandrine: { photo: "/img/equipe/sandrine.webp", names: "Sandrine Cauvin", roles: "Directeur des Investissements" },
   partners: { photo: "/img/equipe/al-patrick.webp", names: "Anne-Laure Boccon-Gibod & Patrick Werner", roles: "Présidente et Directeur Associé" },

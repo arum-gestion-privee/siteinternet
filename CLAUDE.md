@@ -84,6 +84,5 @@ Bas de toutes les pages (dans `App.jsx`) : `NewsSignup` puis `LicencesBand` (Nos
 7. Hébergeur à confirmer dans les mentions légales (Cloudflare par défaut).
 8. Partenaires : Rohan Invest retiré ; BNP Paribas Cardif, Generali Luxembourg, Wealins, AG2R La Mondiale France
    ajoutés **sans logo** (nom écrit) : fournir les logos (`public/img/partenaires`, champ `logo` de `PARTNERS`).
-10. Accueil : ordre reconstitué d'après les données de l'ancien site (Anne-Laure, Sandrine, Patrick + Anne-Laure,
-    Marie) : à valider par l'utilisateur.
+10. Accueil : photos remises comme avant (héros Anne-Laure & Patrick, Anne-Laure & Geneviève, Marie + Sandrine)
 9. Contraste : le brique `#9A4C37` en petit texte sur bleu nuit est faible (≈ 2,7:1) ; alternative de la charte : `#D29965`.

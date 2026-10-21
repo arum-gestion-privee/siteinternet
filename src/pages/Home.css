@@ -599,3 +599,13 @@
     padding-bottom: 0;
   }
 }
+/* bloc sans photo : phrase seule, centrée */
+.halt--text {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  padding-bottom: 0;
+}
+.halt--text .halt__tag::before {
+  margin-inline: auto;
+}

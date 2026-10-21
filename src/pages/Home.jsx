@@ -26,14 +26,12 @@ const person = (slug) => TEAM.find((m) => m.slug.startsWith(slug));
 /* Accueil : 100 % du contenu du site actuel, réorganisé.
    Fonds en alternance : bleu nuit (hero) → clair → bleu nuit → clair… */
 
-/* Ossature du site d'origine : Anne-Laure (héros), Sandrine (« Vous et votre famille… »),
-   Patrick avec Anne-Laure (« Une alternative… »), Marie (chiffres et citation). */
 function Hero() {
-  const p = HOME_PEOPLE.president;
+  const p = HOME_PEOPLE.partners;
   return (
     <section className="hhero">
       <div className="hhero__sky" aria-hidden="true" />
-      <img className="hhero__people" src={p.photo} width="531" height="775" alt={`${p.names}, ${p.roles}`} fetchPriority="high" />
+      <img className="hhero__people" src={p.photo} width="600" height="899" alt={`${p.names}, ${p.roles}`} fetchPriority="high" />
       <div className="shell hhero__grid">
         <div className="hhero__copy">
           <h1>
@@ -65,14 +63,13 @@ function Unique() {
           <p className="hbody">{HOME.introBis}</p>
           <p className="hbody">{HOME.strategy}</p>
         </div>
-        <Portrait {...HOME_PEOPLE.sandrine} cta={null} className="reveal" />
+        <Portrait {...HOME_PEOPLE.duo} cta={null} className="reveal" />
       </div>
     </section>
   );
 }
 
 function Difference() {
-  const { partners } = HOME_PEOPLE;
   return (
     <section className="hsec hsec--navy">
       <div className="shell">
@@ -82,10 +79,9 @@ function Difference() {
           <p>{DIFFERENCE.text}</p>
         </header>
         <Comparison />
-        {/* « Une alternative… » mise en valeur : grande phrase et photo d'Anne-Laure et Patrick */}
-        <div className="halt reveal">
+        {/* « Une alternative… » mise en valeur : grande phrase dans un bloc en verre */}
+        <div className="halt halt--text reveal">
           <p className="halt__tag">{fr(DIFFERENCE.tagline)}</p>
-          <img className="halt__img" src={partners.photo} alt={`${partners.names}, ${partners.roles}`} loading="lazy" width="600" height="899" />
         </div>
       </div>
     </section>
@@ -93,7 +89,7 @@ function Difference() {
 }
 
 function KeyFigures() {
-  const { marie, duo } = HOME_PEOPLE;
+  const { marie, sandrine } = HOME_PEOPLE;
   return (
     <section className="hsec hsec--navy hsec--glass">
       <div className="shell">
@@ -111,7 +107,7 @@ function KeyFigures() {
               </span>
             </figcaption>
           </figure>
-          <Portrait {...duo} cta={null} className="portrait--wide reveal" />
+          <Portrait {...sandrine} cta={null} className="portrait--wide reveal" />
         </div>
       </div>
     </section>
