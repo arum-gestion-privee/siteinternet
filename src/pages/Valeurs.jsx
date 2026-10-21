@@ -57,7 +57,9 @@ export default function Valeurs() {
 
       <section className="section section--navy">
         <div className="shell split">
-          <p className="lead reveal">{VALUES.professionalism}</p>
+          <div className="intro__body reveal">
+            <p>{VALUES.professionalism}</p>
+          </div>
           <Portrait {...VALUES.professionalismPhoto} cta={null} className="reveal" />
         </div>
       </section>
