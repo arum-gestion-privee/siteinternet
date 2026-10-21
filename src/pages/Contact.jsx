@@ -1,7 +1,7 @@
 import Seo from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
-import LiquidButton from "../components/LiquidButton.jsx";
-import { IconArrow, IconPhone, IconMail, IconPin } from "../components/icons.jsx";
+import { ContactForm } from "../components/Forms.jsx";
+import { IconPhone, IconMail, IconPin } from "../components/icons.jsx";
 import { CONTACT } from "../content/site.js";
 
 export default function Contact() {
@@ -35,11 +35,9 @@ export default function Contact() {
             </strong>
           </div>
         </div>
-        <div className="shell center contact__form">
-          <p className="body">Vous préférez nous laisser vos coordonnées ? Notre formulaire vous permet d’être rappelé.</p>
-          <LiquidButton as="a" href={CONTACT.form} target="_blank" rel="noopener noreferrer" variant="copper" size="lg" iconRight={<IconArrow />}>
-            Être rappelé
-          </LiquidButton>
+        <div className="shell form-shell contact__form">
+          <p className="body center">Vous préférez nous laisser vos coordonnées ? Notre formulaire vous permet d’être rappelé.</p>
+          <ContactForm />
         </div>
       </section>
     </>

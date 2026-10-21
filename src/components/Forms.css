@@ -1,0 +1,151 @@
+/* Formulaires : champs en verre sur fond bleu nuit */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.form {
+  display: grid;
+  gap: var(--space-lg);
+}
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+.form__field {
+  display: grid;
+  gap: 0.45rem;
+}
+.form__field > span {
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--on-navy-dim);
+}
+.form input:not([type="checkbox"]):not([type="file"]),
+.form textarea,
+.signup input[type="email"] {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font: inherit;
+  transition: border-color var(--dur-fast), background-color var(--dur-fast);
+}
+.form textarea {
+  resize: vertical;
+  min-height: 9rem;
+}
+.form input::placeholder,
+.signup input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.form input:focus,
+.form textarea:focus,
+.signup input:focus {
+  outline: none;
+  border-color: var(--copper);
+  background: rgba(255, 255, 255, 0.1);
+}
+.form__field--file input {
+  color: var(--on-navy-dim);
+  font-size: var(--step--1);
+}
+.form__field--file input::file-selector-button {
+  margin-right: 1rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+.form__check {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  font-size: var(--step--1);
+  color: var(--on-navy-dim);
+}
+.form__check input {
+  margin-top: 0.25em;
+  accent-color: var(--copper);
+}
+.form__privacy {
+  font-size: var(--step--1);
+  color: var(--on-navy-dim) !important;
+}
+.form__privacy a,
+.form__check a,
+.form__status a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.form .liquid-btn {
+  justify-self: start;
+}
+.form__status {
+  font-size: var(--step--1);
+}
+.section--navy .form__status--ok {
+  color: #fff;
+}
+.section--navy .form__status--err {
+  color: #f0b8a8;
+}
+.form__hp {
+  position: absolute;
+  left: -9999px;
+}
+
+/* Bandeau « Recevez notre actualité » */
+.signup {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+.signup__box {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+.section--navy .signup__text h2 {
+  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem);
+  color: #fff;
+}
+.section--navy .signup__text p {
+  margin-top: var(--space-sm);
+  color: var(--on-navy-dim);
+}
+.signup__fields {
+  display: grid;
+  gap: var(--space-sm);
+}
+.signup__line {
+  display: flex;
+  gap: 0.6rem;
+}
+.signup__line .form__field {
+  flex: 1;
+}
+@media (max-width: 860px) {
+  .signup__box,
+  .form__row {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .signup__line {
+    flex-direction: column;
+  }
+}

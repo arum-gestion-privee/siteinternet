@@ -1,6 +1,6 @@
 import Seo from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
-import { Agrements, Partners, Portrait, CtaBand } from "../components/Sections.jsx";
+import { Partners, Portrait, CtaBand } from "../components/Sections.jsx";
 import { APPROACH } from "../content/site.js";
 
 export default function AgirEnConfiance() {
@@ -52,10 +52,6 @@ export default function AgirEnConfiance() {
       <section className="section section--navy">
         <div className="shell">
           <div className="section__head reveal">
-            <h2>Nos agréments</h2>
-          </div>
-          <Agrements />
-          <div className="section__head section__head--gap reveal">
             <h2>Ils nous font confiance</h2>
           </div>
           <Partners />

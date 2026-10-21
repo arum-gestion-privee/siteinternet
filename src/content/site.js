@@ -13,9 +13,7 @@ export const CONTACT = {
   phoneHref: "tel:+33175436650",
   email: "contact@arumgestionprivee.com",
   address: ["82 avenue Marceau", "75008 Paris"],
-  // Formulaires actuels (Typeform) : conservés tant qu'un formulaire intégré n'est pas branché.
-  form: "https://form.typeform.com/to/Iqi3mogu",
-  jobs: "https://form.typeform.com/to/roMaPuaP",
+  // Formulaires : intégrés au site (src/components/Forms.jsx + functions/api), Typeform n'est plus utilisé.
   linkedin: "https://www.linkedin.com/company/11505552/",
 };
 
@@ -66,6 +64,7 @@ export const DIFFERENCE = {
 };
 
 export const HOME_PEOPLE = {
+  president: { photo: "/img/equipe/anne-laure.webp", names: "Anne-Laure Boccon-Gibod", roles: "Présidente" },
   duo: { photo: "/img/equipe/al-genevieve.webp", names: "Anne-Laure Boccon-Gibod & Geneviève Werner", roles: "Présidente et Directrice Associée" },
   sandrine: { photo: "/img/equipe/sandrine.webp", names: "Sandrine Cauvin", roles: "Directeur des Investissements" },
   partners: { photo: "/img/equipe/al-patrick.webp", names: "Anne-Laure Boccon-Gibod & Patrick Werner", roles: "Présidente et Directeur Associé" },
@@ -351,8 +350,8 @@ export const AGREMENTS = [
 ];
 
 // « Ils nous font confiance » (page Agir en confiance du site actuel)
+// logo: null → nom affiché en toutes lettres, en attendant le fichier du logo.
 export const PARTNERS = [
-  { name: "Rohan Invest", logo: "/img/partenaires/rohan-invest.png" },
   { name: "Allianz", logo: "/img/partenaires/allianz.png" },
   { name: "Tikehau Capital", logo: "/img/partenaires/tikehau-capital.png" },
   { name: "Cardif Lux Vie : Groupe BNP Paribas", logo: "/img/partenaires/cardif-lux-vie.png" },
@@ -360,5 +359,9 @@ export const PARTNERS = [
   { name: "AG2R La Mondiale", logo: "/img/partenaires/ag2r-la-mondiale.png" },
   { name: "Generali", logo: "/img/partenaires/generali.png" },
   { name: "Capza", logo: "/img/partenaires/capza.png" },
+  { name: "BNP Paribas Cardif", logo: null },
+  { name: "Generali Luxembourg", logo: null },
+  { name: "Wealins", logo: null },
+  { name: "AG2R La Mondiale France", logo: null },
 ];
 

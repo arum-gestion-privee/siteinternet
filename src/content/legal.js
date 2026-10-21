@@ -83,8 +83,8 @@ export const PRIVACY = {
     ),
     s(
       "Données collectées",
-      "Ce site ne comporte aucun formulaire hébergé par lui-même et ne collecte aucune donnée personnelle à votre insu. Les seules données que nous recevons sont celles que vous choisissez de nous transmettre : par téléphone, par courriel ou via notre formulaire de rappel.",
-      "Le formulaire de rappel est fourni par Typeform (Typeform S.L., Barcelone, Espagne), qui agit en qualité de sous-traitant ; il s'ouvre sur le site de Typeform, soumis à sa propre politique de confidentialité.",
+      "Ce site ne collecte aucune donnée personnelle à votre insu. Les seules données que nous recevons sont celles que vous choisissez de nous transmettre : par téléphone, par courriel ou via les formulaires du site (contact, candidature, inscription à nos actualités).",
+      "Les messages des formulaires de contact et de candidature (avec le CV joint) nous sont transmis par courriel et servent uniquement à vous répondre ; les candidatures sont conservées au plus 2 ans. L'inscription à nos actualités repose sur votre consentement, que vous pouvez retirer à tout moment grâce au lien de désinscription présent dans chaque envoi. L'acheminement de ces messages et la liste des inscrits sont confiés à Brevo (Sendinblue SAS, Paris), qui agit en qualité de sous-traitant et héberge les données dans l'Union européenne.",
     ),
     s(
       "Finalités et bases légales",

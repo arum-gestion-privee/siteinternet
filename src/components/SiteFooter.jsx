@@ -24,9 +24,7 @@ export default function SiteFooter() {
               </li>
             ))}
             <li>
-              <a href={CONTACT.jobs} target="_blank" rel="noopener noreferrer">
-                Recrutement
-              </a>
+              <Link to="/recrutement">Recrutement</Link>
             </li>
           </ul>
         </nav>

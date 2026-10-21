@@ -16,12 +16,12 @@ Rien n'est publié : l'ancien site Webflow reste en ligne.
 - **100 % du contenu du site actuel, mot pour mot** ; on ne modernise que l'organisation et les composants.
   Ne pas inventer de textes (pas de faux témoignages, pas de chiffres non sourcés).
 - **Charte officielle** (`~/Downloads/CHARTE ARUM.pdf`, agence People of Verso) : bleu nuit `#121C40`,
-  brique `#9A4C37` (**seul orange pour les textes et boutons**), fond clair `#F6F9FC`,
+  brique `#9A4C37`, **éclaircie en `#B85C42` sur le site** (seul orange pour les textes et boutons), fond clair `#F6F9FC`,
   dégradé `#D29965 → #FB190A` fondu dans le bleu nuit (`--orange-grad`).
-  Polices de la charte : Playfair Display + Montserrat ; le site utilise **Inter Tight (titres) + Inter (texte)
-  + Playfair (accents, titre de l'accueil)**, choix de l'utilisateur.
-- Fonds de sections **en alternance bleu nuit / clair** ; dégradé de la charte sur les blocs de mise en avant
-  (objectifs, chiffres, étapes, citation, colonne ARUM du comparatif, bandeau « Nous contacter »).
+  Polices de la charte : Playfair Display + Montserrat ; le site utilise **Playfair pour tous les titres et
+  sous-titres, la liquid bar et le menu mobile, Inter pour le texte** (choix de l'utilisateur).
+- **Toutes les pages sur fond bleu nuit** ; blocs en verre translucide (`.panel`) ; dégradé orange réservé aux
+  cartes objectifs, étapes, colonne ARUM du comparatif et cadres des portraits. Pas de cartes blanches.
 - Boutons translucides = **même verre que la liquid bar** : `rgba(255,255,255,.14)`, bordure `.32`, `blur(18px)`.
 - Typographie française (`fr()` dans `src/content/site.js`), **deux-points à la place des tirets séparateurs**.
 - Page « Nous connaître » (`/nous-connaitre`, entièrement sur fond bleu) ; anciennes adresses redirigées.
@@ -50,6 +50,13 @@ automatiquement à chaque envoi sur `main` (`.github/workflows/pages.yml`, `BASE
 Réglage GitHub requis : Settings → Pages → Source = « GitHub Actions ». L'utilisateur a demandé que chaque
 modification validée y parte directement.
 
+## Formulaires (contact, candidature, « Recevez notre actualité »)
+`src/components/Forms.jsx` → fonctions Cloudflare Pages `functions/api/{contact,candidature,actualites}.js` → Brevo.
+**À configurer avant la mise en ligne** (Cloudflare Pages → Settings → Environment variables) : `BREVO_API_KEY`
+(secret), `MAIL_TO`, `MAIL_FROM` (expéditeur validé dans Brevo), `BREVO_LIST_ID` (liste « Actualités »).
+Sur l'aperçu GitHub Pages les fonctions n'existent pas : l'envoi échoue proprement (message + courriel).
+Bas de toutes les pages (dans `App.jsx`) : `NewsSignup` puis `LicencesBand` (Nos agréments), puis le pied de page.
+
 ## Où modifier quoi
 | Sujet | Fichier |
 |---|---|
@@ -72,7 +79,11 @@ modification validée y parte directement.
 3. Siège fixé au 82 avenue Marceau (choix de l'utilisateur) : vérifier le Kbis.
 4. Chiffre « 6 » (site actuel) ou « 7 » personnes (page équipe) : 7 retenu.
 5. « Recevez notre actualité » (lettre d'information) non reprise : à brancher (ex. Brevo, comme Ernest).
-6. Formulaires Typeform (rappel, recrutement) conservés en liens ; Isabelle Martins sans lien LinkedIn.
+6. Formulaires internes (Typeform abandonné) : brancher Brevo (voir « Formulaires »), relire la mention
+   « Confidentialité » mise à jour ; Isabelle Martins sans lien LinkedIn.
 7. Hébergeur à confirmer dans les mentions légales (Cloudflare par défaut).
-8. Logos partenaires (« Ils nous font confiance ») : vérifier que les accords sont toujours d'actualité.
+8. Partenaires : Rohan Invest retiré ; BNP Paribas Cardif, Generali Luxembourg, Wealins, AG2R La Mondiale France
+   ajoutés **sans logo** (nom écrit) : fournir les logos (`public/img/partenaires`, champ `logo` de `PARTNERS`).
+10. Accueil : ordre reconstitué d'après les données de l'ancien site (Anne-Laure, Sandrine, Patrick + Anne-Laure,
+    Marie) : à valider par l'utilisateur.
 9. Contraste : le brique `#9A4C37` en petit texte sur bleu nuit est faible (≈ 2,7:1) ; alternative de la charte : `#D29965`.

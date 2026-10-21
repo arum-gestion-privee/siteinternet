@@ -18,7 +18,8 @@
 }
 .foot__brand .foot__tagline {
   margin-top: var(--space-lg);
-  font-family: var(--font-display);
+  font-family: var(--font-accent);
+  font-weight: 500;
   font-size: clamp(1.8rem, 1.4rem + 1.4vw, 2.6rem);
   line-height: 1.1;
   color: #fff;

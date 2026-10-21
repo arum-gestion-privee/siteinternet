@@ -15,7 +15,8 @@
   justify-content: space-between;
   gap: 1.5rem;
   padding-block: var(--space-lg);
-  font-family: var(--font-display);
+  font-family: var(--font-accent);
+  font-weight: 500;
   font-size: var(--step-2);
   color: var(--on-navy);
 }

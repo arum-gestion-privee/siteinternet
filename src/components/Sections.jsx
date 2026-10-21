@@ -152,7 +152,7 @@ export function Partners() {
     <ul className="partners">
       {PARTNERS.map((p) => (
         <li key={p.name}>
-          <img src={p.logo} alt={p.name} loading="lazy" />
+          {p.logo ? <img src={p.logo} alt={p.name} loading="lazy" /> : <span className="partners__name">{p.name}</span>}
         </li>
       ))}
     </ul>
@@ -210,6 +210,20 @@ export function CtaBand({ title = "Nous contacter", text }) {
             Nous contacter
           </LiquidButton>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/** Bandeau « Nos agréments », au-dessus du pied de page sur toutes les pages. */
+export function LicencesBand() {
+  return (
+    <section className="section section--navy licences" aria-labelledby="licences-title">
+      <div className="shell">
+        <h2 id="licences-title" className="licences__title">
+          Nos agréments
+        </h2>
+        <Agrements />
       </div>
     </section>
   );

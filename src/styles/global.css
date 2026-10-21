@@ -17,10 +17,10 @@
   /* Dégradé orange des blocs de mise en avant */
   /* Dégradé de la charte (#D29965 → #FB190A, fondu dans le bleu nuit), relevé sur les visuels ARUM */
   --orange-grad: linear-gradient(180deg, #d29965 0%, #b76d52 16%, #934640 36%, #6e2a37 56%, #4c1e38 72%, #2b1c3d 88%, #121c40 100%);
-  --copper: #9a4c37; /* brique de la charte */
-  --copper-deep: #9a4c37; /* un seul orange pour les textes : la brique de la charte */
+  --copper: #b85c42; /* brique de la charte, éclaircie (demande de l'utilisateur) */
+  --copper-deep: #b85c42; /* un seul orange pour les textes */
   /* Variante plus claire pour les petits textes sur bleu nuit (contraste AA) */
-  --copper-light: #9a4c37; /* idem sur bleu nuit (brique de la charte) */
+  --copper-light: #b85c42; /* idem sur bleu nuit */
   --on-navy: #f5f1ea;
   --on-navy-dim: #b8bdd0;
 
@@ -1686,4 +1686,76 @@ a.objective__card:hover {
 html,
 body {
   background: var(--navy);
+}
+
+/* ===========================================================================
+   Police des titres : tous les titres et sous-titres en Playfair (comme « Parlons de votre patrimoine »)
+   =========================================================================== */
+h1,
+h2,
+h3,
+.hstatement span,
+.quote blockquote p,
+.member__quote,
+.member__quote p {
+  font-family: var(--font-accent);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Comparatif : « Autres conseillers » sans bordure, dégradé bleu qui se fond dans le fond de page
+   (pendant bleu du dégradé orange de la colonne ARUM) */
+.hsec--navy .compare__col--others,
+.section--navy .compare__col--others {
+  border: 0 !important;
+  background: linear-gradient(180deg, #2b3559 0%, #222b4e 35%, #19234a 65%, #121c40 100%) !important;
+}
+
+/* Formulaires dans la page (contact, recrutement) */
+.form-shell {
+  max-width: 820px;
+}
+.contact__form {
+  margin-top: var(--space-2xl);
+  display: grid;
+  gap: var(--space-lg);
+}
+
+/* Nous connaître : cartes contact / candidatures */
+.section--navy .duo-cta__card p {
+  margin-top: var(--space-md);
+  color: var(--on-navy-dim);
+  max-width: 40ch;
+}
+
+/* Bandeau « Nos agréments » au-dessus du pied de page */
+.licences {
+  padding-top: clamp(1rem, 2vw, 1.5rem);
+}
+.section--navy .licences__title {
+  margin-bottom: var(--space-xl);
+  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem);
+  color: #fff;
+}
+
+/* Logo de fond des pages intérieures : entier, plus petit, jamais coupé */
+.phero__motif {
+  top: clamp(6.5rem, 12vw, 8.5rem);
+  bottom: clamp(1.5rem, 3vw, 2.5rem);
+  right: var(--shell-pad);
+  height: auto;
+  max-height: calc(100% - clamp(8rem, 15vw, 11rem));
+  width: auto;
+  transform: none;
+  opacity: 0.5;
+}
+
+/* partenaire sans logo (en attente du fichier) : nom en toutes lettres */
+.partners__name {
+  font-family: var(--font-accent);
+  font-weight: 500;
+  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
+  line-height: 1.2;
+  text-align: center;
+  color: #fff;
 }
