@@ -83,6 +83,6 @@ Bas de toutes les pages : `LicencesBand` (Nos agréments, dans `App.jsx`) puis l
    « Confidentialité » mise à jour ; Isabelle Martins sans lien LinkedIn.
 7. Hébergeur à confirmer dans les mentions légales (Cloudflare par défaut).
 8. Partenaires : Rohan Invest retiré ; BNP Paribas Cardif, Generali Luxembourg, Wealins, AG2R La Mondiale France
-   ajoutés **sans logo** (nom écrit) : fournir les logos (`public/img/partenaires`, champ `logo` de `PARTNERS`).
+   ajoutés avec leurs logos (convertis en blanc sur fond transparent, comme les autres).
 10. Accueil : photos remises comme avant (héros Anne-Laure & Patrick, Anne-Laure & Geneviève, Marie + Sandrine)
 9. Contraste : le brique `#9A4C37` en petit texte sur bleu nuit est faible (≈ 2,7:1) ; alternative de la charte : `#D29965`.

@@ -351,7 +351,7 @@ export const AGREMENTS = [
 ];
 
 // « Ils nous font confiance » (page Agir en confiance du site actuel)
-// logo: null → nom affiché en toutes lettres, en attendant le fichier du logo.
+// logo: null → nom affiché en toutes lettres (en attendant le fichier du logo).
 export const PARTNERS = [
   { name: "Allianz", logo: "/img/partenaires/allianz.png" },
   { name: "Tikehau Capital", logo: "/img/partenaires/tikehau-capital.png" },
@@ -360,9 +360,9 @@ export const PARTNERS = [
   { name: "AG2R La Mondiale", logo: "/img/partenaires/ag2r-la-mondiale.png" },
   { name: "Generali", logo: "/img/partenaires/generali.png" },
   { name: "Capza", logo: "/img/partenaires/capza.png" },
-  { name: "BNP Paribas Cardif", logo: null },
-  { name: "Generali Luxembourg", logo: null },
-  { name: "Wealins", logo: null },
-  { name: "AG2R La Mondiale France", logo: null },
+  { name: "BNP Paribas Cardif", logo: "/img/partenaires/bnp-paribas-cardif.png" },
+  { name: "Generali Luxembourg", logo: "/img/partenaires/generali-luxembourg.png" },
+  { name: "Wealins", logo: "/img/partenaires/wealins.png" },
+  { name: "AG2R La Mondiale France", logo: "/img/partenaires/ag2r-la-mondiale-france.png" },
 ];
 
