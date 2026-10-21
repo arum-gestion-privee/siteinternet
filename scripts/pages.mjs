@@ -8,7 +8,7 @@ const DIST = "dist";
 const BASE = (process.env.BASE_PATH || "/").replace(/\/?$/, "/");
 if (BASE === "/") process.exit(0);
 
-const PUBLIC = /(["'(`])\/(img|brand|favicon\.ico|favicon-32\.png|favicon-192\.png|apple-touch-icon\.png|og-arum\.jpg|llms\.txt)/g;
+const PUBLIC = /(["'(`])\/(img|video|brand|favicon\.ico|favicon-32\.png|favicon-192\.png|apple-touch-icon\.png|og-arum\.jpg|llms\.txt)/g;
 const walk = (d) => readdirSync(d).flatMap((f) => {
   const p = join(d, f);
   return statSync(p).isDirectory() ? walk(p) : [p];

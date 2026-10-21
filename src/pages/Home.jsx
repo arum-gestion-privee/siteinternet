@@ -27,11 +27,25 @@ const person = (slug) => TEAM.find((m) => m.slug.startsWith(slug));
    Fonds en alternance : bleu nuit (hero) → clair → bleu nuit → clair… */
 
 function Hero() {
-  const p = HOME_PEOPLE.partners;
   return (
     <section className="hhero">
       <div className="hhero__sky" aria-hidden="true" />
-      <img className="hhero__people" src={p.photo} width="600" height="899" alt={`${p.names}, ${p.roles}`} fetchPriority="high" />
+      {/* Film « Je suis ARUM Gestion Privée » en fond, muet, en boucle, sous un voile bleu nuit */}
+      <video
+        className="hhero__video"
+        poster="/video/arum-film-poster.webp"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+        tabIndex={-1}
+      >
+        <source src="/video/arum-film.mp4" type="video/mp4" />
+        <source src="/video/arum-film.webm" type="video/webm" />
+      </video>
+      <div className="hhero__tint" aria-hidden="true" />
       <div className="shell hhero__grid">
         <div className="hhero__copy">
           <h1>
