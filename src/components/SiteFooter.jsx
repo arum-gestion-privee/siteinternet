@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Logo from "./Logo.jsx";
 import FooterFaq from "./FooterFaq.jsx";
+import { NewsSignup } from "./Forms.jsx";
 import { IconLinkedIn } from "./icons.jsx";
 import { NAV, CONTACT, OBJECTIVES } from "../content/site.js";
 import "./SiteFooter.css";
@@ -53,6 +54,7 @@ export default function SiteFooter() {
             <IconLinkedIn />
             <span>LinkedIn</span>
           </a>
+          <NewsSignup />
         </div>
       </div>
 

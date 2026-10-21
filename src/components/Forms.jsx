@@ -128,39 +128,31 @@ export function JobForm() {
   );
 }
 
-/** Inscription aux actualités du cabinet (bandeau au-dessus du pied de page). */
+/** Inscription aux actualités du cabinet, version compacte intégrée au pied de page. */
 export function NewsSignup() {
   const { state, onSubmit } = useSubmit("actualites");
   return (
-    <section className="section section--navy signup" aria-labelledby="signup-title">
-      <div className="shell">
-        <form className="panel signup__box reveal" onSubmit={onSubmit}>
-          <Honeypot />
-          <div className="signup__text">
-            <h2 id="signup-title">Recevez notre actualité</h2>
-            <p>Fiscalité, transmission, statut du dirigeant, immobilier : nos analyses de l’actualité juridique et financière.</p>
-          </div>
-          <div className="signup__fields">
-            <div className="signup__line">
-              <label className="form__field">
-                <span className="sr-only">Votre courriel</span>
-                <input name="email" type="email" required maxLength={160} autoComplete="email" placeholder="Votre courriel" />
-              </label>
-              <LiquidButton type="submit" variant="copper" disabled={state === "sending"}>
-                {state === "sending" ? "Envoi…" : "S’inscrire"}
-              </LiquidButton>
-            </div>
-            <label className="form__check">
-              <input type="checkbox" name="consentement" value="oui" required />
-              <span>
-                J’accepte de recevoir les actualités d’ARUM Gestion Privée par courriel ; désinscription possible à tout moment.{" "}
-                <Link to="/confidentialite">Vos données</Link>.
-              </span>
-            </label>
-            <Status state={state} done="Merci, votre inscription est bien enregistrée." />
-          </div>
-        </form>
+    <form className="fsign" onSubmit={onSubmit} aria-labelledby="fsign-title">
+      <Honeypot />
+      <h2 id="fsign-title" className="foot__title">
+        Recevez notre actualité
+      </h2>
+      <div className="fsign__line">
+        <label className="fsign__field">
+          <span className="sr-only">Votre courriel</span>
+          <input name="email" type="email" required maxLength={160} autoComplete="email" placeholder="Votre courriel" />
+        </label>
+        <button type="submit" className="fsign__btn" disabled={state === "sending"} aria-label="S’inscrire">
+          {state === "sending" ? "…" : <IconArrow />}
+        </button>
       </div>
-    </section>
+      <label className="fsign__check">
+        <input type="checkbox" name="consentement" value="oui" required />
+        <span>
+          J’accepte de recevoir les actualités d’ARUM Gestion Privée par courriel ; désinscription possible à tout moment.
+        </span>
+      </label>
+      <Status state={state} done="Merci, votre inscription est bien enregistrée." />
+    </form>
   );
 }

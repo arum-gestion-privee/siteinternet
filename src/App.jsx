@@ -3,7 +3,6 @@ import { Outlet, useLocation } from "react-router-dom";
 import LiquidDefs from "./components/LiquidDefs.jsx";
 import LiquidNav from "./components/LiquidNav.jsx";
 import SiteFooter from "./components/SiteFooter.jsx";
-import { NewsSignup } from "./components/Forms.jsx";
 import { LicencesBand } from "./components/Sections.jsx";
 
 function ScrollManager() {
@@ -30,7 +29,6 @@ export default function App() {
       <main id="contenu">
         <Outlet />
         {/* sur toutes les pages, juste au-dessus du pied de page */}
-        <NewsSignup />
         <LicencesBand />
       </main>
       <SiteFooter />

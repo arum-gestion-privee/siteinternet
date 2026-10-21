@@ -55,7 +55,7 @@ modification validée y parte directement.
 **À configurer avant la mise en ligne** (Cloudflare Pages → Settings → Environment variables) : `BREVO_API_KEY`
 (secret), `MAIL_TO`, `MAIL_FROM` (expéditeur validé dans Brevo), `BREVO_LIST_ID` (liste « Actualités »).
 Sur l'aperçu GitHub Pages les fonctions n'existent pas : l'envoi échoue proprement (message + courriel).
-Bas de toutes les pages (dans `App.jsx`) : `NewsSignup` puis `LicencesBand` (Nos agréments), puis le pied de page.
+Bas de toutes les pages : `LicencesBand` (Nos agréments, dans `App.jsx`) puis le pied de page, qui contient « Recevez notre actualité » (`NewsSignup`, version compacte).
 
 ## Où modifier quoi
 | Sujet | Fichier |
