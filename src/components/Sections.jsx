@@ -162,18 +162,17 @@ export function Partners() {
 const fmt = (d) =>
   d ? new Date(d).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" }) : null;
 
-export function NewsList({ limit }) {
+export function NewsList({ limit, items = NEWS }) {
   return (
     <ul className="news">
-      {NEWS.slice(0, limit).map((n) => {
+      {items.slice(0, limit).map((n) => {
         const inner = (
           <>
             {n.image && <img className="news__img" src={n.image} alt="" loading="lazy" width="529" height="362" />}
-            {n.date && (
-              <p className="news__meta">
-                <time dateTime={n.date}>{fmt(n.date)}</time>
-              </p>
-            )}
+            <p className="news__meta">
+              {n.date ? <time dateTime={n.date}>{fmt(n.date)}</time> : <span />}
+              <span>{n.readingTime} min de lecture</span>
+            </p>
             <h3>{n.title}</h3>
             {n.summary && <p className="news__sum">{n.summary}</p>}
             <span className="news__more">

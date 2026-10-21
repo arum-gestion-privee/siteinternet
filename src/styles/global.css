@@ -1780,3 +1780,129 @@ h3,
   mask-image: linear-gradient(180deg, #000 78%, transparent 100%);
   filter: drop-shadow(0 30px 60px rgba(10, 18, 48, 0.35));
 }
+
+/* --- page article (structure des articles d'ERNEST 1895) --- */
+.arthead {
+  padding-top: clamp(8.5rem, 16vw, 11rem);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+}
+.arthead__inner {
+  max-width: calc(var(--shell-max) - 8rem);
+}
+.arthead__kicker {
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--copper-light);
+}
+.arthead__kicker a:hover {
+  color: #fff;
+}
+.arthead h1 {
+  margin-top: var(--space-lg);
+  max-width: 24ch;
+  color: #fff;
+  font-size: clamp(2.2rem, 1.5rem + 3vw, 4.2rem);
+  line-height: 1.08;
+}
+.arthead__lead {
+  margin-top: var(--space-lg);
+  max-width: 62ch;
+  font-size: var(--step-1);
+  line-height: 1.55;
+  color: var(--on-navy-dim);
+}
+.arthead__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: var(--space-lg);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: var(--step--1);
+  color: var(--on-navy-dim);
+}
+.arthead__meta strong {
+  color: #fff;
+  font-weight: 600;
+}
+.artbody {
+  padding-top: 0;
+}
+.artbody__figure {
+  max-width: 860px;
+  margin: 0 auto var(--space-3xl);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-radius: 18px;
+  border: 1px solid rgba(210, 153, 101, 0.35);
+  background: rgba(255, 255, 255, 0.04);
+}
+.artbody__figure img {
+  width: 100%;
+  height: auto;
+}
+.artbody__grid {
+  display: grid;
+  grid-template-columns: minmax(200px, 0.32fr) 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+.artbody__toc {
+  position: sticky;
+  top: 2rem;
+}
+.artbody__toc-title {
+  margin-bottom: var(--space-md);
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--on-navy-dim);
+}
+.artbody__toc ol {
+  list-style: none;
+  border-left: 2px solid var(--copper);
+  padding-left: var(--space-md);
+}
+.artbody__toc a {
+  font-size: var(--step--1);
+  font-weight: 600;
+  line-height: 1.45;
+  color: #fff;
+}
+.artbody__toc a:hover {
+  color: var(--copper-light);
+}
+@media (max-width: 860px) {
+  .artbody__grid {
+    grid-template-columns: 1fr;
+  }
+  .artbody__toc {
+    position: static;
+  }
+}
+.article__more {
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.article__more h2 {
+  margin-bottom: var(--space-xl);
+}
+.section--navy .news__meta span {
+  color: var(--on-navy-dim);
+}
+.arthead {
+  position: relative;
+  overflow: hidden;
+}
+.arthead .phero__motif {
+  position: absolute;
+  pointer-events: none;
+}
+.arthead__inner {
+  position: relative;
+}

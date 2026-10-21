@@ -329,6 +329,8 @@ export const NEWS = [
   },
 ].map((n) => ({
   ...n,
+  // temps de lecture estimé : 220 mots par minute (titre + chapô + texte), arrondi à la minute supérieure
+  readingTime: Math.max(1, Math.ceil(`${n.title} ${n.summary || ""} ${n.quote || ""}`.split(/\s+/).filter(Boolean).length / 220)),
   title: fr(n.title),
   ...(n.summary ? { summary: fr(n.summary) } : {}),
   ...(n.quote ? { quote: fr(n.quote), href: "/articles/" + n.slug, local: true } : {}),
