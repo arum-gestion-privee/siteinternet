@@ -741,3 +741,185 @@
   position: relative;
   z-index: 2;
 }
+
+/* ===========================================================================
+   Accueil façon Hottinger Gaultier : fond photo fixe teinté bleu nuit, symbole ARUM au centre,
+   puis un écran par page qui apparaît et repart au défilement.
+   =========================================================================== */
+.hx {
+  position: relative;
+  clip-path: inset(0); /* le fond fixe ne déborde pas sur le pied de page */
+}
+.hx__bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+.hx__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% 40%;
+  filter: grayscale(0.35) contrast(0.95);
+}
+.hx__tint {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(18, 28, 64, 0.55) 0%, rgba(18, 28, 64, 0.35) 40%, rgba(18, 28, 64, 0.6) 100%),
+    rgba(30, 46, 105, 0.45);
+}
+
+/* ouverture : le symbole seul */
+.hx__intro {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+}
+.hx__logo {
+  width: auto;
+  height: clamp(180px, 42vh, 380px);
+  filter: drop-shadow(0 20px 60px rgba(8, 14, 40, 0.5));
+  animation: hx-logo 1.6s var(--ease-out-expo) both;
+}
+@keyframes hx-logo {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(14px);
+  }
+}
+.hx__scroll {
+  position: absolute;
+  bottom: clamp(1.5rem, 5vh, 3rem);
+  left: 50%;
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
+  animation: hx-scroll 2.4s ease-in-out infinite;
+}
+@keyframes hx-scroll {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: translateY(-8px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* écrans */
+.hx__panel {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: clamp(6rem, 12vh, 9rem) var(--shell-pad);
+}
+.hx__content {
+  max-width: 920px;
+  text-align: center;
+  color: #fff;
+}
+.hx__content > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s var(--ease-out-expo),
+    transform 0.9s var(--ease-out-expo);
+}
+.hx__content.is-in > * {
+  opacity: 1;
+  transform: none;
+}
+.hx__content.is-in > :nth-child(2) {
+  transition-delay: 0.12s;
+}
+.hx__content.is-in > :nth-child(3) {
+  transition-delay: 0.24s;
+}
+.hx__content.is-in > :nth-child(4) {
+  transition-delay: 0.36s;
+}
+.hx__content.is-in > :nth-child(5) {
+  transition-delay: 0.48s;
+}
+.hx__kicker {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.9rem);
+  color: #fff;
+}
+.hx__title {
+  margin-top: var(--space-md);
+  color: #fff;
+  font-size: clamp(2.2rem, 1.4rem + 3.2vw, 4.4rem);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+.hx__title .accent {
+  color: var(--copper-light);
+}
+.hx__text {
+  margin: var(--space-lg) auto 0;
+  max-width: 62ch;
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.2rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.9);
+}
+.hx__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: var(--space-xl);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: var(--step-0);
+  color: #fff;
+  transition: gap var(--dur-base) var(--ease-out-expo), border-color var(--dur-base);
+}
+.hx__link:hover {
+  gap: 1rem;
+  border-color: #fff;
+}
+/* flèche dans un cercle, comme chez Hottinger Gaultier */
+.hx__arrow {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
+.hx__arrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  border-left: 7px solid currentColor;
+  border-top: 4.5px solid transparent;
+  border-bottom: 4.5px solid transparent;
+}
+.hx .cta {
+  background: transparent !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hx__content > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hx__logo,
+  .hx__scroll {
+    animation: none;
+  }
+}
+@media (max-width: 600px) {
+  .hx__logo {
+    height: auto;
+    width: min(50vw, 220px);
+  }
+}

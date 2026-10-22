@@ -1,14 +1,8 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo.jsx";
-import { IconArrow, IconPhone } from "../components/icons.jsx";
-import {
-  Kicker,
-  Portrait,
-  Comparison,
-  Objectives,
-  Figures,
-} from "../components/Sections.jsx";
-import { HOME, DIFFERENCE, HOME_PEOPLE, TEAM, CONTACT, fr } from "../content/site.js";
+import { CtaBand } from "../components/Sections.jsx";
+import { HOME, DIFFERENCE, TEAM_PAGE, APPROACH, BESPOKE, VALUES, fr } from "../content/site.js";
 import { FAQ } from "../content/faq.js";
 import "./Home.css";
 
@@ -21,199 +15,127 @@ const FAQ_LD = {
   ),
 };
 
-const person = (slug) => TEAM.find((m) => m.slug.startsWith(slug));
+/*
+ * Accueil construit comme celui de Hottinger Gaultier : la vue des bureaux en fond fixe sous un voile bleu nuit,
+ * le symbole ARUM seul au centre, puis, au fil du défilement, un écran par page du site (nom en italique,
+ * titre, résumé, lien) qui apparaît puis repart. Textes repris du site ARUM.
+ */
+const PANELS = [
+  {
+    kicker: "Nous connaître",
+    title: TEAM_PAGE.title,
+    text: [TEAM_PAGE.text[1]],
+    to: "/nous-connaitre",
+    link: "Découvrir l'équipe",
+  },
+  {
+    kicker: "Agir en confiance",
+    title: APPROACH.offerTitle,
+    text: [APPROACH.lead[0]],
+    to: "/agir-en-confiance",
+    link: "Notre approche",
+  },
+  {
+    kicker: "Le sur-mesure",
+    title: HOME.unique,
+    text: [HOME.uniqueEnd, HOME.introBis, HOME.strategy],
+    to: "/sur-mesure",
+    link: "Découvrir le sur-mesure",
+  },
+  {
+    kicker: "Des valeurs de famille",
+    title: fr(DIFFERENCE.tagline),
+    text: [VALUES.lead],
+    to: "/valeurs",
+    link: "Découvrir nos valeurs",
+  },
+  {
+    kicker: "Nos décryptages",
+    title: "Décryptages patrimoniaux",
+    text: [fr("Fiscalité, transmission, statut du dirigeant, immobilier : nos analyses de l’actualité juridique et financière.")],
+    to: "/actualites",
+    link: "Lire nos décryptages",
+  },
+];
 
-/* Accueil : 100 % du contenu du site actuel, réorganisé.
-   Fonds en alternance : bleu nuit (hero) → clair → bleu nuit → clair… */
-
-function Hero() {
-  return (
-    <section className="hhero">
-      <div className="hhero__sky" aria-hidden="true" />
-      {/* Film « Je suis ARUM Gestion Privée » en fond, muet, en boucle, sous un voile bleu nuit ; texte en colonne étroite à gauche pour laisser voir noms et sous-titres */}
-      <div className="hhero__film" aria-hidden="true">
-        <video
-          className="hhero__video"
-          poster="/video/arum-film-poster.webp"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-hidden="true"
-          tabIndex={-1}
-        >
-          <source src="/video/arum-film.mp4" type="video/mp4" />
-          <source src="/video/arum-film.webm" type="video/webm" />
-        </video>
-        <div className="hhero__tint" aria-hidden="true" />
-      </div>
-      <div className="shell hhero__grid">
-        {/* Titre et boutons en haut à gauche, sur la partie assombrie du film,
-            pour laisser libres les noms (bas-gauche du film) et les sous-titres (bas, au centre). */}
-        <div className="hhero__head">
-          <h1 className="hhero__title">
-            {HOME.title} <span className="accent">{HOME.titleEnd}</span>
-          </h1>
-          <div className="hhero__actions">
-            <Link className="pill pill--copper pill--inline" to="/contact">
-              Initier un échange <IconArrow />
-            </Link>
-            <Link className="pill pill--glass" to="/agir-en-confiance">
-              Notre approche <IconArrow />
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Unique() {
-  return (
-    <section className="hsec hsec--grad">
-      <div className="shell hsplit">
-        <div className="reveal">
-          <h2 className="hstatement">
-            {HOME.unique} <span>{HOME.uniqueEnd}</span>
-          </h2>
-          <p className="hbody">{HOME.introBis}</p>
-          <p className="hbody">{HOME.strategy}</p>
-        </div>
-        <Portrait {...HOME_PEOPLE.duo} cta={null} className="reveal" />
-      </div>
-    </section>
-  );
-}
-
-function Difference() {
-  return (
-    <section className="hsec hsec--navy">
-      <div className="shell">
-        <header className="hhead hhead--wide">
-          <Kicker light>{DIFFERENCE.kicker}</Kicker>
-          <h2>{DIFFERENCE.title}</h2>
-          <p>{DIFFERENCE.text}</p>
-        </header>
-        <Comparison />
-        {/* « Une alternative… » mise en valeur : grande phrase dans un bloc en verre */}
-        <div className="halt halt--text reveal">
-          <p className="halt__tag">{fr(DIFFERENCE.tagline)}</p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/** Citation d'un membre de l'équipe, avec sa photo, son nom et sa fonction. */
-function QuoteCard({ quote, photo, names, roles }) {
-  return (
-    <figure className="hquote reveal">
-      <blockquote>
-        <p>« {quote} »</p>
-      </blockquote>
-      <figcaption>
-        <img src={photo} alt="" loading="lazy" />
-        <span>
-          <strong>{names}</strong>
-          {roles}
-        </span>
-      </figcaption>
-    </figure>
-  );
-}
-
-function KeyFigures() {
-  const { marie, sandrine } = HOME_PEOPLE;
-  // citation de Sandrine : celle de sa présentation (page Nous connaître)
-  const sandrineQuote = TEAM.find((m) => m.slug.startsWith("sandrine")).quote;
-  return (
-    <section className="hsec hsec--navy hsec--glass">
-      <div className="shell">
-        <Figures />
-        <div className="hduo">
-          <QuoteCard {...marie} />
-          <QuoteCard {...sandrine} quote={sandrineQuote} />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Goals() {
-  return (
-    <section className="hsec hsec--navy">
-      <div className="shell">
-        <header className="hhead">
-          <Kicker light>Vos objectifs</Kicker>
-          <h2>{fr("Transmettre, protéger, organiser, optimiser")}</h2>
-        </header>
-        <Objectives />
-      </div>
-    </section>
-  );
-}
-
-// Invitation vers la page Nos décryptages (textes repris de cette page).
-function News() {
-  return (
-    <section className="hsec hsec--navy hsec--news">
-      <div className="shell">
-        <Link className="hnews reveal" to="/actualites">
-          <div>
-            <h2>Nos décryptages</h2>
-            <p>{fr("Fiscalité, transmission, statut du dirigeant, immobilier : nos analyses de l’actualité juridique et financière.")}</p>
-          </div>
-          <span className="pill pill--glass">
-            Voir tous nos décryptages <IconArrow />
-          </span>
-        </Link>
-      </div>
-    </section>
-  );
-}
-
-// Anne-Laure au centre (position 4, la plus grande, au premier plan).
-const CROWD = ["vincent", "marie", "patrick", "anne-laure", "genevieve", "sandrine", "isabelle"].map(person);
-
-function Cta() {
-  return (
-    <section className="hcta">
-      <div className="hcta__copy">
-        <h2>Initier un échange</h2>
-        <p>
-          {CONTACT.address[0]}, {CONTACT.address[1]}
-        </p>
-        <div className="hcta__bar">
-          <a href={CONTACT.phoneHref} className="hcta__phone">
-            <IconPhone />
-            {CONTACT.phone}
-          </a>
-          <Link className="hcta__btn" to="/contact">
-            Nous écrire
-          </Link>
-        </div>
-      </div>
-      <div className="hcta__crowd" aria-hidden="true">
-        {CROWD.map((m, i) => (
-          <img key={m.slug} src={m.photo} alt="" loading="lazy" className={`hcta__p hcta__p--${i}`} />
-        ))}
-      </div>
-    </section>
-  );
+/** Fait apparaître chaque écran quand il arrive au centre, et le fait repartir quand on le quitte. */
+function useScrollReveal() {
+  const ref = useRef(null);
+  useEffect(() => {
+    const items = ref.current?.querySelectorAll("[data-reveal]") || [];
+    if (!("IntersectionObserver" in window)) {
+      items.forEach((el) => el.classList.add("is-in"));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.target.classList.toggle("is-in", e.isIntersecting)),
+      { rootMargin: "-20% 0px -20% 0px" },
+    );
+    items.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+  return ref;
 }
 
 export default function Home() {
+  const ref = useScrollReveal();
   return (
     <>
       <Seo jsonLd={FAQ_LD} />
-      <Hero />
-      <Unique />
-      <Difference />
-      <KeyFigures />
-      <Goals />
-      <News />
-      <Cta />
+      <div className="hx" ref={ref}>
+        {/* vue des bureaux (82 avenue Marceau, l'Arc de Triomphe), en fond fixe sous un voile bleu nuit */}
+        <div className="hx__bg" aria-hidden="true">
+          <img
+            src="/img/accueil/vue-bureaux-2400.webp"
+            srcSet="/img/accueil/vue-bureaux-1200.webp 1200w, /img/accueil/vue-bureaux-2400.webp 2400w"
+            sizes="100vw"
+            alt=""
+            fetchPriority="high"
+          />
+          <span className="hx__tint" />
+        </div>
+
+        {/* ouverture : le symbole ARUM seul, au centre */}
+        <section className="hx__intro">
+          <h1 className="sr-only">ARUM Gestion Privée</h1>
+          <img className="hx__logo" src="/brand/symbole.png" alt="" width="194" height="245" />
+          <span className="hx__scroll" aria-hidden="true" />
+        </section>
+
+        {/* premier écran : la promesse du cabinet */}
+        <section className="hx__panel">
+          <div className="hx__content" data-reveal>
+            <p className="hx__kicker">ARUM Gestion Privée</p>
+            <h2 className="hx__title">
+              {HOME.title} <span className="accent">{HOME.titleEnd}</span>
+            </h2>
+            <p className="hx__text">{HOME.intro}</p>
+            <Link className="hx__link" to="/contact">
+              Initier un échange <span className="hx__arrow" aria-hidden="true" />
+            </Link>
+          </div>
+        </section>
+
+        {/* un écran par page du site */}
+        {PANELS.map((p) => (
+          <section key={p.to} className="hx__panel">
+            <div className="hx__content" data-reveal>
+              <p className="hx__kicker">{p.kicker}</p>
+              <h2 className="hx__title">{p.title}</h2>
+              {p.text.map((t) => (
+                <p key={t.slice(0, 30)} className="hx__text">
+                  {t}
+                </p>
+              ))}
+              <Link className="hx__link" to={p.to}>
+                {p.link} <span className="hx__arrow" aria-hidden="true" />
+              </Link>
+            </div>
+          </section>
+        ))}
+
+        <CtaBand />
+      </div>
     </>
   );
 }

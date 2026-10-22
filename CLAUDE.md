@@ -89,5 +89,8 @@ Bas de toutes les pages : `LicencesBand` (Nos agréments, dans `App.jsx`) puis l
 7. Hébergeur à confirmer dans les mentions légales (Cloudflare par défaut).
 8. Partenaires : Rohan Invest retiré ; BNP Paribas Cardif, Generali Luxembourg, Wealins, AG2R La Mondiale France
    ajoutés avec leurs logos (convertis en blanc sur fond transparent, comme les autres).
-10. Accueil : photos remises comme avant (héros Anne-Laure & Patrick, Anne-Laure & Geneviève, Marie + Sandrine)
+10. Accueil refait comme celui de Hottinger Gaultier : vue des bureaux (Arc de Triomphe, `public/img/accueil`) en fond
+    fixe teinté bleu nuit, symbole ARUM seul au centre, puis un écran par page (rubrique, titre, résumé, lien) qui
+    apparaît/repart au défilement (`Home.jsx`). Retirés de l'accueil : film, comparatif, chiffres clés, citations
+    de Marie et Sandrine, objectifs, photo de l'équipe (fichiers vidéo encore dans `public/video`).
 9. Contraste : le brique `#9A4C37` en petit texte sur bleu nuit est faible (≈ 2,7:1) ; alternative de la charte : `#D29965`.
