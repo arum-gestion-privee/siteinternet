@@ -132,3 +132,12 @@
 .phero--low .phero__inner {
   align-items: center;
 }
+/* phrase d'accroche sous le titre */
+.phero__sub {
+  margin-top: var(--space-lg);
+  max-width: 46ch;
+  font-size: var(--step-1);
+  line-height: 1.5;
+  font-weight: 500;
+  color: #fff;
+}
