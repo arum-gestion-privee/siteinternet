@@ -1,15 +1,22 @@
 import "./PageHero.css";
 
-/** Bandeau navy des pages intérieures (la nav liquide flotte par-dessus). */
+/**
+ * Ouverture des pages intérieures (construction Hottinger Gaultier) : à gauche la rubrique en italique et le
+ * grand titre, à droite le logo et l'introduction. La nav liquide flotte par-dessus.
+ */
 export default function PageHero({ kicker, title, lead, className = "", children }) {
   return (
     <section className={"phero " + className}>
-      <img className="phero__motif" src="/brand/motif.png" alt="" aria-hidden="true" />
       <div className="shell phero__inner">
-        {kicker && <p className="kicker">{kicker}</p>}
-        <h1>{title}</h1>
-        {lead && <p className="phero__lead">{lead}</p>}
-        {children}
+        <div className="phero__main">
+          {kicker && <p className="phero__kicker">{kicker}</p>}
+          <h1>{title}</h1>
+          {children}
+        </div>
+        <div className="phero__aside">
+          <img className="phero__motif" src="/brand/motif.png" alt="" aria-hidden="true" />
+          {lead && <p className="phero__lead">{lead}</p>}
+        </div>
       </div>
     </section>
   );

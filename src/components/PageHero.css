@@ -3,38 +3,54 @@
   overflow: hidden;
   background: var(--navy-bg);
   color: var(--on-navy);
-  padding-top: clamp(8.5rem, 16vw, 12rem);
+  padding-top: clamp(8.5rem, 15vw, 11rem);
   padding-bottom: clamp(3.5rem, 7vw, 6rem);
-}
-.phero__motif {
-  position: absolute;
-  right: clamp(-4rem, -2vw, 0rem);
-  top: 50%;
-  height: 135%;
-  width: auto;
-  transform: translateY(-42%);
-  opacity: 0.55;
-  pointer-events: none;
 }
 .phero__inner {
   position: relative;
-  max-width: calc(var(--shell-max));
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: end;
+}
+/* rubrique en italique, comme « La Maison » chez Hottinger Gaultier */
+.phero__kicker {
+  margin-bottom: var(--space-md);
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--step-1);
+  color: var(--copper-light);
 }
 .phero h1 {
   color: #fff;
-  font-size: var(--step-5);
-  max-width: 16ch;
+  font-size: clamp(2.4rem, 1.6rem + 3vw, 4.6rem);
+  line-height: 1.06;
+  max-width: 17ch;
+}
+.phero__aside {
+  display: grid;
+  gap: var(--space-xl);
+  justify-items: start;
+}
+.phero__motif {
+  height: clamp(10rem, 18vw, 15rem);
+  width: auto;
+  opacity: 0.5;
+  pointer-events: none;
 }
 .phero__lead {
-  margin-top: var(--space-lg);
-  max-width: 54ch;
-  font-size: var(--step-1);
-  line-height: 1.55;
-  color: var(--on-navy-dim);
+  font-size: var(--step-0);
+  line-height: 1.65;
+  font-weight: 500;
+  color: #fff;
+  max-width: 42ch;
 }
-@media (max-width: 720px) {
+@media (max-width: 860px) {
+  .phero__inner {
+    grid-template-columns: 1fr;
+  }
   .phero__motif {
-    opacity: 0.25;
+    display: none;
   }
 }
 /* page article : titres longs, taille réduite */

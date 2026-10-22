@@ -98,7 +98,7 @@ export default function Article({ article: a }) {
               ))}
               <p className="article__back">
                 <Link className="pill pill--glass" to="/actualites">
-                  Toutes les actualités <IconArrow />
+                  Voir toutes les actualités <IconArrow />
                 </Link>
               </p>
             </article>

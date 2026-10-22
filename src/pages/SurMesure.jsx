@@ -1,6 +1,6 @@
 import Seo from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
-import { Kicker, Quote, Comparison, Objectives, Portrait, CtaBand } from "../components/Sections.jsx";
+import { Kicker, Quote, Comparison, Objectives, Portrait, CtaBand, Discover } from "../components/Sections.jsx";
 import { BESPOKE, DIFFERENCE, TEAM } from "../content/site.js";
 
 export default function SurMesure() {
@@ -12,7 +12,7 @@ export default function SurMesure() {
         title="Le sur-mesure"
         description="Transmettre, protéger, organiser, optimiser : un conseil patrimonial sur-mesure, pensé sur plusieurs générations."
       />
-      <PageHero className="phero--accent" kicker="Le sur-mesure" title="Le sur-mesure" />
+      <PageHero className="phero--accent" kicker="Vos objectifs" title="Le sur-mesure" />
 
       <section className="section section--navy">
         <div className="shell">
@@ -22,7 +22,8 @@ export default function SurMesure() {
 
       <section className="section section--navy">
         <div className="shell">
-          <div className="section__head reveal">
+          {/* titre à gauche, texte à droite (construction Hottinger Gaultier) */}
+          <div className="edito reveal">
             <h2>{BESPOKE.proximity}</h2>
             <p className="body">{DIFFERENCE.text}</p>
           </div>
@@ -48,6 +49,7 @@ export default function SurMesure() {
           <Objectives withAnchors />
         </div>
       </section>
+      <Discover current="/sur-mesure" />
       <CtaBand />
     </>
   );

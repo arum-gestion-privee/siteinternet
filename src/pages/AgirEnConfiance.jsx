@@ -1,6 +1,6 @@
 import Seo from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
-import { Partners, Portrait, CtaBand } from "../components/Sections.jsx";
+import { Partners, Portrait, CtaBand, Discover } from "../components/Sections.jsx";
 import { APPROACH } from "../content/site.js";
 
 export default function AgirEnConfiance() {
@@ -10,7 +10,7 @@ export default function AgirEnConfiance() {
         title="Agir en confiance"
         description="Expertise, approche transversale, sur-mesure : l'offre en trois temps d'ARUM Gestion Privée, votre family-office."
       />
-      <PageHero className="phero--accent" kicker="Agir en confiance" title="Agir en confiance" lead={APPROACH.lead[0]} />
+      <PageHero className="phero--accent" kicker="Notre approche" title="Agir en confiance" lead={APPROACH.lead[0]} />
 
       <section className="section section--navy">
         <div className="shell">
@@ -58,6 +58,7 @@ export default function AgirEnConfiance() {
         </div>
       </section>
 
+      <Discover current="/agir-en-confiance" />
       <CtaBand />
     </>
   );

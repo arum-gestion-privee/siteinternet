@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import LiquidButton from "./LiquidButton.jsx";
 import { IconArrow } from "./icons.jsx";
-import { DIFFERENCE, OBJECTIVES, NEWS, FIGURES, AGREMENTS, PARTNERS, REGULATORY } from "../content/site.js";
+import { DIFFERENCE, OBJECTIVES, NEWS, FIGURES, AGREMENTS, PARTNERS, REGULATORY, DISCOVER, CONTACT } from "../content/site.js";
 
 export function Kicker({ children, light = false }) {
   return <p className={"kicker" + (light ? " kicker--light" : "")}>{children}</p>;
@@ -24,8 +24,8 @@ export function Quote({ text, name, role, photo, light = false }) {
   );
 }
 
-/** Portrait légendé (noms + fonctions) avec appel « Nous contacter », comme sur le site actuel. */
-export function Portrait({ photo, names, roles, cta = "Nous contacter", className = "" }) {
+/** Portrait légendé (noms + fonctions), avec un appel facultatif vers « Initier un échange ». */
+export function Portrait({ photo, names, roles, cta = null, className = "" }) {
   return (
     <figure className={"portrait " + className}>
       <div className="portrait__frame">
@@ -97,7 +97,7 @@ export function Objectives({ withAnchors = false }) {
               <Link className="objective__card" to={`/sur-mesure#${o.id}`}>
                 {content}
                 <span className="objective__more">
-                  En savoir plus <IconArrow />
+                  Découvrir <IconArrow />
                 </span>
               </Link>
             )}
@@ -196,22 +196,59 @@ export function NewsList({ limit, items = NEWS }) {
   );
 }
 
-export function CtaBand({ title = "Nous contacter", text }) {
+/**
+ * Clôture des pages intérieures, construite comme chez Hottinger Gaultier : « Initier un échange »,
+ * une phrase, les coordonnées du cabinet et un lien « Nous écrire ».
+ */
+export function CtaBand({ title = "Initier un échange", text }) {
   return (
     <section className="cta">
-      {/* cadre en verre translucide, comme les autres blocs du site */}
       <div className="shell">
         <div className="panel cta__inner">
           <div>
             <h2>{title}</h2>
-            {text !== false && <p>{text || "82 avenue Marceau, 75008 Paris · (+33) 1 75 43 66 50"}</p>}
+            {text !== false && (
+              <p>{text || "Un premier échange, sans engagement, pour comprendre votre situation, vos projets et vos objectifs."}</p>
+            )}
           </div>
-          <div className="cta__actions">
-            <LiquidButton as="link" to="/contact" variant="copper" size="lg" iconRight={<IconArrow />}>
-              Nous contacter
-            </LiquidButton>
+          <div className="cta__side">
+            <address className="cta__address">
+              <strong>Paris</strong>
+              {CONTACT.address[0]}
+              <br />
+              {CONTACT.address[1]}
+              <br />
+              <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
+            </address>
+            <Link className="cta__link" to="/contact">
+              Nous écrire <IconArrow />
+            </Link>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/** Tuiles de renvoi vers les autres pages, en fin de page (comme chez Hottinger Gaultier). */
+export function Discover({ current }) {
+  const i = DISCOVER.findIndex((d) => d.to === current);
+  const others = DISCOVER.filter((d) => d.to !== current);
+  // les trois pages suivantes, dans l'ordre du menu
+  const start = i < 0 ? 0 : i;
+  const items = [0, 1, 2].map((k) => others[(start + k) % others.length]);
+  return (
+    <section className="section section--navy discover" aria-label="À découvrir aussi">
+      <div className="shell discover__grid">
+        {items.map((d, k) => (
+          <Link key={d.to} to={d.to} className={"discover__tile reveal" + (k === 1 ? " discover__tile--warm" : "")}>
+            <h2>{d.title}</h2>
+            <p>{d.text}</p>
+            <span className="discover__link">
+              {d.link} <IconArrow />
+            </span>
+          </Link>
+        ))}
       </div>
     </section>
   );

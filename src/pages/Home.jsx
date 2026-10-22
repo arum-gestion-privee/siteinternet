@@ -57,10 +57,10 @@ function Hero() {
           </h1>
           <div className="hhero__actions">
             <Link className="pill pill--copper pill--inline" to="/contact">
-              Nous contacter <IconArrow />
+              Initier un échange <IconArrow />
             </Link>
             <Link className="pill pill--glass" to="/agir-en-confiance">
-              Notre approche <IconArrow />
+              Comprendre notre approche <IconArrow />
             </Link>
           </div>
         </div>
@@ -165,7 +165,7 @@ function News() {
             <p>{fr("Fiscalité, transmission, statut du dirigeant, immobilier : nos analyses de l’actualité juridique et financière.")}</p>
           </div>
           <span className="pill pill--glass">
-            Toutes les actualités <IconArrow />
+            Voir toutes les actualités <IconArrow />
           </span>
         </Link>
       </div>
@@ -180,7 +180,7 @@ function Cta() {
   return (
     <section className="hcta">
       <div className="hcta__copy">
-        <h2>Nous contacter</h2>
+        <h2>Initier un échange</h2>
         <p>
           {CONTACT.address[0]}, {CONTACT.address[1]}
         </p>
@@ -190,7 +190,7 @@ function Cta() {
             {CONTACT.phone}
           </a>
           <Link className="hcta__btn" to="/contact">
-            Nous contacter
+            Nous écrire
           </Link>
         </div>
       </div>

@@ -3,6 +3,7 @@ import PageHero from "../components/PageHero.jsx";
 import LiquidButton from "../components/LiquidButton.jsx";
 import { IconArrow, IconLinkedIn } from "../components/icons.jsx";
 import { TEAM, TEAM_PAGE } from "../content/site.js";
+import { Discover } from "../components/Sections.jsx";
 
 const TEAM_LD = TEAM.map((m) => ({
   "@context": "https://schema.org",
@@ -70,16 +71,16 @@ export default function NousConnaitre() {
         </section>
       ))}
 
-      {/* Deux appels côte à côte : contact à gauche, candidatures spontanées à droite */}
+      {/* Deux appels côte à côte : « Initier un échange » à gauche, candidatures spontanées à droite */}
       <section className="section section--navy member-band">
         <div className="shell duo-cta">
           <div className="panel duo-cta__card reveal">
             <div>
-              <h2>Nous contacter</h2>
+              <h2>Initier un échange</h2>
               <p>Un premier échange, sans engagement, pour comprendre votre situation, vos projets et vos objectifs.</p>
             </div>
             <LiquidButton as="link" to="/contact" variant="copper" iconRight={<IconArrow />}>
-              Prendre rendez-vous
+              Nous écrire
             </LiquidButton>
           </div>
           <div className="panel duo-cta__card reveal">
@@ -93,6 +94,7 @@ export default function NousConnaitre() {
           </div>
         </div>
       </section>
+      <Discover current="/nous-connaitre" />
     </>
   );
 }

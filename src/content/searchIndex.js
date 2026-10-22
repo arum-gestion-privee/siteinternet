@@ -10,7 +10,7 @@ export const SEARCH_INDEX = [
   { title: label("/agir-en-confiance"), section: "Page", to: "/agir-en-confiance", text: [...APPROACH.lead, APPROACH.familyOffice, ...APPROACH.steps.flatMap((s) => [s.title, ...s.text])].join(" ") },
   { title: label("/sur-mesure"), section: "Page", to: "/sur-mesure", text: [BESPOKE.quote, BESPOKE.generations, BESPOKE.generationsText].join(" ") },
   { title: label("/valeurs"), section: "Page", to: "/valeurs", text: [VALUES.lead, VALUES.title, ...VALUES.mindset, VALUES.professionalism, VALUES.freedomTitle, VALUES.freedom].join(" ") },
-  { title: "Nous contacter", section: "Page", to: "/contact", text: "contact téléphone courriel adresse rendez-vous rappel" },
+  { title: "Initier un échange", section: "Page", to: "/contact", text: "initier un échange nous écrire contact téléphone courriel adresse rendez-vous rappel" },
   { title: "Recrutement", section: "Page", to: "/recrutement", text: "candidature spontanée recrutement CV rejoindre l'équipe " + TEAM_PAGE.join },
   { title: "Mentions légales", section: "Page", to: "/mentions-legales", text: "ORIAS CIF CNCGP AMF réclamation médiateur SFDR durabilité" },
   ...TEAM.map((m) => ({ title: m.name, section: m.role, to: `/nous-connaitre#${m.slug}`, text: [m.quote, ...m.bio].join(" ") })),

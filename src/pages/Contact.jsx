@@ -7,9 +7,9 @@ import { CONTACT } from "../content/site.js";
 export default function Contact() {
   return (
     <>
-      <Seo title="Nous contacter" description="Contactez ARUM Gestion Privée, 82 avenue Marceau, Paris 8e : 01 75 43 66 50." />
+      <Seo title="Initier un échange" description="Contactez ARUM Gestion Privée, 82 avenue Marceau, Paris 8e : 01 75 43 66 50." />
       <PageHero
-        kicker="Nous contacter"
+        kicker="Initier un échange"
         title="Parlons de votre patrimoine"
         lead="Un premier échange, sans engagement, pour comprendre votre situation, vos projets et vos objectifs."
       />
@@ -36,7 +36,8 @@ export default function Contact() {
           </div>
         </div>
         <div className="shell form-shell contact__form">
-          <p className="body center">Vous préférez nous laisser vos coordonnées ? Notre formulaire vous permet d’être rappelé.</p>
+          <h2 className="contact__title">Nous écrire</h2>
+          <p className="body">Vous préférez nous laisser vos coordonnées ? Notre formulaire vous permet d’être rappelé.</p>
           <ContactForm />
         </div>
       </section>

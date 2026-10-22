@@ -1738,19 +1738,13 @@ h3,
   color: #fff;
 }
 
-/* Logo de fond des pages intérieures : entier, plus petit, jamais coupé */
-.phero__motif {
+/* Logo de fond de l'en-tête des articles (les autres pages l'ont dans la colonne de droite de leur ouverture) */
+.arthead .phero__motif {
   top: clamp(6.5rem, 12vw, 8.5rem);
   right: var(--shell-pad);
-  height: clamp(13rem, 22vw, 19rem); /* même taille sur toutes les pages */
-  max-height: none;
+  height: clamp(10rem, 18vw, 15rem);
   width: auto;
-  transform: none;
   opacity: 0.5;
-}
-/* bandeau assez haut pour montrer le logo en entier, même avec un titre court */
-.phero {
-  min-height: calc(clamp(6.5rem, 12vw, 8.5rem) + clamp(13rem, 22vw, 19rem) + clamp(2rem, 4vw, 3rem));
 }
 
 /* partenaire sans logo (en attente du fichier) : nom en toutes lettres */
@@ -1930,4 +1924,149 @@ h3,
 }
 .artbody__text .article__back {
   margin-top: var(--space-2xl);
+}
+
+/* ===========================================================================
+   Clôture « Initier un échange » et tuiles de renvoi (construction Hottinger Gaultier)
+   =========================================================================== */
+.cta .panel.cta__inner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-xl);
+  align-items: end;
+}
+.cta__side {
+  display: grid;
+  gap: var(--space-lg);
+  justify-items: start;
+}
+.cta__address {
+  font-style: normal;
+  line-height: 1.7;
+  color: var(--on-navy-dim);
+}
+.cta__address strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+  font-size: var(--step-1);
+  color: #fff;
+}
+.cta__address a:hover {
+  color: #fff;
+}
+.cta__link,
+.discover__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  font-family: var(--font-label);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #fff;
+  transition: border-color var(--dur-fast), gap var(--dur-fast);
+}
+.cta__link svg,
+.discover__link svg {
+  width: 16px;
+  height: 16px;
+}
+.cta__link:hover,
+.discover__tile:hover .discover__link {
+  gap: 0.9rem;
+  border-color: #fff;
+}
+.discover {
+  padding-block: clamp(2.5rem, 5vw, 4rem) 0;
+}
+.discover__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.discover__tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  min-height: 300px;
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  border-radius: 24px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background-color var(--dur-base);
+}
+.discover__tile:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.discover__tile--warm {
+  background: var(--orange-grad);
+  border-color: transparent;
+}
+.discover__tile--warm:hover {
+  background: var(--orange-grad);
+}
+.section--navy .discover__tile h2 {
+  font-size: clamp(1.6rem, 1.3rem + 1vw, 2.2rem);
+  color: #fff;
+}
+.section--navy .discover__tile p {
+  flex: 1;
+  max-width: 32ch;
+  font-size: var(--step--1);
+  color: rgba(255, 255, 255, 0.82);
+}
+@media (max-width: 860px) {
+  .discover__grid,
+  .cta .panel.cta__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Section éditoriale : titre à gauche, texte à droite (construction Hottinger Gaultier) */
+.edito {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+  margin-bottom: var(--space-2xl);
+}
+.edito h2 {
+  font-size: clamp(1.9rem, 1.4rem + 1.8vw, 3rem);
+  line-height: 1.12;
+}
+.section--navy .edito .body {
+  max-width: 60ch;
+  font-size: var(--step-0);
+  line-height: 1.75;
+}
+@media (max-width: 860px) {
+  .edito {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Étapes : numéros en italique (comme « 01, 02, 03 » chez Hottinger Gaultier) */
+.step__n {
+  font-family: var(--font-accent) !important;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Contact : titre « Nous écrire » au-dessus du formulaire */
+.section--navy .contact__title {
+  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem);
+  color: #fff;
+}
+.contact__form .body {
+  margin-top: calc(var(--space-sm) * -1);
+}
+.contact__form {
+  justify-items: stretch;
+  text-align: left;
 }

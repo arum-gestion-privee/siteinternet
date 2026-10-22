@@ -40,7 +40,7 @@ export default function SiteFooter() {
           </ul>
         </nav>
         <div>
-          <h2 className="foot__title">Nous contacter</h2>
+          <h2 className="foot__title">Initier un échange</h2>
           <address>
             {CONTACT.address[0]}
             <br />

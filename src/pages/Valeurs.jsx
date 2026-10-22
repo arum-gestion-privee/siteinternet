@@ -1,7 +1,7 @@
 import Seo from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
 import { IconLinkedIn } from "../components/icons.jsx";
-import { Kicker, Portrait, CtaBand } from "../components/Sections.jsx";
+import { Portrait, CtaBand, Discover } from "../components/Sections.jsx";
 import { VALUES, TEAM, HOME_PEOPLE, fr } from "../content/site.js";
 
 export default function Valeurs() {
@@ -15,7 +15,7 @@ export default function Valeurs() {
         title="Des valeurs de famille"
         description="L'intérêt du client, le professionnalisme et l'honnêteté : un cabinet libre en droit, libre d'esprit."
       />
-      <PageHero className="phero--accent" kicker="Des valeurs de famille" title="Des valeurs de famille" />
+      <PageHero className="phero--accent" kicker={VALUES.kicker} title="Des valeurs de famille" />
 
       <section className="section section--navy">
         <div className="shell split">
@@ -38,7 +38,6 @@ export default function Valeurs() {
       <section className="section section--navy">
         <div className="shell">
           <div className="section__head reveal">
-            <Kicker>{VALUES.kicker}</Kicker>
             <h2>{fr(VALUES.title)}</h2>
           </div>
           {/* l'engagement mis en avant, puis le constat qui le fonde */}
@@ -79,6 +78,7 @@ export default function Valeurs() {
           </div>
         </div>
       </section>
+      <Discover current="/valeurs" />
       <CtaBand />
     </>
   );
