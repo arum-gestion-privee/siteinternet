@@ -16,6 +16,10 @@ const TEAM_LD = TEAM.map((m) => ({
   ...(m.linkedin ? { sameAs: [m.linkedin] } : {}),
 }));
 
+const CROWD = ["vincent", "marie", "patrick", "anne-laure", "genevieve", "sandrine", "isabelle"].map((k) =>
+  TEAM.find((m) => m.slug.startsWith(k)),
+);
+
 export default function NousConnaitre() {
   return (
     <>
@@ -31,6 +35,12 @@ export default function NousConnaitre() {
         <div className="shell team-intro reveal">
           <p>{TEAM_PAGE.text[1]}</p>
           <span className="panel__bar" aria-hidden="true" />
+        </div>
+        {/* toute l'équipe réunie, Anne-Laure au centre */}
+        <div className="crowd reveal" role="img" aria-label="L'équipe d'ARUM Gestion Privée">
+          {CROWD.map((m, i) => (
+            <img key={m.slug} src={m.photo} alt="" loading="lazy" className={`crowd__p crowd__p--${i}`} />
+          ))}
         </div>
       </section>
 

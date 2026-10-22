@@ -35,6 +35,16 @@ export default function Valeurs() {
         </div>
       </section>
 
+      {/* le film « Je suis ARUM Gestion Privée » */}
+      <section className="section section--navy">
+        <div className="shell">
+          <video className="film reveal" controls playsInline preload="metadata" poster="/video/arum-film-poster.webp">
+            <source src="/video/arum-film.mp4" type="video/mp4" />
+            <source src="/video/arum-film.webm" type="video/webm" />
+          </video>
+        </div>
+      </section>
+
       <section className="section section--navy">
         <div className="shell">
           <div className="section__head reveal">

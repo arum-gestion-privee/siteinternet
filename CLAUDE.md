@@ -89,7 +89,7 @@ Bas de toutes les pages : `LicencesBand` (Nos agréments, dans `App.jsx`) puis l
 7. Hébergeur à confirmer dans les mentions légales (Cloudflare par défaut).
 8. Partenaires : Rohan Invest retiré ; BNP Paribas Cardif, Generali Luxembourg, Wealins, AG2R La Mondiale France
    ajoutés avec leurs logos (convertis en blanc sur fond transparent, comme les autres).
-10. Accueil refait comme celui de Hottinger Gaultier : vue des bureaux (Arc de Triomphe, `public/img/accueil`) en fond
+10. Accueil refait comme celui de Hottinger Gaultier : vue des bureaux (Arc de Triomphe, `public/img/accueil`) en fond — Photo de toute l'équipe (rangée des 7 portraits) sur Nous connaître ; film sur Des valeurs de famille.
     fixe teinté bleu nuit, symbole ARUM seul au centre, puis un écran par page (rubrique, titre, résumé, lien) qui
     apparaît/repart au défilement (`Home.jsx`). Retirés de l'accueil : film, comparatif, chiffres clés, citations
     de Marie et Sandrine, objectifs, photo de l'équipe (fichiers vidéo encore dans `public/video`).

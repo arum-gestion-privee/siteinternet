@@ -780,7 +780,7 @@
 .hx__logo {
   width: auto;
   height: clamp(180px, 42vh, 380px);
-  animation: hx-logo 1.6s var(--ease-out-expo) both;
+  animation: hx-logo 2.6s var(--ease-out-expo) both;
 }
 @keyframes hx-logo {
   from {
@@ -803,26 +803,26 @@
 }
 .hx__content > * {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(40px);
   transition:
-    opacity 0.9s var(--ease-out-expo),
-    transform 0.9s var(--ease-out-expo);
+    opacity 1.6s var(--ease-out-expo),
+    transform 1.8s var(--ease-out-expo);
 }
 .hx__content.is-in > * {
   opacity: 1;
   transform: none;
 }
 .hx__content.is-in > :nth-child(2) {
-  transition-delay: 0.12s;
+  transition-delay: 0.25s;
 }
 .hx__content.is-in > :nth-child(3) {
-  transition-delay: 0.24s;
+  transition-delay: 0.5s;
 }
 .hx__content.is-in > :nth-child(4) {
-  transition-delay: 0.36s;
+  transition-delay: 0.75s;
 }
 .hx__content.is-in > :nth-child(5) {
-  transition-delay: 0.48s;
+  transition-delay: 1s;
 }
 .hx__kicker {
   font-family: var(--font-accent);
@@ -882,8 +882,11 @@
   border-top: 4.5px solid transparent;
   border-bottom: 4.5px solid transparent;
 }
+/* le bleu nuit remonte sur la photo par un fondu doux, puis porte le bloc « Initier un échange » */
 .hx .cta {
-  background: transparent !important;
+  margin-top: -30vh;
+  padding-top: calc(30vh + clamp(4rem, 8vw, 6rem));
+  background: linear-gradient(180deg, rgba(18, 28, 64, 0) 0, rgba(18, 28, 64, 0.75) 18vh, var(--navy) 36vh) !important;
 }
 @media (prefers-reduced-motion: reduce) {
   .hx__content > * {

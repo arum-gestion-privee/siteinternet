@@ -2025,3 +2025,38 @@ h3,
   justify-items: stretch;
   text-align: left;
 }
+
+/* Nous connaître : toute l'équipe réunie, chaque personne centrée sur sa position, Anne-Laure au milieu */
+.crowd {
+  position: relative;
+  margin: clamp(2.5rem, 5vw, 4rem) auto 0;
+  width: min(1240px, 100%);
+  height: clamp(260px, 36vw, 460px);
+  overflow: hidden;
+}
+.crowd__p {
+  position: absolute;
+  bottom: 0;
+  width: auto;
+  max-width: none;
+  transform: translateX(-50%);
+  -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 80%, transparent 100%);
+}
+.crowd__p--0 { left: 9%; height: 78%; }
+.crowd__p--1 { left: 22%; height: 84%; }
+.crowd__p--2 { left: 35.5%; height: 92%; z-index: 2; }
+.crowd__p--3 { left: 50%; height: 100%; z-index: 3; }
+.crowd__p--4 { left: 64.5%; height: 92%; z-index: 2; }
+.crowd__p--5 { left: 78%; height: 84%; }
+.crowd__p--6 { left: 91%; height: 78%; }
+
+/* Des valeurs de famille : le film, dans un cadre arrondi */
+.film {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg, 24px);
+  background: #000;
+  box-shadow: 0 30px 80px rgba(5, 10, 30, 0.45);
+}
