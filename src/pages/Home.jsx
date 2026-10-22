@@ -60,7 +60,7 @@ function Hero() {
               Initier un échange <IconArrow />
             </Link>
             <Link className="pill pill--glass" to="/agir-en-confiance">
-              Comprendre notre approche <IconArrow />
+              Notre approche <IconArrow />
             </Link>
           </div>
         </div>

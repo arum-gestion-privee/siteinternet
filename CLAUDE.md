@@ -27,7 +27,7 @@ Rien n'est publié : l'ancien site Webflow reste en ligne.
 - **Pages intérieures construites comme celles de Hottinger Gaultier** (hottinger-gaultier.ch) : ouverture en deux
   colonnes (rubrique en italique + grand titre | logo + introduction), sections « titre | texte » (`.edito`),
   clôture « Initier un échange » (`CtaBand`). Pas de tuiles de renvoi (retirées à la demande de l'utilisateur).
-  **Vocabulaire** : « Initier un échange » (jamais « Nous contacter »), « Nous écrire », « Comprendre notre approche »,
+  **Vocabulaire** : « Initier un échange » (jamais « Nous contacter »), « Nous écrire », « Notre approche »,
   « Découvrir… ». Les textes d'ARUM restent mot pour mot ; ne pas copier les phrases de Hottinger Gaultier.
 - Page « Nous connaître » (`/nous-connaitre`, entièrement sur fond bleu) ; anciennes adresses redirigées.
 
