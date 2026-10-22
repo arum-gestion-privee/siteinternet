@@ -2031,16 +2031,10 @@ h3,
   position: relative;
   overflow: hidden;
   padding-top: clamp(3rem, 6vw, 5rem);
-  background: linear-gradient(180deg, #2a3c78 0%, #1e2e69 60%, #172356 100%);
+  background: var(--navy-bg);
 }
-/* voile bleu par-dessus les portraits, comme sur la vue des bureaux de l'accueil */
-.crowd-band__tint {
+.crowd__defs {
   position: absolute;
-  inset: 0;
-  z-index: 4;
-  background: linear-gradient(180deg, rgba(30, 46, 105, 0.25), rgba(18, 28, 64, 0.55));
-  mix-blend-mode: multiply;
-  pointer-events: none;
 }
 .crowd {
   position: relative;
@@ -2055,6 +2049,8 @@ h3,
   width: auto;
   max-width: none;
   transform: translateX(-50%);
+  /* filtre bleu sur les portraits, le fond restant le bleu nuit de la page */
+  filter: url(#crowd-blue);
   -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent 100%);
   mask-image: linear-gradient(180deg, #000 80%, transparent 100%);
 }

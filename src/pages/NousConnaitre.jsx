@@ -37,14 +37,19 @@ export default function NousConnaitre() {
         motif={false}
       />
 
-      {/* toute l'équipe réunie, sous un voile bleu, sur toute la largeur */}
+      {/* toute l'équipe réunie, sous un filtre bleu, sur toute la largeur */}
       <div className="crowd-band" role="img" aria-label="L'équipe d'ARUM Gestion Privée">
+        {/* filtre bleu (duotone bleu nuit / bleu clair, à moitié mêlé aux couleurs d'origine) */}
+        <svg width="0" height="0" aria-hidden="true" focusable="false" className="crowd__defs">
+          <filter id="crowd-blue" colorInterpolationFilters="sRGB">
+            <feColorMatrix type="matrix" values="0.5840 0.2825 0.0285 0 0.0350  0.0840 0.7825 0.0285 0 0.0550  0.0797 0.2682 0.5271 0 0.1250  0 0 0 1 0" />
+          </filter>
+        </svg>
         <div className="crowd">
           {CROWD.map((m, i) => (
             <img key={m.slug} src={m.photo} alt="" loading="lazy" className={`crowd__p crowd__p--${i}`} />
           ))}
         </div>
-        <span className="crowd-band__tint" aria-hidden="true" />
       </div>
 
       <section className="section section--navy">
