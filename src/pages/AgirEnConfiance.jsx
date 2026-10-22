@@ -4,8 +4,7 @@ import { Partners, CtaBand } from "../components/Sections.jsx";
 import { APPROACH } from "../content/site.js";
 
 /*
- * Construite comme « Notre approche » de Hottinger Gaultier : ouverture aérée, grande photo sous filtre bleu,
- * titre | texte, puis l'offre en trois temps en cartes numérotées qui se déplient.
+ * Construite comme « Notre approche » de Hottinger Gaultier : ouverture aérée, titre | texte, puis l'offre en trois temps en cartes numérotées qui se déplient.
  */
 export default function AgirEnConfiance() {
   return (
@@ -15,24 +14,13 @@ export default function AgirEnConfiance() {
         description="Expertise, approche transversale, sur-mesure : l'offre en trois temps d'ARUM Gestion Privée, votre family-office."
       />
       <PageHero
-        className="phero--accent phero--open"
+        className="phero--accent phero--open phero--top"
         kicker="Notre approche"
         title="Agir en confiance"
         lead={APPROACH.familyOffice}
         body={APPROACH.lead[0]}
         motif={false}
       />
-
-      {/* la vue des bureaux, sous un filtre bleu */}
-      <div className="photo-band" aria-hidden="true">
-        <img
-          src="/img/accueil/vue-bureaux-2400.webp"
-          srcSet="/img/accueil/vue-bureaux-1200.webp 1200w, /img/accueil/vue-bureaux-2400.webp 2400w"
-          sizes="100vw"
-          alt=""
-          loading="lazy"
-        />
-      </div>
 
       <section className="section section--navy">
         <div className="shell">
@@ -63,7 +51,7 @@ export default function AgirEnConfiance() {
         </div>
       </section>
 
-      <section className="section section--navy">
+      <section className="section section--navy partners-sec">
         <div className="shell">
           <div className="section__head reveal">
             <h2>Ils nous font confiance</h2>

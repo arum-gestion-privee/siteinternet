@@ -88,3 +88,7 @@
     grid-template-columns: 1fr;
   }
 }
+/* titre aligné en haut du texte de droite */
+.phero--top .phero__inner {
+  align-items: start;
+}
