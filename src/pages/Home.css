@@ -649,8 +649,8 @@
   grid-column: 2;
   grid-row: 3;
   text-align: right;
-  /* au-dessus de la ligne des sous-titres du film (bas de l'image) */
-  margin-bottom: clamp(5rem, 14vh, 9rem);
+  /* tout en bas à droite, à droite de la ligne des sous-titres du film */
+  margin-bottom: 0;
 }
 .hhero__side p {
   font-size: clamp(0.98rem, 0.94rem + 0.2vw, 1.1rem);
@@ -691,5 +691,23 @@
   }
   .hhero__sky {
     background: #121c40 url("/video/arum-film-poster.webp") center / cover no-repeat;
+  }
+}
+/* boutons empilés tout à droite : ils restent à l'écart des sous-titres centrés du film */
+.hhero__side .hhero__actions {
+  flex-direction: column;
+  align-items: flex-end;
+}
+.hhero__side .pill {
+  min-width: 13.5rem;
+  justify-content: center;
+}
+@media (max-width: 960px) {
+  .hhero__side .hhero__actions {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .hhero__side .pill {
+    min-width: 0;
   }
 }
