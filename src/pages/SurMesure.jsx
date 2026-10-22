@@ -12,7 +12,7 @@ export default function SurMesure() {
         title="Le sur-mesure"
         description="Transmettre, protéger, organiser, optimiser : un conseil patrimonial sur-mesure, pensé sur plusieurs générations."
       />
-      <PageHero className="phero--accent" kicker="Vos objectifs" title="Le sur-mesure" />
+      <PageHero className="phero--accent phero--low" kicker="Vos objectifs" title="Le sur-mesure" motif={false} logo />
 
       <section className="section section--navy">
         <div className="shell">

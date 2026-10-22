@@ -94,7 +94,7 @@
 }
 /* variante : le symbole ARUM à droite du titre, le texte en dessous, sur toute la largeur */
 .phero__logo {
-  justify-self: end;
+  justify-self: start;
   height: clamp(9rem, 16vw, 14rem);
   width: auto;
 }
@@ -127,4 +127,8 @@
   .phero--logo .phero__aside {
     display: none;
   }
+}
+/* texte au même niveau que le symbole */
+.phero--low .phero__inner {
+  align-items: center;
 }

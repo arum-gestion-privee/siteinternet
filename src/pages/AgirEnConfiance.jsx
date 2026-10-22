@@ -4,7 +4,7 @@ import { Partners, CtaBand } from "../components/Sections.jsx";
 import { APPROACH } from "../content/site.js";
 
 /*
- * Construite comme « Notre approche » de Hottinger Gaultier : ouverture aérée, titre | texte, puis l'offre en trois temps en cartes numérotées qui se déplient.
+ * Construite comme « Notre approche » de Hottinger Gaultier : ouverture aérée, titre | texte, puis l'offre en trois temps.
  */
 export default function AgirEnConfiance() {
   return (
@@ -29,30 +29,26 @@ export default function AgirEnConfiance() {
 
       <section className="section section--navy">
         <div className="shell">
+          {/* construit comme « Discernement » de Hottinger Gaultier : filet, grand titre, texte,
+              puis les trois temps en grandes phrases centrées qui s'éclairent au passage */}
           <div className="approach reveal">
             <h2>{APPROACH.offerTitle}</h2>
             <p>{APPROACH.lead[1]}</p>
           </div>
 
-          {/* l'offre en trois temps : cartes numérotées, le texte se déplie au clic */}
-          <div className="tempo">
+          <ol className="phrases">
             {APPROACH.steps.map((s) => (
-              <details key={s.n} className="tempo__card reveal">
-                <summary>
-                  <span className="tempo__n">{s.n}</span>
-                  <span className="tempo__title">
-                    <h3>{s.title}</h3>
-                    <span className="tempo__icon" aria-hidden="true" />
-                  </span>
-                </summary>
-                <div className="tempo__body">
+              <li key={s.n} className="phrase">
+                <span className="phrase__n">{s.n}</span>
+                <h3 className="phrase__title">{s.title}</h3>
+                <div className="phrase__text">
                   {s.text.map((p) => (
                     <p key={p}>{p}</p>
                   ))}
                 </div>
-              </details>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
