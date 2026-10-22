@@ -1,8 +1,12 @@
 import Seo from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
-import { Partners, Portrait, CtaBand } from "../components/Sections.jsx";
+import { Partners, CtaBand } from "../components/Sections.jsx";
 import { APPROACH } from "../content/site.js";
 
+/*
+ * Construite comme « Notre approche » de Hottinger Gaultier : ouverture aérée, grande photo sous filtre bleu,
+ * titre | texte, puis l'offre en trois temps en cartes numérotées qui se déplient.
+ */
 export default function AgirEnConfiance() {
   return (
     <>
@@ -10,42 +14,52 @@ export default function AgirEnConfiance() {
         title="Agir en confiance"
         description="Expertise, approche transversale, sur-mesure : l'offre en trois temps d'ARUM Gestion Privée, votre family-office."
       />
-      <PageHero className="phero--accent" kicker="Notre approche" title="Agir en confiance" lead={APPROACH.lead[0]} />
+      <PageHero
+        className="phero--accent phero--open"
+        kicker="Notre approche"
+        title="Agir en confiance"
+        lead={APPROACH.familyOffice}
+        body={APPROACH.lead[0]}
+        motif={false}
+      />
+
+      {/* la vue des bureaux, sous un filtre bleu */}
+      <div className="photo-band" aria-hidden="true">
+        <img
+          src="/img/accueil/vue-bureaux-2400.webp"
+          srcSet="/img/accueil/vue-bureaux-1200.webp 1200w, /img/accueil/vue-bureaux-2400.webp 2400w"
+          sizes="100vw"
+          alt=""
+          loading="lazy"
+        />
+      </div>
 
       <section className="section section--navy">
         <div className="shell">
-          <div className="panel reveal">
-            <p className="panel__lead">{APPROACH.familyOffice}</p>
-            <span className="panel__bar" aria-hidden="true" />
-            <div className="panel__body">
-              <p>{APPROACH.lead[1]}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--navy">
-        <div className="shell split">
-          <div className="reveal">
+          <div className="approach reveal">
             <h2>{APPROACH.offerTitle}</h2>
+            <p>{APPROACH.lead[1]}</p>
           </div>
-          <Portrait photo={APPROACH.offerPhoto.photo} names={APPROACH.offerPhoto.names} cta={null} className="reveal" />
-        </div>
-      </section>
 
-      <section className="section section--navy">
-        <div className="shell">
-          <ol className="steps">
+          {/* l'offre en trois temps : cartes numérotées, le texte se déplie au clic */}
+          <div className="tempo">
             {APPROACH.steps.map((s) => (
-              <li key={s.n} className="step reveal">
-                <span className="step__n">{s.n}</span>
-                <h3>{s.title}</h3>
-                {s.text.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-              </li>
+              <details key={s.n} className="tempo__card reveal">
+                <summary>
+                  <span className="tempo__n">{s.n}</span>
+                  <span className="tempo__title">
+                    <h3>{s.title}</h3>
+                    <span className="tempo__icon" aria-hidden="true" />
+                  </span>
+                </summary>
+                <div className="tempo__body">
+                  {s.text.map((p) => (
+                    <p key={p}>{p}</p>
+                  ))}
+                </div>
+              </details>
             ))}
-          </ol>
+          </div>
         </div>
       </section>
 
