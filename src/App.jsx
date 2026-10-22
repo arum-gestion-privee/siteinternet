@@ -24,6 +24,13 @@ export default function App() {
         Aller au contenu
       </a>
       <ScrollManager />
+      {/* Nappes du dégradé orange qui apparaissent puis repartent, derrière toute la page
+          (comme le jaune du site de Hottinger Gaultier) */}
+      <div className="aura" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </div>
       <LiquidDefs />
       <LiquidNav />
       <main id="contenu">
