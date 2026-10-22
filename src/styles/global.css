@@ -1906,3 +1906,28 @@ h3,
 .arthead__inner {
   position: relative;
 }
+
+/* Corps d'article lisible (comme ERNEST 1895) : introduction en Playfair, filet, paragraphes aérés */
+.section--navy .artbody__lead {
+  padding-bottom: var(--space-xl);
+  margin-bottom: var(--space-xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: var(--font-accent);
+  font-weight: 500;
+  font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.75rem);
+  line-height: 1.55;
+  color: #fff;
+  max-width: 40ch;
+}
+.section--navy .artbody__p {
+  max-width: 66ch;
+  font-size: clamp(1rem, 0.96rem + 0.25vw, 1.12rem);
+  line-height: 1.85;
+  color: rgba(245, 241, 234, 0.86);
+}
+.artbody__p + .artbody__p {
+  margin-top: var(--space-lg);
+}
+.artbody__text .article__back {
+  margin-top: var(--space-2xl);
+}

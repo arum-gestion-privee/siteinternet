@@ -7,12 +7,34 @@ import { NEWS } from "../content/site.js";
 const fmt = (d) => new Date(d).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
 
 /**
+ * Corps d'article lisible (comme ERNEST 1895) sans toucher au texte : la première phrase sert d'introduction,
+ * la suite est découpée en paragraphes de 2 à 3 phrases (coupure après « . ! ? » suivis d'une majuscule,
+ * ce qui épargne « art. 894 », « L. 132-13 », « ch. réunies »…).
+ */
+function splitBody(text) {
+  const sentences = text.split(/(?<=[.!?…])\s+(?=[«A-ZÀÂÉÈÊÎÔÛÇ])/u);
+  const [lead, ...rest] = sentences;
+  const paras = [];
+  let cur = "";
+  for (const sentence of rest) {
+    cur = cur ? `${cur} ${sentence}` : sentence;
+    if (cur.length > 320) {
+      paras.push(cur);
+      cur = "";
+    }
+  }
+  if (cur) paras.push(cur);
+  return { lead, paras };
+}
+
+/**
  * Article d'actualité repris de l'ancien site (même adresse /articles/…, texte mot pour mot).
  * Structure reprise des articles d'ERNEST 1895 : rubrique, titre, chapô, ligne auteur · date · temps de lecture,
  * filet, photo encadrée, puis deux colonnes « Dans cet article » / texte.
  */
 export default function Article({ article: a }) {
   const others = NEWS.filter((n) => n.slug !== a.slug && n.local).slice(0, 3);
+  const body = splitBody(a.quote);
   const ld = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -68,9 +90,12 @@ export default function Article({ article: a }) {
               </ol>
             </aside>
             <article id="texte" className="artbody__text">
-              <blockquote className="article__quote reveal">
-                <p>{a.quote}</p>
-              </blockquote>
+              <p className="artbody__lead">{body.lead}</p>
+              {body.paras.map((p) => (
+                <p key={p.slice(0, 40)} className="artbody__p">
+                  {p}
+                </p>
+              ))}
               <p className="article__back">
                 <Link className="pill pill--glass" to="/actualites">
                   Toutes les actualités <IconArrow />
