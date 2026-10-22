@@ -642,8 +642,8 @@
 .hhero__title {
   grid-column: 1 / -1;
   grid-row: 1;
-  max-width: 21ch;
-  font-size: clamp(1.9rem, 1.3rem + 1.8vw, 3.1rem) !important;
+  max-width: 16ch;
+  font-size: clamp(2.2rem, 1.5rem + 2.6vw, 3.9rem) !important; /* grand titre */
 }
 .hhero__side {
   grid-column: 2;
@@ -693,21 +693,24 @@
     background: #121c40 url("/video/arum-film-poster.webp") center / cover no-repeat;
   }
 }
-/* boutons empilés tout à droite : ils restent à l'écart des sous-titres centrés du film */
+/* boutons côte à côte, tout en bas à droite, sous la ligne des sous-titres du film */
+.hhero .hhero__grid {
+  padding-bottom: clamp(0.75rem, 1.6vh, 1.25rem);
+}
 .hhero__side .hhero__actions {
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
 }
 .hhero__side .pill {
-  min-width: 13.5rem;
-  justify-content: center;
+  padding: 0.7rem 1.35rem;
 }
 @media (max-width: 960px) {
-  .hhero__side .hhero__actions {
-    flex-direction: row;
-    align-items: flex-start;
+  .hhero .hhero__grid {
+    padding-bottom: clamp(2.5rem, 6vh, 4.5rem);
   }
-  .hhero__side .pill {
-    min-width: 0;
+  .hhero__side .hhero__actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 }
