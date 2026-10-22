@@ -98,8 +98,7 @@ export default function Home() {
         {/* ouverture : le symbole ARUM seul, au centre */}
         <section className="hx__intro">
           <h1 className="sr-only">ARUM Gestion Privée</h1>
-          <img className="hx__logo" src="/brand/symbole.png" alt="" width="194" height="245" />
-          <span className="hx__scroll" aria-hidden="true" />
+          <img className="hx__logo" src="/brand/symbole.svg" alt="" width="194" height="245" />
         </section>
 
         {/* premier écran : la promesse du cabinet */}
