@@ -727,3 +727,17 @@
 .hhero .hhero__grid {
   padding-bottom: clamp(2.5rem, 6vh, 4.5rem);
 }
+
+/* Safari : une vidéo en lecture (avec filtre) peut passer au-dessus du texte placé en z-index négatif.
+   On fixe des couches explicites : fond (0) < film (1) < texte (2). */
+.hhero__sky {
+  z-index: 0;
+}
+.hhero__film {
+  z-index: 1;
+  transform: translateZ(0);
+}
+.hhero .hhero__grid {
+  position: relative;
+  z-index: 2;
+}
