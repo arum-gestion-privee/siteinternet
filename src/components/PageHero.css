@@ -58,3 +58,33 @@
   font-size: var(--step-4);
   max-width: 28ch;
 }
+
+/* variante Hottinger Gaultier (« Notre expertise ») : grande ouverture aérée, titre en bas à gauche,
+   introduction en gras puis texte courant en bas à droite, sans logo */
+.phero--open {
+  min-height: min(88vh, 900px);
+  display: flex;
+  align-items: flex-end;
+}
+.phero--open .phero__inner {
+  width: 100%;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
+}
+.phero--open .phero__lead {
+  font-weight: 600;
+}
+.phero__body {
+  font-size: var(--step-0);
+  line-height: 1.65;
+  color: var(--on-navy-dim);
+  max-width: 42ch;
+  margin-top: calc(-1 * var(--space-md));
+}
+@media (max-width: 860px) {
+  .phero--open {
+    min-height: 0;
+  }
+  .phero--open .phero__inner {
+    grid-template-columns: 1fr;
+  }
+}

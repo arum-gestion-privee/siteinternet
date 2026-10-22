@@ -2027,9 +2027,24 @@ h3,
 }
 
 /* Nous connaître : toute l'équipe réunie, chaque personne centrée sur sa position, Anne-Laure au milieu */
+.crowd-band {
+  position: relative;
+  overflow: hidden;
+  padding-top: clamp(3rem, 6vw, 5rem);
+  background: linear-gradient(180deg, #2a3c78 0%, #1e2e69 60%, #172356 100%);
+}
+/* voile bleu par-dessus les portraits, comme sur la vue des bureaux de l'accueil */
+.crowd-band__tint {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: linear-gradient(180deg, rgba(30, 46, 105, 0.25), rgba(18, 28, 64, 0.55));
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
 .crowd {
   position: relative;
-  margin: clamp(2.5rem, 5vw, 4rem) auto 0;
+  margin: 0 auto;
   width: min(1240px, 100%);
   height: clamp(260px, 36vw, 460px);
   overflow: hidden;

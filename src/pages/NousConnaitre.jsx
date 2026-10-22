@@ -28,19 +28,30 @@ export default function NousConnaitre() {
         description="Une équipe de 7 personnes dédiée à l'organisation de votre patrimoine : découvrez les femmes et les hommes d'ARUM Gestion Privée."
         jsonLd={TEAM_LD}
       />
-      <PageHero className="phero--accent" kicker="Nous connaître" title={TEAM_PAGE.title} lead={TEAM_PAGE.text[0]} />
+      <PageHero
+        className="phero--accent phero--open"
+        kicker="Nous connaître"
+        title={TEAM_PAGE.title}
+        lead={TEAM_PAGE.lead}
+        body={TEAM_PAGE.text[0]}
+        motif={false}
+      />
+
+      {/* toute l'équipe réunie, sous un voile bleu, sur toute la largeur */}
+      <div className="crowd-band" role="img" aria-label="L'équipe d'ARUM Gestion Privée">
+        <div className="crowd">
+          {CROWD.map((m, i) => (
+            <img key={m.slug} src={m.photo} alt="" loading="lazy" className={`crowd__p crowd__p--${i}`} />
+          ))}
+        </div>
+        <span className="crowd-band__tint" aria-hidden="true" />
+      </div>
 
       <section className="section section--navy">
         {/* introduction à la présentation de l'équipe : centrée, avant les portraits */}
         <div className="shell team-intro reveal">
           <p>{TEAM_PAGE.text[1]}</p>
           <span className="panel__bar" aria-hidden="true" />
-        </div>
-        {/* toute l'équipe réunie, Anne-Laure au centre */}
-        <div className="crowd reveal" role="img" aria-label="L'équipe d'ARUM Gestion Privée">
-          {CROWD.map((m, i) => (
-            <img key={m.slug} src={m.photo} alt="" loading="lazy" className={`crowd__p crowd__p--${i}`} />
-          ))}
         </div>
       </section>
 
