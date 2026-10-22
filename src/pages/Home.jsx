@@ -154,18 +154,18 @@ function Goals() {
   );
 }
 
-// Invitation vers la page Actualités (textes repris de cette page).
+// Invitation vers la page Nos décryptages (textes repris de cette page).
 function News() {
   return (
     <section className="hsec hsec--navy hsec--news">
       <div className="shell">
         <Link className="hnews reveal" to="/actualites">
           <div>
-            <h2>Actualités</h2>
+            <h2>Nos décryptages</h2>
             <p>{fr("Fiscalité, transmission, statut du dirigeant, immobilier : nos analyses de l’actualité juridique et financière.")}</p>
           </div>
           <span className="pill pill--glass">
-            Voir toutes les actualités <IconArrow />
+            Voir tous nos décryptages <IconArrow />
           </span>
         </Link>
       </div>

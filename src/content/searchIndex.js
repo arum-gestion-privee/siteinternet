@@ -15,7 +15,7 @@ export const SEARCH_INDEX = [
   { title: "Mentions légales", section: "Page", to: "/mentions-legales", text: "ORIAS CIF CNCGP AMF réclamation médiateur SFDR durabilité" },
   ...TEAM.map((m) => ({ title: m.name, section: m.role, to: `/nous-connaitre#${m.slug}`, text: [m.quote, ...m.bio].join(" ") })),
   ...OBJECTIVES.map((o) => ({ title: `${o.verb} ${o.object}`, section: "Vos objectifs", to: `/sur-mesure#${o.id}`, text: o.text })),
-  ...NEWS.map((n) => ({ title: n.title, section: "Actualités", href: n.href, text: n.summary })),
+  ...NEWS.map((n) => ({ title: n.title, section: "Nos décryptages", href: n.href, text: n.summary })),
   ...FAQ.flatMap((g) => g.items.map((i) => ({ title: i.q, section: "Questions fréquentes", to: "#faq", text: i.a }))),
 ];
 

@@ -22,7 +22,7 @@ export const NAV = [
   { to: "/agir-en-confiance", label: "Agir en confiance" },
   { to: "/sur-mesure", label: "Le sur-mesure" },
   { to: "/valeurs", label: "Des valeurs de famille" },
-  { to: "/actualites", label: "Actualités" },
+  { to: "/actualites", label: "Nos décryptages" },
 ];
 
 // Textes repris mot pour mot du site actuel (seules la typographie et l'organisation changent).

@@ -5,9 +5,9 @@ import { NewsList, CtaBand } from "../components/Sections.jsx";
 export default function Actualites() {
   return (
     <>
-      <Seo title="Actualités" description="Fiscalité, transmission, dirigeants, immobilier : les analyses d'ARUM Gestion Privée." />
+      <Seo title="Nos décryptages" description="Fiscalité, transmission, dirigeants, immobilier : les analyses d'ARUM Gestion Privée." />
       <PageHero className="phero--accent"
-        kicker="Actualités"
+        kicker="Nos décryptages"
         title="Décryptages patrimoniaux"
         lead="Fiscalité, transmission, statut du dirigeant, immobilier : nos analyses de l’actualité juridique et financière."
       />

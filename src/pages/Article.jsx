@@ -53,9 +53,7 @@ export default function Article({ article: a }) {
         <img className="phero__motif" src="/brand/motif.png" alt="" aria-hidden="true" />
         <div className="shell arthead__inner">
           <p className="arthead__kicker">
-            <Link to="/actualites">Actualités</Link>
-            <span aria-hidden="true"> · </span>
-            Décryptages patrimoniaux
+            <Link to="/actualites">Nos décryptages</Link>
           </p>
           <h1>{a.title}</h1>
           {a.summary && <p className="arthead__lead">{a.summary}</p>}
@@ -98,7 +96,7 @@ export default function Article({ article: a }) {
               ))}
               <p className="article__back">
                 <Link className="pill pill--glass" to="/actualites">
-                  Voir toutes les actualités <IconArrow />
+                  Voir tous nos décryptages <IconArrow />
                 </Link>
               </p>
             </article>
@@ -107,7 +105,7 @@ export default function Article({ article: a }) {
 
         {others.length > 0 && (
           <div className="shell article__more">
-            <h2>Autres actualités</h2>
+            <h2>Autres décryptages</h2>
             <NewsList items={others} />
           </div>
         )}

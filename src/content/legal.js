@@ -61,7 +61,7 @@ export const MENTIONS = {
     ),
     s(
       "Avertissement",
-      "Les informations publiées sur ce site, notamment dans la rubrique Actualités, sont fournies à titre d'information générale. Elles ne constituent ni un conseil en investissement, ni une recommandation personnalisée, ni une offre ou une sollicitation d'achat ou de vente d'un produit financier ou d'assurance. Toute décision doit être précédée d'une analyse de votre situation personnelle avec un conseiller.",
+      "Les informations publiées sur ce site, notamment dans la rubrique Nos décryptages, sont fournies à titre d'information générale. Elles ne constituent ni un conseil en investissement, ni une recommandation personnalisée, ni une offre ou une sollicitation d'achat ou de vente d'un produit financier ou d'assurance. Toute décision doit être précédée d'une analyse de votre situation personnelle avec un conseiller.",
       "Tout investissement comporte des risques, notamment un risque de perte en capital. Les performances passées ne préjugent pas des performances futures. Les dispositifs fiscaux évoqués dépendent de la situation de chacun et sont susceptibles d'évoluer.",
     ),
     s(
