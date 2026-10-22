@@ -92,3 +92,39 @@
 .phero--top .phero__inner {
   align-items: start;
 }
+/* variante : le symbole ARUM à droite du titre, le texte en dessous, sur toute la largeur */
+.phero__logo {
+  justify-self: end;
+  height: clamp(9rem, 16vw, 14rem);
+  width: auto;
+}
+.phero__below {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: clamp(1.5rem, 5vw, 5rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.phero__below .phero__lead,
+.phero__below .phero__body {
+  max-width: none;
+  margin: 0;
+}
+.phero--logo .phero__inner {
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .phero__logo {
+    display: none;
+  }
+  .phero__below {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 860px) {
+  .phero--logo .phero__aside {
+    display: none;
+  }
+}

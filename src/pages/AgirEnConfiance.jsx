@@ -14,12 +14,17 @@ export default function AgirEnConfiance() {
         description="Expertise, approche transversale, sur-mesure : l'offre en trois temps d'ARUM Gestion Privée, votre family-office."
       />
       <PageHero
-        className="phero--accent phero--open phero--top"
+        className="phero--accent phero--open phero--logo"
         kicker="Notre approche"
         title="Agir en confiance"
-        lead={APPROACH.familyOffice}
-        body={APPROACH.lead[0]}
         motif={false}
+        logo
+        below={
+          <>
+            <p className="phero__lead">{APPROACH.familyOffice}</p>
+            <p className="phero__body">{APPROACH.lead[0]}</p>
+          </>
+        }
       />
 
       <section className="section section--navy">
