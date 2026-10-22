@@ -28,17 +28,9 @@ export default function NousConnaitre() {
         description="Une équipe de 7 personnes dédiée à l'organisation de votre patrimoine : découvrez les femmes et les hommes d'ARUM Gestion Privée."
         jsonLd={TEAM_LD}
       />
-      <PageHero
-        className="phero--accent phero--open"
-        kicker="Nous connaître"
-        title={TEAM_PAGE.title}
-        lead={TEAM_PAGE.lead}
-        body={TEAM_PAGE.text[0]}
-        motif={false}
-      />
 
-      {/* toute l'équipe réunie, sous un filtre bleu, sur toute la largeur */}
-      <div className="crowd-band" role="img" aria-label="L'équipe d'ARUM Gestion Privée">
+      {/* on arrive sur toute l'équipe réunie, sous un filtre bleu ; le titre et le texte apparaissent en défilant */}
+      <div className="crowd-band crowd-band--open" role="img" aria-label="L'équipe d'ARUM Gestion Privée">
         {/* filtre bleu (duotone bleu nuit / bleu clair, à moitié mêlé aux couleurs d'origine) */}
         <svg width="0" height="0" aria-hidden="true" focusable="false" className="crowd__defs">
           <filter id="crowd-blue" colorInterpolationFilters="sRGB">
@@ -47,10 +39,19 @@ export default function NousConnaitre() {
         </svg>
         <div className="crowd">
           {CROWD.map((m, i) => (
-            <img key={m.slug} src={m.photo} alt="" loading="lazy" className={`crowd__p crowd__p--${i}`} />
+            <img key={m.slug} src={m.photo} alt="" loading="eager" className={`crowd__p crowd__p--${i}`} />
           ))}
         </div>
       </div>
+
+      <PageHero
+        className="phero--accent phero--after"
+        kicker="Nous connaître"
+        title={TEAM_PAGE.title}
+        lead={TEAM_PAGE.lead}
+        body={TEAM_PAGE.text[0]}
+        motif={false}
+      />
 
       <section className="section section--navy">
         {/* introduction à la présentation de l'équipe : centrée, avant les portraits */}

@@ -2170,3 +2170,23 @@ h3,
 .partners-sec {
   padding-top: clamp(6rem, 12vw, 10rem);
 }
+
+/* Nous connaître : la photo de l'équipe en ouverture, sur tout l'écran (la nav flotte par-dessus) */
+.crowd-band--open {
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  padding-top: clamp(7rem, 12vw, 9rem);
+}
+.crowd-band--open .crowd {
+  height: min(78svh, 46vw);
+}
+@media (max-width: 700px) {
+  .crowd-band--open {
+    min-height: 0;
+    padding-top: 6.5rem;
+  }
+  .crowd-band--open .crowd {
+    height: 58vw;
+  }
+}

@@ -141,3 +141,16 @@
   font-weight: 500;
   color: #fff;
 }
+/* ouverture placée après la photo d'ouverture : moins d'espace en haut, apparition au défilement */
+.phero--after {
+  padding-top: clamp(4rem, 8vw, 7rem);
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .phero--after .phero__inner > * {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 70%;
+    }
+  }
+}
