@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import LiquidButton from "./LiquidButton.jsx";
 import { IconArrow } from "./icons.jsx";
-import { DIFFERENCE, OBJECTIVES, NEWS, FIGURES, AGREMENTS, PARTNERS, REGULATORY, DISCOVER, CONTACT } from "../content/site.js";
+import { DIFFERENCE, OBJECTIVES, NEWS, FIGURES, AGREMENTS, PARTNERS, REGULATORY, CONTACT } from "../content/site.js";
 
 export function Kicker({ children, light = false }) {
   return <p className={"kicker" + (light ? " kicker--light" : "")}>{children}</p>;
@@ -225,30 +225,6 @@ export function CtaBand({ title = "Initier un échange", text }) {
             </Link>
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
-/** Tuiles de renvoi vers les autres pages, en fin de page (comme chez Hottinger Gaultier). */
-export function Discover({ current }) {
-  const i = DISCOVER.findIndex((d) => d.to === current);
-  const others = DISCOVER.filter((d) => d.to !== current);
-  // les trois pages suivantes, dans l'ordre du menu
-  const start = i < 0 ? 0 : i;
-  const items = [0, 1, 2].map((k) => others[(start + k) % others.length]);
-  return (
-    <section className="section section--navy discover" aria-label="À découvrir aussi">
-      <div className="shell discover__grid">
-        {items.map((d, k) => (
-          <Link key={d.to} to={d.to} className={"discover__tile reveal" + (k === 1 ? " discover__tile--warm" : "")}>
-            <h2>{d.title}</h2>
-            <p>{d.text}</p>
-            <span className="discover__link">
-              {d.link} <IconArrow />
-            </span>
-          </Link>
-        ))}
       </div>
     </section>
   );

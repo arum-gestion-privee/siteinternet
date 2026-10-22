@@ -1,6 +1,6 @@
 import Seo from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
-import { Kicker, Quote, Comparison, Objectives, Portrait, CtaBand, Discover } from "../components/Sections.jsx";
+import { Kicker, Quote, Comparison, Objectives, Portrait, CtaBand } from "../components/Sections.jsx";
 import { BESPOKE, DIFFERENCE, TEAM } from "../content/site.js";
 
 export default function SurMesure() {
@@ -49,7 +49,6 @@ export default function SurMesure() {
           <Objectives withAnchors />
         </div>
       </section>
-      <Discover current="/sur-mesure" />
       <CtaBand />
     </>
   );

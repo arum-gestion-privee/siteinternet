@@ -1,6 +1,6 @@
 import Seo from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
-import { NewsList, CtaBand, Discover } from "../components/Sections.jsx";
+import { NewsList, CtaBand } from "../components/Sections.jsx";
 
 export default function Actualites() {
   return (
@@ -16,7 +16,6 @@ export default function Actualites() {
           <NewsList />
         </div>
       </section>
-      <Discover current="/actualites" />
       <CtaBand />
     </>
   );

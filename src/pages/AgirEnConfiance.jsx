@@ -1,6 +1,6 @@
 import Seo from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
-import { Partners, Portrait, CtaBand, Discover } from "../components/Sections.jsx";
+import { Partners, Portrait, CtaBand } from "../components/Sections.jsx";
 import { APPROACH } from "../content/site.js";
 
 export default function AgirEnConfiance() {
@@ -57,8 +57,6 @@ export default function AgirEnConfiance() {
           <Partners />
         </div>
       </section>
-
-      <Discover current="/agir-en-confiance" />
       <CtaBand />
     </>
   );

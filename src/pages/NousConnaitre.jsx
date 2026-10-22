@@ -3,7 +3,6 @@ import PageHero from "../components/PageHero.jsx";
 import LiquidButton from "../components/LiquidButton.jsx";
 import { IconArrow, IconLinkedIn } from "../components/icons.jsx";
 import { TEAM, TEAM_PAGE } from "../content/site.js";
-import { Discover } from "../components/Sections.jsx";
 
 const TEAM_LD = TEAM.map((m) => ({
   "@context": "https://schema.org",
@@ -94,7 +93,6 @@ export default function NousConnaitre() {
           </div>
         </div>
       </section>
-      <Discover current="/nous-connaitre" />
     </>
   );
 }

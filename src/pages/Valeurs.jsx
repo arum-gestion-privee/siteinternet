@@ -1,7 +1,7 @@
 import Seo from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
 import { IconLinkedIn } from "../components/icons.jsx";
-import { Portrait, CtaBand, Discover } from "../components/Sections.jsx";
+import { Portrait, CtaBand } from "../components/Sections.jsx";
 import { VALUES, TEAM, HOME_PEOPLE, fr } from "../content/site.js";
 
 export default function Valeurs() {
@@ -78,7 +78,6 @@ export default function Valeurs() {
           </div>
         </div>
       </section>
-      <Discover current="/valeurs" />
       <CtaBand />
     </>
   );

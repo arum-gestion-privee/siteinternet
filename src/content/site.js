@@ -25,16 +25,6 @@ export const NAV = [
   { to: "/actualites", label: "Actualités" },
 ];
 
-// Tuiles de renvoi en fin de page (construction Hottinger Gaultier) : titre de la page, sa description
-// (celle déjà utilisée pour les moteurs de recherche) et un lien « Découvrir… ».
-export const DISCOVER = [
-  { to: "/nous-connaitre", title: "Nous connaître", text: fr("Une équipe de 7 personnes dédiée à l'organisation de votre patrimoine : découvrez les femmes et les hommes d'ARUM Gestion Privée."), link: "Découvrir l'équipe" },
-  { to: "/agir-en-confiance", title: "Agir en confiance", text: fr("Expertise, approche transversale, sur-mesure : l'offre en trois temps d'ARUM Gestion Privée, votre family-office."), link: "Comprendre notre approche" },
-  { to: "/sur-mesure", title: "Le sur-mesure", text: fr("Transmettre, protéger, organiser, optimiser : un conseil patrimonial sur-mesure, pensé sur plusieurs générations."), link: "Découvrir le sur-mesure" },
-  { to: "/valeurs", title: "Des valeurs de famille", text: fr("L'intérêt du client, le professionnalisme et l'honnêteté : un cabinet libre en droit, libre d'esprit."), link: "Découvrir nos valeurs" },
-  { to: "/actualites", title: "Actualités", text: fr("Fiscalité, transmission, dirigeants, immobilier : les analyses d'ARUM Gestion Privée."), link: "Lire nos analyses" },
-];
-
 // Textes repris mot pour mot du site actuel (seules la typographie et l'organisation changent).
 export const HOME = {
   title: fr("Faire vivre votre patrimoine et vous simplifier la vie"),
