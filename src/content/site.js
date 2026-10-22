@@ -184,7 +184,7 @@ export const TEAM = [
   },
   {
     slug: "isabelle-martins",
-    linkedin: null, // pas de profil publié sur le site actuel
+    linkedin: "https://www.linkedin.com/in/isabelle-martins-2228a13b1/",
     name: "Isabelle Martins",
     role: "Chargée de Middle Office et Affaires Générales",
     photo: "/img/equipe/isabelle.webp",

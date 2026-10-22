@@ -80,7 +80,7 @@ Bas de toutes les pages : `LicencesBand` (Nos agréments, dans `App.jsx`) puis l
 4. Chiffre « 6 » (site actuel) ou « 7 » personnes (page équipe) : 7 retenu.
 5. « Recevez notre actualité » (lettre d'information) non reprise : à brancher (ex. Brevo, comme Ernest).
 6. Formulaires internes (Typeform abandonné) : brancher Brevo (voir « Formulaires »), relire la mention
-   « Confidentialité » mise à jour ; Isabelle Martins sans lien LinkedIn.
+   « Confidentialité » mise à jour.
 7. Hébergeur à confirmer dans les mentions légales (Cloudflare par défaut).
 8. Partenaires : Rohan Invest retiré ; BNP Paribas Cardif, Generali Luxembourg, Wealins, AG2R La Mondiale France
    ajoutés avec leurs logos (convertis en blanc sur fond transparent, comme les autres).
