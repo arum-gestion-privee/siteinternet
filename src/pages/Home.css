@@ -884,9 +884,9 @@
 }
 /* le bleu nuit remonte sur la photo par un fondu doux, puis porte le bloc « Initier un échange » */
 .hx .cta {
-  margin-top: -30vh;
-  padding-top: calc(30vh + clamp(4rem, 8vw, 6rem));
-  background: linear-gradient(180deg, rgba(18, 28, 64, 0) 0, rgba(18, 28, 64, 0.75) 18vh, var(--navy) 36vh) !important;
+  margin-top: 10vh;
+  padding-top: calc(14vh + clamp(4rem, 8vw, 6rem));
+  background: linear-gradient(180deg, rgba(18, 28, 64, 0) 0, rgba(18, 28, 64, 0.8) 8vh, var(--navy) 14vh) !important;
 }
 @media (prefers-reduced-motion: reduce) {
   .hx__content > * {
