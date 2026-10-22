@@ -49,12 +49,12 @@ function Hero() {
         <div className="hhero__tint" aria-hidden="true" />
       </div>
       <div className="shell hhero__grid">
-        {/* Disposition du site d'ERNEST 1895 : titre en haut à gauche, boutons tout en bas à droite,
+        {/* Titre et boutons en haut à gauche, sur la partie assombrie du film,
             pour laisser libres les noms (bas-gauche du film) et les sous-titres (bas, au centre). */}
-        <h1 className="hhero__title">
-          {HOME.title} <span className="accent">{HOME.titleEnd}</span>
-        </h1>
-        <div className="hhero__side">
+        <div className="hhero__head">
+          <h1 className="hhero__title">
+            {HOME.title} <span className="accent">{HOME.titleEnd}</span>
+          </h1>
           <div className="hhero__actions">
             <Link className="pill pill--copper pill--inline" to="/contact">
               Nous contacter <IconArrow />

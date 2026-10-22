@@ -642,8 +642,8 @@
 .hhero__title {
   grid-column: 1 / -1;
   grid-row: 1;
-  max-width: 16ch;
-  font-size: clamp(2.2rem, 1.5rem + 2.6vw, 3.9rem) !important; /* grand titre */
+  max-width: 18ch;
+  font-size: clamp(1.9rem, 1.3rem + 2vw, 3.1rem) !important;
 }
 .hhero__side {
   grid-column: 2;
@@ -713,4 +713,17 @@
     justify-content: flex-start;
     flex-wrap: wrap;
   }
+}
+
+/* titre et boutons ensemble, en haut à gauche (les noms du film restent libres en bas à gauche) */
+.hhero__head {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+.hhero__head .hhero__actions {
+  margin-top: var(--space-xl);
+  justify-content: flex-start;
+}
+.hhero .hhero__grid {
+  padding-bottom: clamp(2.5rem, 6vh, 4.5rem);
 }
