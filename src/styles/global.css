@@ -2308,6 +2308,6 @@ h3,
   height: clamp(70px, 9vw, 110px);
   width: auto;
 }
-.sm-quote.arrive {
+.first-in.arrive {
   transition-duration: 1.8s, 1.8s;
 }

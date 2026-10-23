@@ -24,3 +24,16 @@ export default function PageHero({ kicker, title, lead, body, motif = true, logo
     </section>
   );
 }
+
+/** Ouverture centrée (Le sur-mesure, Des valeurs de famille, Nos décryptages) : titre, texte, puis le symbole ARUM en petit. */
+export function CenteredHero({ title, text }) {
+  return (
+    <section className="sm-open">
+      <div className="shell sm-open__inner">
+        <h1>{title}</h1>
+        {text && <p className="sm-open__text">{text}</p>}
+        <img className="sm-open__logo" src="/brand/symbole.svg" alt="" aria-hidden="true" width="194" height="245" />
+      </div>
+    </section>
+  );
+}

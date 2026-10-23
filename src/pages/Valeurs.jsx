@@ -1,25 +1,28 @@
 import Seo from "../components/Seo.jsx";
-import PageHero from "../components/PageHero.jsx";
+import { CenteredHero } from "../components/PageHero.jsx";
+import { useArrive } from "../components/useArrive.js";
 import { IconLinkedIn } from "../components/icons.jsx";
 import { Portrait, CtaBand } from "../components/Sections.jsx";
-import { VALUES, TEAM, HOME_PEOPLE, fr } from "../content/site.js";
+import { VALUES, TEAM, HOME_PEOPLE, DIFFERENCE, fr } from "../content/site.js";
 
 export default function Valeurs() {
   const al = TEAM.find((m) => m.slug.startsWith("anne-laure"));
   const cut = VALUES.freedom.indexOf(". ");
   const freedomFirst = VALUES.freedom.slice(0, cut);
   const freedomRest = VALUES.freedom.slice(cut + 2);
+  // le premier bloc n'arrive, en fondu, qu'une fois le défilement commencé (comme Le sur-mesure)
+  useArrive(".first-in", { afterScroll: true });
   return (
     <>
       <Seo
         title="Des valeurs de famille"
         description="L'intérêt du client, le professionnalisme et l'honnêteté : un cabinet libre en droit, libre d'esprit."
       />
-      <PageHero className="phero--accent" kicker={VALUES.kicker} title="Des valeurs de famille" />
+      <CenteredHero title="Des valeurs de famille" text={fr(DIFFERENCE.tagline)} />
 
       <section className="section section--navy">
-        <div className="shell split">
-          <figure className="lead-quote reveal">
+        <div className="shell split first-in">
+          <figure className="lead-quote">
             <blockquote>
               <p>{VALUES.lead}</p>
             </blockquote>
@@ -31,7 +34,7 @@ export default function Valeurs() {
             </figcaption>
           </figure>
           {/* la photo du haut de l'accueil, en grand */}
-          <img className="valeurs__duo reveal" src={HOME_PEOPLE.partners.photo} alt={`${HOME_PEOPLE.partners.names}, ${HOME_PEOPLE.partners.roles}`} width="600" height="899" />
+          <img className="valeurs__duo" src={HOME_PEOPLE.partners.photo} alt={`${HOME_PEOPLE.partners.names}, ${HOME_PEOPLE.partners.roles}`} width="600" height="899" />
         </div>
       </section>
 
