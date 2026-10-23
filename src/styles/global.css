@@ -2255,7 +2255,7 @@ h3,
   min-height: 100svh;
   display: grid;
   place-items: center;
-  padding-block: clamp(7rem, 12vw, 9rem) clamp(3rem, 6vw, 5rem);
+  padding-block: clamp(7rem, 12vw, 9rem) 0;
   text-align: center;
   color: #fff;
 }
@@ -2284,15 +2284,21 @@ h3,
   transition-duration: 1.8s, 1.8s;
 }
 
-/* citation centrée (Le sur-mesure) : la photo au-dessus, le texte au milieu */
+/* citation au milieu de la page (Le sur-mesure), Anne-Laure à sa droite */
 .quote--center {
-  grid-template-columns: 1fr;
-  justify-items: center;
-  text-align: center;
-  max-width: 900px;
+  grid-template-columns: 1fr auto;
+  max-width: 980px;
 }
 .quote--center .quote__photo {
-  width: clamp(120px, 14vw, 170px);
+  order: 2;
+}
+@media (max-width: 640px) {
+  .quote--center {
+    grid-template-columns: 1fr;
+  }
+  .quote--center .quote__photo {
+    order: 0;
+  }
 }
 /* titre puis texte, au centre de la page, un peu plus d'espace au-dessus */
 .edito--center {
@@ -2300,11 +2306,14 @@ h3,
   justify-items: center;
   text-align: center;
   gap: var(--space-lg);
-  margin-top: clamp(2rem, 5vw, 4rem);
 }
 .edito--center h2 {
   max-width: 22ch;
 }
 .section--navy .edito--center .body {
   margin-inline: auto;
+}
+/* espaces réguliers entre les parties : la première partie suit l'ouverture centrée sans double marge */
+.sm-open + .section {
+  padding-top: 0;
 }
