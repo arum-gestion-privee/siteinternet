@@ -38,16 +38,6 @@ export default function Valeurs() {
         </div>
       </section>
 
-      {/* le film « Je suis ARUM Gestion Privée » */}
-      <section className="section section--navy">
-        <div className="shell">
-          <video className="film reveal" controls playsInline preload="metadata" poster="/video/arum-film-poster.webp">
-            <source src="/video/arum-film.mp4" type="video/mp4" />
-            <source src="/video/arum-film.webm" type="video/webm" />
-          </video>
-        </div>
-      </section>
-
       {/* sans boîte : à gauche le titre et l'engagement (blanc), à droite le constat (gris), même police */}
       <section className="section section--navy">
         <div className="shell duo reveal">
@@ -60,6 +50,16 @@ export default function Valeurs() {
             ))}
           </div>
           <p className="duo__body">{VALUES.mindset[0]}</p>
+        </div>
+      </section>
+
+      {/* le film « Je suis ARUM Gestion Privée » */}
+      <section className="section section--navy">
+        <div className="shell">
+          <video className="film reveal" controls playsInline preload="metadata" poster="/video/arum-film-poster.webp">
+            <source src="/video/arum-film.mp4" type="video/mp4" />
+            <source src="/video/arum-film.webm" type="video/webm" />
+          </video>
         </div>
       </section>
 
