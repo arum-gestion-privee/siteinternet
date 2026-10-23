@@ -1836,6 +1836,7 @@ h3,
 .artbody__figure img {
   width: 100%;
   height: auto;
+  border-radius: 12px;
 }
 .artbody__grid {
   display: grid;

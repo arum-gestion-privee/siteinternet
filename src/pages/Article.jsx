@@ -75,7 +75,7 @@ export default function Article({ article: a }) {
         <div className="shell">
           {a.image && (
             <figure className="artbody__figure reveal">
-              <img src={a.image} alt="" width="529" height="362" />
+              <img src={a.image.replace(".webp", "-cadre.webp")} alt="" width="529" height="300" />
             </figure>
           )}
           <div className="artbody__grid">
