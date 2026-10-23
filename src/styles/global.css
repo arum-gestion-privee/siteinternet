@@ -2277,3 +2277,37 @@ h3,
 .rime__head > .arrive:nth-child(3) {
   transition-delay: 0.5s;
 }
+
+/* Le sur-mesure : ouverture centrée (titre, texte, symbole ARUM en petit) sur un écran */
+.sm-open {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding-block: clamp(7rem, 12vw, 9rem) clamp(3rem, 6vw, 5rem);
+  text-align: center;
+  color: #fff;
+}
+.sm-open__inner {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-lg);
+}
+.sm-open h1 {
+  font-size: clamp(3rem, 1.8rem + 5vw, 6.4rem);
+  line-height: 1.04;
+  color: #fff;
+}
+.sm-open__text {
+  max-width: 46ch;
+  font-size: var(--step-1);
+  line-height: 1.55;
+  color: var(--on-navy-dim);
+}
+.sm-open__logo {
+  margin-top: var(--space-xl);
+  height: clamp(70px, 9vw, 110px);
+  width: auto;
+}
+.sm-quote.arrive {
+  transition-duration: 1.8s, 1.8s;
+}
