@@ -21,14 +21,14 @@ export default function SurMesure() {
 
       <section className="section section--navy">
         <div className="shell first-in">
-          <Quote text={BESPOKE.quote} name={al.name} role={al.role} photo={al.photo} light />
+          <Quote text={BESPOKE.quote} name={al.name} role={al.role} photo={al.photo} light center />
         </div>
       </section>
 
       <section className="section section--navy">
         <div className="shell">
-          {/* titre à gauche, texte à droite (construction Hottinger Gaultier) */}
-          <div className="edito reveal">
+          {/* au centre : le titre puis son texte, puis le tableau à deux colonnes */}
+          <div className="edito edito--center reveal">
             <h2>{BESPOKE.proximity}</h2>
             <p className="body">{DIFFERENCE.text}</p>
           </div>

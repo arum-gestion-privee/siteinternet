@@ -7,9 +7,9 @@ export function Kicker({ children, light = false }) {
   return <p className={"kicker" + (light ? " kicker--light" : "")}>{children}</p>;
 }
 
-export function Quote({ text, name, role, photo, light = false }) {
+export function Quote({ text, name, role, photo, light = false, center = false }) {
   return (
-    <figure className={"quote" + (light ? " quote--light" : "")}>
+    <figure className={"quote" + (light ? " quote--light" : "") + (center ? " quote--center" : "")}>
       {photo && <img className="quote__photo" src={photo} alt={name} loading="lazy" />}
       <div>
         <blockquote>
