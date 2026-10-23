@@ -66,8 +66,8 @@ export default function Valeurs() {
       {/* le professionnalisme, mis en avant en grand à côté du portrait */}
       <section className="section section--navy">
         <div className="shell split">
-          <p className="valeurs__pro reveal">{VALUES.professionalism}</p>
-          <Portrait {...VALUES.professionalismPhoto} cta={null} className="reveal" />
+          <p className="valeurs__pro">{VALUES.professionalism}</p>
+          <Portrait {...VALUES.professionalismPhoto} cta={null} />
         </div>
       </section>
 
