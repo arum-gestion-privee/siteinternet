@@ -5,27 +5,27 @@ import { Partners, CtaBand } from "../components/Sections.jsx";
 import { APPROACH } from "../content/site.js";
 
 /*
- * Ouverture en enchaînement (ARUM… rime avec… Agir en confiance), puis l'offre en trois temps.
+ * Ouverture en enchaînement (logo ARUM… rime avec… Agir en confiance), puis l'offre en trois temps.
  */
 export default function AgirEnConfiance() {
-  useArrive(".rime__with, .rime__head > *");
+  useArrive(".rime__head > *");
   return (
     <>
       <Seo
         title="Agir en confiance"
         description="Expertise, approche transversale, sur-mesure : l'offre en trois temps d'ARUM Gestion Privée, votre family-office."
       />
-      {/* enchaînement d'ouverture : le symbole ARUM seul, puis « rime avec », puis « Agir en confiance » */}
+      {/* enchaînement d'ouverture : le logo ARUM seul, puis « rime avec… Agir en confiance » */}
       <section className="rime">
         <div className="rime__screen rime__screen--logo">
-          <img className="rime__logo" src="/brand/symbole.svg" alt="ARUM" width="194" height="245" />
-        </div>
-        <div className="rime__screen rime__screen--with">
-          <p className="rime__with">rime avec</p>
+          <figure className="rime__logo" role="img" aria-label="ARUM Gestion Privée">
+            <img className="rime__symbol" src="/brand/symbole.svg" alt="" width="194" height="245" />
+            <img className="rime__name" src="/brand/nom-blanc.png" alt="" width="633" height="190" />
+          </figure>
         </div>
         <div className="rime__screen rime__screen--title">
           <div className="shell rime__head">
-            <p className="phero__kicker">Notre approche</p>
+            <p className="rime__with">rime avec</p>
             <h1>Agir en confiance</h1>
             <p className="phero__sub">{APPROACH.familyOffice}</p>
           </div>

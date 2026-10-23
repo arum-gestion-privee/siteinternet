@@ -2075,6 +2075,8 @@ h3,
 /* Agir en confiance (construite comme « Notre approche » de Hottinger Gaultier) */
 .approach {
   display: grid;
+  justify-items: center;
+  text-align: center;
   gap: var(--space-lg);
   padding-top: clamp(2rem, 4vw, 3rem);
   border-top: 1px solid rgba(255, 255, 255, 0.18);
@@ -2214,15 +2216,30 @@ h3,
   display: grid;
   place-items: center;
 }
-.rime__screen--with {
-  min-height: 70svh;
+.rime__screen--logo {
+  min-height: 88svh;
+  padding-top: 5rem;
 }
 .rime__screen--title {
-  min-height: 90svh;
+  min-height: 0;
+  padding-bottom: clamp(5rem, 10vw, 8rem);
 }
+/* logo complet : le symbole au-dessus du nom ARUM Gestion Privée (proportions du logo vertical) */
 .rime__logo {
-  height: clamp(180px, 42vh, 380px);
-  width: auto;
+  display: grid;
+  justify-items: center;
+  gap: calc(var(--w) * 0.07);
+  --w: clamp(240px, 28vw, 380px);
+  width: var(--w);
+  margin: 0;
+}
+.rime__symbol {
+  width: calc(var(--w) * 0.308);
+  height: auto;
+}
+.rime__name {
+  width: 100%;
+  height: auto;
 }
 @media (prefers-reduced-motion: no-preference) {
   .rime__logo {
@@ -2236,9 +2253,10 @@ h3,
   }
 }
 .rime__with {
+  margin-bottom: var(--space-sm);
   font-family: var(--font-accent);
   font-style: italic;
-  font-size: clamp(2.2rem, 1.4rem + 3.6vw, 4.6rem);
+  font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3.2rem);
   color: var(--copper-light);
 }
 .rime__head {
