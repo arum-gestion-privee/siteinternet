@@ -2217,7 +2217,7 @@ h3,
   place-items: center;
 }
 .rime__screen--logo {
-  min-height: 88svh;
+  min-height: 100svh;
   padding-top: 5rem;
 }
 .rime__screen--title {

@@ -8,7 +8,7 @@ import { APPROACH } from "../content/site.js";
  * Ouverture en enchaînement (logo ARUM… rime avec… Agir en confiance), puis l'offre en trois temps.
  */
 export default function AgirEnConfiance() {
-  useArrive(".rime__head > *");
+  useArrive(".rime__head > *", { afterScroll: true });
   return (
     <>
       <Seo

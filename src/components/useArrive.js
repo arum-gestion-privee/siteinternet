@@ -3,8 +3,9 @@ import { useEffect } from "react";
 /**
  * Fait arriver en fondu, vers le haut, les éléments choisis quand on les atteint en défilant
  * (classes .arrive / .is-in, styles dans PageHero.css). Sans effet si l'appareil réduit les animations.
+ * afterScroll : rien n'apparaît avant que l'on ait commencé à défiler, même si c'est déjà à l'écran.
  */
-export function useArrive(selector) {
+export function useArrive(selector, { afterScroll = false } = {}) {
   useEffect(() => {
     const items = document.querySelectorAll(selector);
     if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -19,7 +20,13 @@ export function useArrive(selector) {
         }),
       { rootMargin: "0px 0px -15% 0px" },
     );
-    items.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, [selector]);
+    const start = () => items.forEach((el) => io.observe(el));
+    if (afterScroll && window.scrollY < 10) {
+      window.addEventListener("scroll", start, { once: true, passive: true });
+    } else start();
+    return () => {
+      window.removeEventListener("scroll", start);
+      io.disconnect();
+    };
+  }, [selector, afterScroll]);
 }
