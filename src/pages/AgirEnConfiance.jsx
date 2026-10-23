@@ -1,27 +1,36 @@
 import Seo from "../components/Seo.jsx";
-import PageHero from "../components/PageHero.jsx";
+import { useArrive } from "../components/useArrive.js";
+import "../components/PageHero.css"; // rubrique, phrase d'accroche, apparitions
 import { Partners, CtaBand } from "../components/Sections.jsx";
 import { APPROACH } from "../content/site.js";
 
 /*
- * Construite comme « Notre approche » de Hottinger Gaultier : ouverture aérée, titre | texte, puis l'offre en trois temps.
+ * Ouverture en enchaînement (ARUM… rime avec… Agir en confiance), puis l'offre en trois temps.
  */
 export default function AgirEnConfiance() {
+  useArrive(".rime__with, .rime__head > *");
   return (
     <>
       <Seo
         title="Agir en confiance"
         description="Expertise, approche transversale, sur-mesure : l'offre en trois temps d'ARUM Gestion Privée, votre family-office."
       />
-      <PageHero
-        className="phero--accent phero--logo"
-        kicker="Notre approche"
-        title="Agir en confiance"
-        motif={false}
-        logo
-      >
-        <p className="phero__sub">{APPROACH.familyOffice}</p>
-      </PageHero>
+      {/* enchaînement d'ouverture : le symbole ARUM seul, puis « rime avec », puis « Agir en confiance » */}
+      <section className="rime">
+        <div className="rime__screen rime__screen--logo">
+          <img className="rime__logo" src="/brand/symbole.svg" alt="ARUM" width="194" height="245" />
+        </div>
+        <div className="rime__screen rime__screen--with">
+          <p className="rime__with">rime avec</p>
+        </div>
+        <div className="rime__screen rime__screen--title">
+          <div className="shell rime__head">
+            <p className="phero__kicker">Notre approche</p>
+            <h1>Agir en confiance</h1>
+            <p className="phero__sub">{APPROACH.familyOffice}</p>
+          </div>
+        </div>
+      </section>
 
       <section className="section section--navy">
         <div className="shell">

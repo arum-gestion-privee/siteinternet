@@ -2203,3 +2203,59 @@ h3,
     padding-top: 6.5rem;
   }
 }
+
+/* Agir en confiance : enchaînement d'ouverture, un écran par élément */
+.rime {
+  text-align: center;
+  color: #fff;
+}
+.rime__screen {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+}
+.rime__screen--with {
+  min-height: 70svh;
+}
+.rime__screen--title {
+  min-height: 90svh;
+}
+.rime__logo {
+  height: clamp(180px, 42vh, 380px);
+  width: auto;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .rime__logo {
+    animation: rime-logo 2.6s var(--ease-out-expo) both;
+  }
+}
+@keyframes rime-logo {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(14px);
+  }
+}
+.rime__with {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: clamp(2.2rem, 1.4rem + 3.6vw, 4.6rem);
+  color: var(--copper-light);
+}
+.rime__head {
+  display: grid;
+  justify-items: center;
+}
+.rime__head h1 {
+  font-size: clamp(3rem, 1.8rem + 5vw, 6.4rem);
+  line-height: 1.04;
+  color: #fff;
+}
+.rime__head .phero__sub {
+  margin-inline: auto;
+}
+.rime__head > .arrive:nth-child(2) {
+  transition-delay: 0.25s;
+}
+.rime__head > .arrive:nth-child(3) {
+  transition-delay: 0.5s;
+}

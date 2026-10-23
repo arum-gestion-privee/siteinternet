@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import Seo, { SITE_ORIGIN, ORG_ID } from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
+import { useArrive } from "../components/useArrive.js";
 import LiquidButton from "../components/LiquidButton.jsx";
 import { IconArrow, IconLinkedIn } from "../components/icons.jsx";
 import { TEAM, TEAM_PAGE } from "../content/site.js";
@@ -21,29 +21,9 @@ const CROWD = ["vincent", "marie", "patrick", "anne-laure", "genevieve", "sandri
   TEAM.find((m) => m.slug.startsWith(k)),
 );
 
-/** Fait arriver le titre puis le texte de l'ouverture quand on les atteint en défilant. */
-function useHeroReveal() {
-  useEffect(() => {
-    const items = document.querySelectorAll(".phero--after .phero__main, .phero--after .phero__aside > *");
-    if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    items.forEach((el) => el.classList.add("arrive"));
-    const io = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-in");
-            io.unobserve(e.target);
-          }
-        }),
-      { rootMargin: "0px 0px -15% 0px" },
-    );
-    items.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
-}
-
 export default function NousConnaitre() {
-  useHeroReveal();
+  // le titre puis le texte de l'ouverture arrivent en défilant
+  useArrive(".phero--after .phero__main, .phero--after .phero__aside > *");
   return (
     <>
       <Seo
