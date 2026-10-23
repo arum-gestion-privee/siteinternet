@@ -19,10 +19,7 @@ export default function AgirEnConfiance() {
       {/* ouverture centrée comme Le sur-mesure, qui se lit : ARUM rime avec Agir en confiance */}
       <section className="sm-open">
         <div className="shell sm-open__inner rime__head">
-          <figure className="rime__logo" role="img" aria-label="ARUM Gestion Privée">
-            <img className="rime__symbol" src="/brand/symbole.svg" alt="" width="194" height="245" />
-            <img className="rime__name" src="/brand/nom-blanc.png" alt="" width="633" height="190" />
-          </figure>
+          <img className="rime__arum" src="/brand/arum-blanc.png" alt="ARUM" width="633" height="136" />
           <p className="rime__with">rime avec</p>
           <h1>Agir en confiance</h1>
           <p className="sm-open__text">{APPROACH.familyOffice}</p>
