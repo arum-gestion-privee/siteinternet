@@ -2206,30 +2206,13 @@ h3,
   }
 }
 
-/* Agir en confiance : enchaînement d'ouverture, un écran par élément */
-.rime {
-  text-align: center;
-  color: #fff;
-}
-.rime__screen {
-  min-height: 100svh;
-  display: grid;
-  place-items: center;
-}
-.rime__screen--logo {
-  min-height: 100svh;
-  padding-top: 5rem;
-}
-.rime__screen--title {
-  min-height: 0;
-  padding-bottom: clamp(5rem, 10vw, 8rem);
-}
+/* Agir en confiance : ouverture « ARUM rime avec Agir en confiance » */
 /* logo complet : le symbole au-dessus du nom ARUM Gestion Privée (proportions du logo vertical) */
 .rime__logo {
   display: grid;
   justify-items: center;
   gap: calc(var(--w) * 0.07);
-  --w: clamp(240px, 28vw, 380px);
+  --w: clamp(180px, 18vw, 260px);
   width: var(--w);
   margin: 0;
 }
@@ -2252,8 +2235,13 @@ h3,
     transform: scale(0.92) translateY(14px);
   }
 }
-.rime__with {
+.rime__head .rime__logo {
   margin-bottom: var(--space-sm);
+}
+.rime__head .rime__with {
+  margin-bottom: calc(-1 * var(--space-md));
+}
+.rime__with {
   font-family: var(--font-accent);
   font-style: italic;
   font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3.2rem);

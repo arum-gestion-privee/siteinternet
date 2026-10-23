@@ -5,30 +5,27 @@ import { Partners, CtaBand } from "../components/Sections.jsx";
 import { APPROACH } from "../content/site.js";
 
 /*
- * Ouverture en enchaînement (logo ARUM… rime avec… Agir en confiance), puis l'offre en trois temps.
+ * Ouverture en enchaînement (ARUM rime avec Agir en confiance), puis l'offre en trois temps.
  */
 export default function AgirEnConfiance() {
-  useArrive(".rime__head > *", { afterScroll: true });
+  // la présentation de l'offre n'arrive, en fondu, qu'une fois le défilement commencé
+  useArrive(".first-in", { afterScroll: true });
   return (
     <>
       <Seo
         title="Agir en confiance"
         description="Expertise, approche transversale, sur-mesure : l'offre en trois temps d'ARUM Gestion Privée, votre family-office."
       />
-      {/* enchaînement d'ouverture : le logo ARUM seul, puis « rime avec… Agir en confiance » */}
-      <section className="rime">
-        <div className="rime__screen rime__screen--logo">
+      {/* ouverture centrée comme Le sur-mesure, qui se lit : ARUM rime avec Agir en confiance */}
+      <section className="sm-open">
+        <div className="shell sm-open__inner rime__head">
           <figure className="rime__logo" role="img" aria-label="ARUM Gestion Privée">
             <img className="rime__symbol" src="/brand/symbole.svg" alt="" width="194" height="245" />
             <img className="rime__name" src="/brand/nom-blanc.png" alt="" width="633" height="190" />
           </figure>
-        </div>
-        <div className="rime__screen rime__screen--title">
-          <div className="shell rime__head">
-            <p className="rime__with">rime avec</p>
-            <h1>Agir en confiance</h1>
-            <p className="phero__sub">{APPROACH.familyOffice}</p>
-          </div>
+          <p className="rime__with">rime avec</p>
+          <h1>Agir en confiance</h1>
+          <p className="sm-open__text">{APPROACH.familyOffice}</p>
         </div>
       </section>
 
@@ -36,7 +33,7 @@ export default function AgirEnConfiance() {
         <div className="shell">
           {/* construit comme « Discernement » de Hottinger Gaultier : filet, grand titre, texte,
               puis les trois temps en grandes phrases centrées qui s'éclairent au passage */}
-          <div className="approach reveal">
+          <div className="approach first-in">
             <h2>{APPROACH.offerTitle}</h2>
             <p>{APPROACH.lead[1]}</p>
           </div>
