@@ -2317,3 +2317,43 @@ h3,
 .sm-open + .section {
   padding-top: 0;
 }
+
+/* Des valeurs de famille : titre et texte blanc à gauche, texte gris à droite, sans boîte, même police */
+.duo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: end;
+}
+.duo h2 {
+  margin-bottom: var(--space-lg);
+  font-size: clamp(2rem, 1.4rem + 2.4vw, 3.4rem);
+  line-height: 1.1;
+}
+.section--navy .duo__lead,
+.section--navy .duo__body {
+  font-size: var(--step-1);
+  line-height: 1.6;
+}
+.section--navy .duo__lead {
+  color: #fff;
+  font-weight: 500;
+}
+.duo__lead + .duo__lead {
+  margin-top: var(--space-sm);
+}
+.section--navy .duo__body {
+  color: var(--on-navy-dim);
+}
+/* le professionnalisme, en grand et en blanc */
+.section--navy .valeurs__pro {
+  font-family: var(--font-accent);
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.3rem);
+  line-height: 1.4;
+  color: #fff;
+}
+@media (max-width: 860px) {
+  .duo {
+    grid-template-columns: 1fr;
+  }
+}

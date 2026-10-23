@@ -48,47 +48,36 @@ export default function Valeurs() {
         </div>
       </section>
 
+      {/* sans boîte : à gauche le titre et l'engagement (blanc), à droite le constat (gris), même police */}
       <section className="section section--navy">
-        <div className="shell">
-          <div className="section__head reveal">
+        <div className="shell duo reveal">
+          <div>
             <h2>{fr(VALUES.title)}</h2>
+            {VALUES.mindset.slice(1).map((p) => (
+              <p key={p} className="duo__lead">
+                {p}
+              </p>
+            ))}
           </div>
-          {/* l'engagement mis en avant, puis le constat qui le fonde */}
-          <div className="panel reveal">
-            <div className="panel__lead">
-              {VALUES.mindset.slice(1).map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
-            <span className="panel__bar" aria-hidden="true" />
-            <div className="panel__body">
-              <p>{VALUES.mindset[0]}</p>
-            </div>
-          </div>
+          <p className="duo__body">{VALUES.mindset[0]}</p>
         </div>
       </section>
 
+      {/* le professionnalisme, mis en avant en grand à côté du portrait */}
       <section className="section section--navy">
         <div className="shell split">
-          <div className="intro__body reveal">
-            <p>{VALUES.professionalism}</p>
-          </div>
+          <p className="valeurs__pro reveal">{VALUES.professionalism}</p>
           <Portrait {...VALUES.professionalismPhoto} cta={null} className="reveal" />
         </div>
       </section>
 
       <section className="section section--navy">
-        <div className="shell">
-          <div className="section__head reveal">
+        <div className="shell duo reveal">
+          <div>
             <h2>{fr(VALUES.freedomTitle)}</h2>
+            <p className="duo__lead">{freedomFirst}.</p>
           </div>
-          <div className="panel reveal">
-            <p className="panel__lead">{freedomFirst}.</p>
-            <span className="panel__bar" aria-hidden="true" />
-            <div className="panel__body">
-              <p>{freedomRest}</p>
-            </div>
-          </div>
+          <p className="duo__body">{freedomRest}</p>
         </div>
       </section>
       <CtaBand />
