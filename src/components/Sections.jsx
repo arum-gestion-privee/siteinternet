@@ -109,6 +109,42 @@ export function Objectives({ withAnchors = false }) {
   );
 }
 
+/** Pictogrammes des objectifs : trait fin, même grille (24), même épaisseur. */
+const OBJECTIVE_ICONS = {
+  // transmettre : un arbre de générations (un parent, deux enfants)
+  transmettre: (
+    <>
+      <circle cx="12" cy="5" r="2.25" />
+      <circle cx="6" cy="19" r="2.25" />
+      <circle cx="18" cy="19" r="2.25" />
+      <path d="M12 7.25V12M6 16.75V14.5a2.5 2.5 0 0 1 2.5-2.5h7a2.5 2.5 0 0 1 2.5 2.5v2.25" />
+    </>
+  ),
+  // protéger : un écusson
+  proteger: (
+    <>
+      <path d="M12 3 19 5.75v5.5c0 4.4-2.95 8.1-7 9.75-4.05-1.65-7-5.35-7-9.75v-5.5Z" />
+      <path d="m8.75 12 2.25 2.25 4.25-4.5" />
+    </>
+  ),
+  // organiser : trois strates superposées
+  organiser: (
+    <>
+      <path d="M12 3.5 21 8l-9 4.5L3 8Z" />
+      <path d="m3 12 9 4.5 9-4.5" />
+      <path d="m3 16 9 4.5 9-4.5" />
+    </>
+  ),
+  // optimiser : une courbe ascendante sur deux axes
+  optimiser: (
+    <>
+      <path d="M3.5 3.5v17h17" />
+      <path d="m7 15.5 4-4.5 3 2.5 5.5-6.5" />
+      <path d="M15.5 7h4v4" />
+    </>
+  ),
+};
+
 /**
  * Les quatre objectifs en onglets (Le sur-mesure) : la liste à gauche, l'objectif choisi détaillé à droite.
  * Chaque onglet garde l'ancre d'origine (/sur-mesure#transmettre…), qui l'ouvre directement.
@@ -143,7 +179,11 @@ export function ObjectiveTabs() {
         ))}
       </div>
       <div className="otabs__panel" id="otabs-panel" role="tabpanel" aria-labelledby={active} key={active}>
-        <span className="panel__bar" aria-hidden="true" />
+        <span className="otabs__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+            {OBJECTIVE_ICONS[current.id]}
+          </svg>
+        </span>
         <p>{current.text}</p>
       </div>
     </div>
