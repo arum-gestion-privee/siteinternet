@@ -127,7 +127,6 @@ export function ObjectiveTabs() {
         {OBJECTIVES.map((o, i) => (
           <button
             key={o.id}
-            id={o.id}
             type="button"
             role="tab"
             aria-selected={o.id === active}
@@ -136,13 +135,15 @@ export function ObjectiveTabs() {
             onClick={() => setActive(o.id)}
           >
             <span className="otabs__n">{String(i + 1).padStart(2, "0")}</span>
-            <span className="otabs__verb">{o.verb}</span>
+            <span className="otabs__verb" id={o.id}>
+              {o.verb}
+            </span>
             <span className="otabs__object">{o.object}</span>
           </button>
         ))}
       </div>
       <div className="otabs__panel" id="otabs-panel" role="tabpanel" aria-labelledby={active} key={active}>
-        <Icon src={current.icon} className={`picto--${current.id}`} />
+        <span className="panel__bar" aria-hidden="true" />
         <p>{current.text}</p>
       </div>
     </div>
@@ -243,7 +244,7 @@ export function NewsList({ limit, items = NEWS }) {
  */
 export function CtaBand({ title = "Initier un échange", text }) {
   return (
-    <section className="cta">
+    <section className="cta" data-step={title}>
       <div className="shell">
         <div className="panel cta__inner">
           <div>

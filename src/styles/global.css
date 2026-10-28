@@ -2395,52 +2395,6 @@ h3,
 
 /* Le sur-mesure : parcours en trois étapes au centre ; à gauche, un fil court à trois points, collé pendant
    la lecture, dont le point de l'étape en cours s'allume */
-.path-wrap {
-  display: grid;
-  grid-template-columns: 1.5rem minmax(0, 1fr);
-  gap: clamp(1rem, 3vw, 3rem);
-}
-.path__rail {
-  position: sticky;
-  top: calc(50vh - 60px);
-  align-self: start;
-  display: grid;
-  justify-items: center;
-  align-content: space-between;
-  height: 120px;
-}
-.path__rail::before {
-  content: "";
-  position: absolute;
-  top: 6px;
-  bottom: 6px;
-  left: 50%;
-  width: 1px;
-  background: rgba(255, 255, 255, 0.22);
-}
-.path__rail span {
-  position: relative;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  border: 1px solid rgba(210, 153, 101, 0.7);
-  background: var(--navy-bg);
-  transition: background 0.6s, transform 0.6s;
-}
-.path-wrap:has(.path__step:nth-child(1).is-lit) .path__rail span:nth-child(1),
-.path-wrap:has(.path__step:nth-child(2).is-lit) .path__rail span:nth-child(2),
-.path-wrap:has(.path__step:nth-child(3).is-lit) .path__rail span:nth-child(3) {
-  background: var(--copper-light);
-  transform: scale(1.3);
-}
-@media (max-width: 700px) {
-  .path-wrap {
-    grid-template-columns: 1fr;
-  }
-  .path__rail {
-    display: none;
-  }
-}
 .path {
   list-style: none;
   display: grid;
@@ -2495,44 +2449,60 @@ h3,
   display: grid;
 }
 .otabs__tab {
+  position: relative;
   display: grid;
-  grid-template-columns: 3rem 1fr;
+  grid-template-columns: 2.5rem 1fr;
   align-items: baseline;
   column-gap: 1rem;
-  padding: 1.1rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 1.15rem 0 1.15rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   background: none;
   color: #fff;
   text-align: left;
   cursor: pointer;
-  opacity: 0.45;
+  opacity: 0.5;
   transition: opacity var(--dur-base);
 }
 .otabs__tab:last-child {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+/* repère orange à gauche de l'objectif choisi */
+.otabs__tab::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.15rem;
+  bottom: 1.15rem;
+  width: 2px;
+  background: var(--copper-light);
+  transform: scaleY(0);
+  transition: transform var(--dur-base) var(--ease-out-expo);
 }
 .otabs__tab:hover,
 .otabs__tab[aria-selected="true"] {
   opacity: 1;
 }
+.otabs__tab[aria-selected="true"]::before {
+  transform: scaleY(1);
+}
 .otabs__n {
-  font-family: var(--font-accent);
-  font-style: italic;
-  font-size: 1.3rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  font-variant-numeric: tabular-nums;
   color: var(--copper-light);
 }
 .otabs__verb {
-  font-family: var(--font-accent);
-  font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.4rem);
-  line-height: 1.1;
+  font-size: clamp(1.15rem, 1rem + 0.5vw, 1.4rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
 }
 .otabs__object {
   grid-column: 2;
+  margin-top: 0.15rem;
   font-size: var(--step--1);
   color: var(--on-navy-dim);
-}
-.otabs__tab[aria-selected="true"] .otabs__verb {
-  color: var(--copper-light);
 }
 .otabs__panel {
   display: grid;
@@ -2545,10 +2515,8 @@ h3,
   color: #fff;
   animation: otabs-in 0.6s var(--ease-out-expo) both;
 }
-.otabs__panel .picto {
-  width: 64px;
-  height: 64px;
-  background: var(--copper-light);
+.otabs__panel .panel__bar {
+  margin: 0;
 }
 .otabs__panel p {
   font-size: var(--step-1);
@@ -2568,4 +2536,50 @@ h3,
 }
 .otabs__tab:focus:not(:focus-visible) {
   outline: none;
+}
+
+/* fil de lecture (toutes les pages sauf Nos décryptages) : trait court à gauche de l'écran, un point par partie,
+   le point de la partie en cours allumé ; l'écart entre points se resserre quand il y a beaucoup de parties */
+.rail {
+  --gap: clamp(26px, calc(300px / var(--n)), 55px);
+  position: fixed;
+  z-index: 40;
+  left: clamp(0.75rem, 2vw, 2rem);
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  gap: calc(var(--gap) - 11px);
+  justify-items: center;
+}
+.rail::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.22);
+}
+.rail__dot {
+  position: relative;
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(210, 153, 101, 0.7);
+  background: var(--navy-bg);
+  cursor: pointer;
+  transition: background 0.5s, transform 0.5s;
+}
+.rail__dot:hover,
+.rail__dot.is-on {
+  background: var(--copper-light);
+}
+.rail__dot.is-on {
+  transform: scale(1.35);
+}
+@media (max-width: 860px) {
+  .rail {
+    display: none;
+  }
 }

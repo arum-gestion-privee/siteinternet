@@ -71,6 +71,7 @@ Bas de toutes les pages : `LicencesBand` (Nos agréments, dans `App.jsx`) puis l
 | Accueil | `src/pages/Home.jsx` + `Home.css` |
 | Composants partagés (objectifs en onglets, chiffres, portraits, agréments…) | `src/components/Sections.jsx` |
 | Apparitions au défilement (`useArrive`) et éclairage au passage (`useLight`) | `src/components/useArrive.js` |
+| Fil de lecture à gauche (un point par élément `data-step`, absent de Nos décryptages) | `src/components/ReadingRail.jsx` |
 | Couleurs, styles communs | `src/styles/global.css` (variables en tête) |
 | Sécurité (CSP stricte, HSTS…), redirections | `public/_headers`, `public/_redirects` |
 | SEO / données structurées | `src/components/Seo.jsx`, `index.html`, `scripts/postbuild.mjs` |

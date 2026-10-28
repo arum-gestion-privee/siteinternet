@@ -33,7 +33,7 @@ export default function NousConnaitre() {
       />
 
       {/* on arrive sur toute l'équipe réunie, sous un filtre bleu ; le titre et le texte apparaissent en défilant */}
-      <div className="crowd-band crowd-band--open" role="img" aria-label="L'équipe d'ARUM Gestion Privée">
+      <div className="crowd-band crowd-band--open" data-step="L'équipe" role="img" aria-label="L'équipe d'ARUM Gestion Privée">
         {/* filtre bleu (duotone bleu nuit / bleu clair, à moitié mêlé aux couleurs d'origine) */}
         <svg width="0" height="0" aria-hidden="true" focusable="false" className="crowd__defs">
           <filter id="crowd-blue" colorInterpolationFilters="sRGB">
@@ -49,6 +49,7 @@ export default function NousConnaitre() {
 
       <PageHero
         className="phero--accent phero--after"
+        step="Présentation"
         kicker="Nous connaître"
         title={TEAM_PAGE.title}
         lead={TEAM_PAGE.lead}
@@ -58,7 +59,7 @@ export default function NousConnaitre() {
 
       <section className="section section--navy">
         {/* introduction à la présentation de l'équipe : centrée, avant les portraits */}
-        <div className="shell team-intro reveal">
+        <div className="shell team-intro reveal" data-step="Créée en 2014">
           <p>{TEAM_PAGE.text[1]}</p>
           <span className="panel__bar" aria-hidden="true" />
         </div>
@@ -66,7 +67,7 @@ export default function NousConnaitre() {
 
       {/* Page entièrement sur fond bleu nuit ; un bandeau par personne, séparé d'un filet */}
       {TEAM.map((m, i) => (
-        <section key={m.slug} id={m.slug} className="section section--navy member-band">
+        <section key={m.slug} id={m.slug} className="section section--navy member-band" data-step={m.name}>
           <div className="shell">
             <article className={"member reveal" + (i % 2 ? " member--alt" : "")}>
               <div className="member__photo">
@@ -101,7 +102,7 @@ export default function NousConnaitre() {
       ))}
 
       {/* Deux appels côte à côte : « Initier un échange » à gauche, candidatures spontanées à droite */}
-      <section className="section section--navy member-band">
+      <section className="section section--navy member-band" data-step="Initier un échange">
         <div className="shell duo-cta">
           <div className="panel duo-cta__card reveal">
             <div>

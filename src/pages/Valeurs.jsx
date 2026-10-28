@@ -23,7 +23,7 @@ export default function Valeurs() {
       <CenteredHero title="Des valeurs de famille" text={fr(DIFFERENCE.tagline)} />
 
       <section className="section section--navy">
-        <div className="shell split first-in">
+        <div className="shell split first-in" data-step="Citation d'Anne-Laure Boccon-Gibod">
           <figure className="lead-quote lead-quote--mark">
             <blockquote>
               <p>{VALUES.lead}</p>
@@ -43,7 +43,7 @@ export default function Valeurs() {
       {/* trois chapitres numérotés : le numéro à gauche, le titre et l'essentiel en blanc, le développement en gris */}
       <section className="section section--navy">
         <ol className="shell chapters">
-          <li className="chapter">
+          <li className="chapter" data-step="Un état d'esprit différent">
             <span className="chapter__n">01</span>
             <div className="chapter__head">
               <h2>{fr(VALUES.title)}</h2>
@@ -55,7 +55,7 @@ export default function Valeurs() {
             </div>
             <p className="chapter__body">{VALUES.mindset[0]}</p>
           </li>
-          <li className="chapter">
+          <li className="chapter" data-step="Diversité des expériences">
             <span className="chapter__n">02</span>
             <div className="chapter__head">
               <h2>Diversité des expériences</h2>
@@ -63,7 +63,7 @@ export default function Valeurs() {
             </div>
             <Portrait {...VALUES.professionalismPhoto} cta={null} className="chapter__portrait" />
           </li>
-          <li className="chapter">
+          <li className="chapter" data-step="Libre en droit, libre d'esprit">
             <span className="chapter__n">03</span>
             <div className="chapter__head">
               <h2>{fr(VALUES.freedomTitle)}</h2>
@@ -76,7 +76,7 @@ export default function Valeurs() {
 
       {/* le film « Je suis ARUM Gestion Privée » */}
       <section className="section section--navy">
-        <div className="shell">
+        <div className="shell" data-step="Le film">
           <video className="film" controls playsInline preload="metadata" poster="/video/arum-film-poster.webp">
             <source src="/video/arum-film.mp4" type="video/mp4" />
             <source src="/video/arum-film.webm" type="video/webm" />

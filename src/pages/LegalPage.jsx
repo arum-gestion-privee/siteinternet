@@ -5,11 +5,11 @@ export default function LegalPage({ doc }) {
   return (
     <>
       <Seo title={doc.title} />
-      <PageHero kicker="Informations" title={doc.title} />
+      <PageHero kicker="Informations" title={doc.title} step={doc.title} />
       <section className="section section--navy">
         <div className="shell legal">
           {doc.sections.map((s) => (
-            <section key={s.title}>
+            <section key={s.title} data-step={s.title}>
               <h2>{s.title}</h2>
               {s.paras.map((p) =>
                 p.startsWith("•") ? (

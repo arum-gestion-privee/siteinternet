@@ -96,13 +96,13 @@ export default function Home() {
         </div>
 
         {/* ouverture : le symbole ARUM seul, au centre */}
-        <section className="hx__intro">
+        <section className="hx__intro" data-step="Accueil">
           <h1 className="sr-only">ARUM Gestion Privée</h1>
           <img className="hx__logo" src="/brand/symbole.svg" alt="" width="194" height="245" />
         </section>
 
         {/* premier écran : la promesse du cabinet */}
-        <section className="hx__panel">
+        <section className="hx__panel" data-step="ARUM Gestion Privée">
           <div className="hx__content" data-reveal>
             <p className="hx__kicker">ARUM Gestion Privée</p>
             <h2 className="hx__title">
@@ -117,7 +117,7 @@ export default function Home() {
 
         {/* un écran par page du site */}
         {PANELS.map((p) => (
-          <section key={p.to} className="hx__panel">
+          <section key={p.to} className="hx__panel" data-step={p.kicker}>
             <div className="hx__content" data-reveal>
               <p className="hx__kicker">{p.kicker}</p>
               <h2 className="hx__title">{p.title}</h2>

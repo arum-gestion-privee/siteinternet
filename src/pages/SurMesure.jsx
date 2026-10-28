@@ -22,29 +22,24 @@ export default function SurMesure() {
       <CenteredHero title="Le sur-mesure" text={`${HOME.unique} ${HOME.uniqueEnd}`} />
 
       <section className="section section--navy">
-        <div className="shell first-in">
+        <div className="shell first-in" data-step="Citation d'Anne-Laure Boccon-Gibod">
           <Quote text={BESPOKE.quote} name={al.name} role={al.role} photo={al.photo} light center />
         </div>
       </section>
 
-      {/* parcours en trois étapes ; à gauche, un petit fil à trois points suit la lecture */}
+      {/* parcours en trois étapes (le fil de lecture à gauche de l'écran en marque chaque partie) */}
       <section className="section section--navy">
-        <div className="shell path-wrap">
-          <div className="path__rail" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-          </div>
+        <div className="shell">
         <ol className="path">
-          <li className="path__step">
+          <li className="path__step" data-step="Une relation de confiance">
             <h2>Notre objectif : construire avec vous une relation de confiance</h2>
             <p className="path__text">{DIFFERENCE.text}</p>
           </li>
-          <li className="path__step">
+          <li className="path__step" data-step="Ce qui nous différencie">
             <h2>{fr(DIFFERENCE.title)}</h2>
             <Comparison />
           </li>
-          <li className="path__step">
+          <li className="path__step" data-step="Une stratégie ajustée à vos objectifs">
             <h2>Une stratégie ajustée à vos objectifs</h2>
             <p className="path__text path__text--lead">{HOME.strategy}</p>
             <p className="path__text">
@@ -58,7 +53,7 @@ export default function SurMesure() {
 
       {/* pour finir, la citation de Geneviève Werner */}
       <section className="section section--navy">
-        <div className="shell">
+        <div className="shell" data-step="Citation de Geneviève Werner">
           <Quote text={gw.quote} name={gw.name} role={gw.role} photo="/img/equipe/genevieve-sur-mesure.webp" light center />
         </div>
       </section>

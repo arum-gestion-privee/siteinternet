@@ -4,6 +4,7 @@ import LiquidDefs from "./components/LiquidDefs.jsx";
 import LiquidNav from "./components/LiquidNav.jsx";
 import SiteFooter from "./components/SiteFooter.jsx";
 import { LicencesBand } from "./components/Sections.jsx";
+import ReadingRail from "./components/ReadingRail.jsx";
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -26,6 +27,7 @@ export default function App() {
       <ScrollManager />
       <LiquidDefs />
       <LiquidNav />
+      <ReadingRail />
       <main id="contenu">
         <Outlet />
         {/* sur toutes les pages, juste au-dessus du pied de page */}
