@@ -2484,7 +2484,7 @@ h3,
   opacity: 1;
 }
 
-/* les quatre objectifs en onglets : la liste à gauche, l'objectif choisi en dégradé orange à droite */
+/* les quatre objectifs en onglets : la liste à gauche, l'objectif choisi dans un bloc en verre à droite */
 .otabs {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -2540,14 +2540,15 @@ h3,
   gap: var(--space-md);
   padding: clamp(1.75rem, 4vw, 3rem);
   border-radius: 24px;
-  background: var(--orange-grad);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
   color: #fff;
   animation: otabs-in 0.6s var(--ease-out-expo) both;
 }
 .otabs__panel .picto {
   width: 64px;
   height: 64px;
-  background: #fff;
+  background: var(--copper-light);
 }
 .otabs__panel p {
   font-size: var(--step-1);
@@ -2564,4 +2565,7 @@ h3,
   .otabs {
     grid-template-columns: 1fr;
   }
+}
+.otabs__tab:focus:not(:focus-visible) {
+  outline: none;
 }
