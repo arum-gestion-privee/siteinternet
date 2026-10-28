@@ -244,7 +244,7 @@ export function NewsList({ limit, items = NEWS }) {
  */
 export function CtaBand({ title = "Initier un échange", text }) {
   return (
-    <section className="cta" data-step={title}>
+    <section className="cta">
       <div className="shell">
         <div className="panel cta__inner">
           <div>
