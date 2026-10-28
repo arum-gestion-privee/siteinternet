@@ -59,7 +59,7 @@ export default function NousConnaitre() {
 
       <section className="section section--navy">
         {/* introduction à la présentation de l'équipe : centrée, avant les portraits */}
-        <div className="shell team-intro reveal" data-step="Créée en 2014">
+        <div className="shell team-intro reveal">
           <p>{TEAM_PAGE.text[1]}</p>
           <span className="panel__bar" aria-hidden="true" />
         </div>
@@ -102,7 +102,7 @@ export default function NousConnaitre() {
       ))}
 
       {/* Deux appels côte à côte : « Initier un échange » à gauche, candidatures spontanées à droite */}
-      <section className="section section--navy member-band" data-step="Initier un échange">
+      <section className="section section--navy member-band">
         <div className="shell duo-cta">
           <div className="panel duo-cta__card reveal">
             <div>
