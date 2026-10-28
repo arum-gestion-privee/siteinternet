@@ -143,9 +143,6 @@ export function ObjectiveTabs() {
       </div>
       <div className="otabs__panel" id="otabs-panel" role="tabpanel" aria-labelledby={active} key={active}>
         <Icon src={current.icon} className={`picto--${current.id}`} />
-        <h3>
-          {current.verb} <span>{current.object}</span>
-        </h3>
         <p>{current.text}</p>
       </div>
     </div>

@@ -2393,7 +2393,54 @@ h3,
   }
 }
 
-/* Le sur-mesure : parcours en trois étapes au centre, reliées par un fil ; le repère s'allume au passage */
+/* Le sur-mesure : parcours en trois étapes au centre ; à gauche, un fil court à trois points, collé pendant
+   la lecture, dont le point de l'étape en cours s'allume */
+.path-wrap {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 3rem);
+}
+.path__rail {
+  position: sticky;
+  top: calc(50vh - 60px);
+  align-self: start;
+  display: grid;
+  justify-items: center;
+  align-content: space-between;
+  height: 120px;
+}
+.path__rail::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.22);
+}
+.path__rail span {
+  position: relative;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1px solid rgba(210, 153, 101, 0.7);
+  background: var(--navy-bg);
+  transition: background 0.6s, transform 0.6s;
+}
+.path-wrap:has(.path__step:nth-child(1).is-lit) .path__rail span:nth-child(1),
+.path-wrap:has(.path__step:nth-child(2).is-lit) .path__rail span:nth-child(2),
+.path-wrap:has(.path__step:nth-child(3).is-lit) .path__rail span:nth-child(3) {
+  background: var(--copper-light);
+  transform: scale(1.3);
+}
+@media (max-width: 700px) {
+  .path-wrap {
+    grid-template-columns: 1fr;
+  }
+  .path__rail {
+    display: none;
+  }
+}
 .path {
   list-style: none;
   display: grid;
@@ -2405,28 +2452,6 @@ h3,
   display: grid;
   justify-items: center;
   gap: var(--space-lg);
-}
-.path__step + .path__step::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 100%;
-  width: 1px;
-  height: clamp(6rem, 12vw, 10rem);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(210, 153, 101, 0.6));
-}
-.path__n {
-  display: grid;
-  place-items: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: 1px solid rgba(210, 153, 101, 0.6);
-  font-family: var(--font-accent);
-  font-style: italic;
-  font-size: 1.5rem;
-  color: var(--copper-light);
-  transition: background 0.8s, color 0.8s, border-color 0.8s;
 }
 .path__step h2 {
   max-width: 24ch;
@@ -2451,17 +2476,12 @@ h3,
   margin-top: var(--space-lg);
   text-align: left;
 }
-.path__step.will-light > :not(.path__n) {
+.path__step.will-light > * {
   opacity: 0.3;
   transition: opacity 1s var(--ease-out-expo);
 }
 .path__step.will-light.is-lit > * {
   opacity: 1;
-}
-.path__step.will-light.is-lit .path__n {
-  background: var(--orange-grad);
-  border-color: transparent;
-  color: #fff;
 }
 
 /* les quatre objectifs en onglets : la liste à gauche, l'objectif choisi en dégradé orange à droite */
@@ -2528,17 +2548,6 @@ h3,
   width: 64px;
   height: 64px;
   background: #fff;
-}
-.otabs__panel h3 {
-  font-size: clamp(1.8rem, 1.3rem + 1.8vw, 2.8rem);
-  line-height: 1.1;
-  color: #fff;
-}
-.otabs__panel h3 span {
-  display: block;
-  font-style: italic;
-  font-size: 0.6em;
-  opacity: 0.85;
 }
 .otabs__panel p {
   font-size: var(--step-1);

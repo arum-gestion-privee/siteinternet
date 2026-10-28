@@ -10,7 +10,7 @@ export default function SurMesure() {
   const gw = TEAM.find((m) => m.slug.startsWith("genevieve"));
   // la citation d'Anne-Laure n'arrive, en fondu, qu'une fois le défilement commencé
   useArrive(".first-in", { afterScroll: true });
-  // le parcours en trois étapes : chaque repère s'allume quand son étape passe au milieu de l'écran
+  // le parcours en trois étapes : chaque étape (et son point sur le fil) s'éclaire en passant au milieu de l'écran
   useLight(".path__step");
   return (
     <>
@@ -27,21 +27,24 @@ export default function SurMesure() {
         </div>
       </section>
 
-      {/* parcours en trois étapes, reliées par un fil vertical au centre */}
+      {/* parcours en trois étapes ; à gauche, un petit fil à trois points suit la lecture */}
       <section className="section section--navy">
-        <ol className="shell path">
+        <div className="shell path-wrap">
+          <div className="path__rail" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </div>
+        <ol className="path">
           <li className="path__step">
-            <span className="path__n">01</span>
             <h2>Notre objectif : construire avec vous une relation de confiance</h2>
             <p className="path__text">{DIFFERENCE.text}</p>
           </li>
           <li className="path__step">
-            <span className="path__n">02</span>
             <h2>{fr(DIFFERENCE.title)}</h2>
             <Comparison />
           </li>
           <li className="path__step">
-            <span className="path__n">03</span>
             <h2>Une stratégie ajustée à vos objectifs</h2>
             <p className="path__text path__text--lead">{HOME.strategy}</p>
             <p className="path__text">
@@ -50,6 +53,7 @@ export default function SurMesure() {
             <ObjectiveTabs />
           </li>
         </ol>
+        </div>
       </section>
 
       {/* pour finir, la citation de Geneviève Werner */}
