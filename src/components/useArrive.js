@@ -30,3 +30,21 @@ export function useArrive(selector, { afterScroll = false } = {}) {
     };
   }, [selector, afterScroll]);
 }
+
+/**
+ * Éclaire les éléments choisis quand ils passent au milieu de l'écran (classe .is-lit), et les ramène
+ * en retrait quand ils en sortent (classe .will-light posée par le script : sans script, tout reste éclairé).
+ */
+export function useLight(selector) {
+  useEffect(() => {
+    const items = document.querySelectorAll(selector);
+    if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    items.forEach((el) => el.classList.add("will-light"));
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.target.classList.toggle("is-lit", e.isIntersecting)),
+      { rootMargin: "-35% 0px -35% 0px" },
+    );
+    items.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [selector]);
+}

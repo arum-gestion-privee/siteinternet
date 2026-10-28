@@ -2319,42 +2319,240 @@ h3,
   padding-top: 0;
 }
 
-/* Des valeurs de famille : titre et texte blanc à gauche, texte gris à droite, sans boîte, même police */
-.duo {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(2rem, 6vw, 6rem);
-  align-items: center;
+
+/* citation d'Anne-Laure (Des valeurs de famille) : guillemets orange en haut à gauche */
+.lead-quote--mark blockquote p::before {
+  content: "“";
+  display: block;
+  margin-bottom: 0.4rem;
+  font-family: var(--font-accent);
+  font-size: 4.5rem;
+  line-height: 0.6;
+  color: var(--copper-light);
 }
-.duo h2 {
+
+/* Des valeurs de famille : trois chapitres numérotés (numéro | titre et essentiel | développement),
+   chacun s'éclaire en passant au milieu de l'écran */
+.chapters {
+  list-style: none;
+  display: grid;
+}
+.chapter {
+  display: grid;
+  grid-template-columns: clamp(4rem, 9vw, 8rem) minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+  padding-block: clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.chapter:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+.chapter__n {
+  align-self: start;
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: clamp(2.6rem, 2rem + 2.4vw, 4.4rem);
+  line-height: 1;
+  color: var(--copper-light);
+}
+.chapter h2 {
   margin-bottom: var(--space-lg);
-  font-size: clamp(2rem, 1.4rem + 2.4vw, 3.4rem);
+  font-size: clamp(2rem, 1.4rem + 2.2vw, 3.2rem);
   line-height: 1.1;
 }
-.section--navy .duo__lead,
-.section--navy .duo__body {
+.section--navy .chapter__lead,
+.section--navy .chapter__body {
   font-size: var(--step-1);
   line-height: 1.6;
 }
-.section--navy .duo__lead {
+.section--navy .chapter__lead {
   color: #fff;
   font-weight: 500;
 }
-.duo__lead + .duo__lead {
+.chapter__lead + .chapter__lead {
   margin-top: var(--space-sm);
 }
-.section--navy .duo__body {
+.section--navy .chapter__body {
   color: var(--on-navy-dim);
 }
-/* le professionnalisme, en grand et en blanc */
-.section--navy .valeurs__pro {
-  font-family: var(--font-accent);
-  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.3rem);
-  line-height: 1.4;
-  color: #fff;
+.chapter__portrait {
+  justify-self: center;
+  max-width: 360px;
+}
+.chapter.will-light {
+  opacity: 0.3;
+  transition: opacity 1s var(--ease-out-expo);
+}
+.chapter.will-light.is-lit {
+  opacity: 1;
 }
 @media (max-width: 860px) {
-  .duo {
+  .chapter {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Le sur-mesure : parcours en trois étapes au centre, reliées par un fil ; le repère s'allume au passage */
+.path {
+  list-style: none;
+  display: grid;
+  gap: clamp(6rem, 12vw, 10rem);
+  text-align: center;
+}
+.path__step {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: var(--space-lg);
+}
+.path__step + .path__step::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  width: 1px;
+  height: clamp(6rem, 12vw, 10rem);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(210, 153, 101, 0.6));
+}
+.path__n {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid rgba(210, 153, 101, 0.6);
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--copper-light);
+  transition: background 0.8s, color 0.8s, border-color 0.8s;
+}
+.path__step h2 {
+  max-width: 24ch;
+  font-size: clamp(2rem, 1.4rem + 2.2vw, 3.2rem);
+  line-height: 1.12;
+}
+.section--navy .path__text {
+  max-width: 62ch;
+  font-size: var(--step-0);
+  line-height: 1.75;
+  color: var(--on-navy-dim);
+}
+.section--navy .path__text--lead {
+  font-size: var(--step-1);
+  line-height: 1.6;
+  color: #fff;
+  font-weight: 500;
+}
+.path .compare,
+.path .otabs {
+  width: 100%;
+  margin-top: var(--space-lg);
+  text-align: left;
+}
+.path__step.will-light > :not(.path__n) {
+  opacity: 0.3;
+  transition: opacity 1s var(--ease-out-expo);
+}
+.path__step.will-light.is-lit > * {
+  opacity: 1;
+}
+.path__step.will-light.is-lit .path__n {
+  background: var(--orange-grad);
+  border-color: transparent;
+  color: #fff;
+}
+
+/* les quatre objectifs en onglets : la liste à gauche, l'objectif choisi en dégradé orange à droite */
+.otabs {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: stretch;
+}
+.otabs__list {
+  display: grid;
+}
+.otabs__tab {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  align-items: baseline;
+  column-gap: 1rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  background: none;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+  opacity: 0.45;
+  transition: opacity var(--dur-base);
+}
+.otabs__tab:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+.otabs__tab:hover,
+.otabs__tab[aria-selected="true"] {
+  opacity: 1;
+}
+.otabs__n {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--copper-light);
+}
+.otabs__verb {
+  font-family: var(--font-accent);
+  font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.4rem);
+  line-height: 1.1;
+}
+.otabs__object {
+  grid-column: 2;
+  font-size: var(--step--1);
+  color: var(--on-navy-dim);
+}
+.otabs__tab[aria-selected="true"] .otabs__verb {
+  color: var(--copper-light);
+}
+.otabs__panel {
+  display: grid;
+  align-content: center;
+  gap: var(--space-md);
+  padding: clamp(1.75rem, 4vw, 3rem);
+  border-radius: 24px;
+  background: var(--orange-grad);
+  color: #fff;
+  animation: otabs-in 0.6s var(--ease-out-expo) both;
+}
+.otabs__panel .picto {
+  width: 64px;
+  height: 64px;
+  background: #fff;
+}
+.otabs__panel h3 {
+  font-size: clamp(1.8rem, 1.3rem + 1.8vw, 2.8rem);
+  line-height: 1.1;
+  color: #fff;
+}
+.otabs__panel h3 span {
+  display: block;
+  font-style: italic;
+  font-size: 0.6em;
+  opacity: 0.85;
+}
+.otabs__panel p {
+  font-size: var(--step-1);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+}
+@keyframes otabs-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+@media (max-width: 860px) {
+  .otabs {
     grid-template-columns: 1fr;
   }
 }

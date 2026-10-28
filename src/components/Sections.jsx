@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import LiquidButton from "./LiquidButton.jsx";
 import { IconArrow } from "./icons.jsx";
 import { DIFFERENCE, OBJECTIVES, NEWS, FIGURES, AGREMENTS, PARTNERS, REGULATORY, CONTACT } from "../content/site.js";
@@ -105,6 +106,49 @@ export function Objectives({ withAnchors = false }) {
         );
       })}
     </ol>
+  );
+}
+
+/**
+ * Les quatre objectifs en onglets (Le sur-mesure) : la liste à gauche, l'objectif choisi détaillé à droite.
+ * Chaque onglet garde l'ancre d'origine (/sur-mesure#transmettre…), qui l'ouvre directement.
+ */
+export function ObjectiveTabs() {
+  const { hash } = useLocation();
+  const [active, setActive] = useState(OBJECTIVES[0].id);
+  useEffect(() => {
+    const id = hash.slice(1);
+    if (OBJECTIVES.some((o) => o.id === id)) setActive(id);
+  }, [hash]);
+  const current = OBJECTIVES.find((o) => o.id === active);
+  return (
+    <div className="otabs">
+      <div className="otabs__list" role="tablist" aria-label="Vos objectifs">
+        {OBJECTIVES.map((o, i) => (
+          <button
+            key={o.id}
+            id={o.id}
+            type="button"
+            role="tab"
+            aria-selected={o.id === active}
+            aria-controls="otabs-panel"
+            className="otabs__tab"
+            onClick={() => setActive(o.id)}
+          >
+            <span className="otabs__n">{String(i + 1).padStart(2, "0")}</span>
+            <span className="otabs__verb">{o.verb}</span>
+            <span className="otabs__object">{o.object}</span>
+          </button>
+        ))}
+      </div>
+      <div className="otabs__panel" id="otabs-panel" role="tabpanel" aria-labelledby={active} key={active}>
+        <Icon src={current.icon} className={`picto--${current.id}`} />
+        <h3>
+          {current.verb} <span>{current.object}</span>
+        </h3>
+        <p>{current.text}</p>
+      </div>
+    </div>
   );
 }
 
