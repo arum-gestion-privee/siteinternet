@@ -326,7 +326,7 @@ export function LicencesBand() {
   );
 }
 
-/** Toute l'équipe réunie (Nous connaître, Initier un échange), Anne-Laure au centre, sous un filtre bleu. */
+/** Toute l'équipe réunie (Se connaître, Initier un échange), Anne-Laure au centre, sous un filtre bleu. */
 const CROWD = ["vincent", "marie", "patrick", "anne-laure", "genevieve", "sandrine", "isabelle"].map((k) =>
   TEAM.find((m) => m.slug.startsWith(k)),
 );

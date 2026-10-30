@@ -83,7 +83,7 @@ ${TEAM.map((m) => `- ${m.name}, ${m.role}`).join("\n")}
 
 ## Pages
 - [Accueil](${ORIGIN}/)
-- [Nous connaître](${ORIGIN}/nous-connaitre)
+- [Se connaître](${ORIGIN}/nous-connaitre)
 - [Agir en confiance : l'offre en trois temps](${ORIGIN}/agir-en-confiance)
 - [Le sur-mesure : transmettre, protéger, organiser, optimiser](${ORIGIN}/sur-mesure)
 - [Des valeurs de famille](${ORIGIN}/valeurs)

@@ -18,7 +18,7 @@ export const CONTACT = {
 };
 
 export const NAV = [
-  { to: "/nous-connaitre", label: "Nous connaître" },
+  { to: "/nous-connaitre", label: "Se connaître" },
   { to: "/agir-en-confiance", label: "Agir en confiance" },
   { to: "/sur-mesure", label: "Le sur-mesure" },
   { to: "/valeurs", label: "Des valeurs de famille" },

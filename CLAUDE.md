@@ -29,7 +29,7 @@ Rien n'est publié : l'ancien site Webflow reste en ligne.
   clôture « Initier un échange » (`CtaBand`). Pas de tuiles de renvoi (retirées à la demande de l'utilisateur).
   **Vocabulaire** : « Initier un échange » (jamais « Nous contacter »), « Nous écrire », « Notre approche »,
   « Découvrir… ». Les textes d'ARUM restent mot pour mot ; ne pas copier les phrases de Hottinger Gaultier.
-- Page « Nous connaître » (`/nous-connaitre`, entièrement sur fond bleu) ; anciennes adresses redirigées.
+- Page « Se connaître » (`/nous-connaitre`, entièrement sur fond bleu) ; anciennes adresses redirigées.
 
 ## Commandes
 ```bash
@@ -94,5 +94,5 @@ Bas de toutes les pages : `LicencesBand` (Nos agréments, dans `App.jsx`) puis l
 10. Accueil refait comme celui de Hottinger Gaultier : vue des bureaux (Arc de Triomphe, `public/img/accueil`) en fond
     fixe teinté bleu nuit, symbole ARUM seul au centre, puis un écran par page (rubrique, titre, résumé, lien) qui
     apparaît/repart au défilement (`Home.jsx`). Retirés de l'accueil : film, comparatif, chiffres clés, citations
-    de Marie et Sandrine, objectifs. Photo de l'équipe déplacée sur Nous connaître, film sur Des valeurs de famille.
+    de Marie et Sandrine, objectifs. Photo de l'équipe déplacée sur Se connaître, film sur Des valeurs de famille.
 9. Contraste : le brique `#9A4C37` en petit texte sur bleu nuit est faible (≈ 2,7:1) ; alternative de la charte : `#D29965`.

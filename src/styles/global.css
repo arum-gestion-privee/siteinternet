@@ -12,7 +12,7 @@
   --cream: #f7f2ec;
   --line: #e6dfd6;
 
-  /* Fond bleu nuit de référence (bandeau des pages, ex. « Nous connaître ») */
+  /* Fond bleu nuit de référence (bandeau des pages, ex. « Se connaître ») */
   --navy-bg: #121c40; /* un seul bleu nuit, uni, partout */
   /* Dégradé orange des blocs de mise en avant */
   /* Dégradé de la charte (#D29965 → #FB190A, fondu dans le bleu nuit), relevé sur les visuels ARUM */
@@ -1407,7 +1407,7 @@ a.objective__card:hover {
   border-color: rgba(18, 28, 64, 0.3);
 }
 
-/* « Nous connaître » : bandeau de contact en bleu nuit uni, séparé du recrutement par un filet */
+/* « Se connaître » : bandeau de contact en bleu nuit uni, séparé du recrutement par un filet */
 .member-band + .cta {
   padding-top: 0;
 }
@@ -1631,7 +1631,7 @@ a.objective__card:hover {
   line-height: 1.75;
 }
 
-/* Nous connaître : recrutement et contact côte à côte */
+/* Se connaître : recrutement et contact côte à côte */
 .duo-cta {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1655,7 +1655,7 @@ a.objective__card:hover {
   }
 }
 
-/* Nous connaître : introduction à la présentation de l'équipe, centrée */
+/* Se connaître : introduction à la présentation de l'équipe, centrée */
 .team-intro {
   display: grid;
   justify-items: center;
@@ -1721,7 +1721,7 @@ h3,
   gap: var(--space-lg);
 }
 
-/* Nous connaître : cartes contact / candidatures */
+/* Se connaître : cartes contact / candidatures */
 .section--navy .duo-cta__card p {
   margin-top: var(--space-md);
   color: var(--on-navy-dim);
@@ -2027,7 +2027,7 @@ h3,
   text-align: left;
 }
 
-/* Nous connaître : toute l'équipe réunie, chaque personne centrée sur sa position, Anne-Laure au milieu */
+/* Se connaître : toute l'équipe réunie, chaque personne centrée sur sa position, Anne-Laure au milieu */
 .crowd-band {
   position: relative;
   overflow: hidden;
@@ -2174,7 +2174,7 @@ h3,
   padding-top: clamp(6rem, 12vw, 10rem);
 }
 
-/* Nous connaître : la photo de l'équipe en ouverture (même taille qu'avant), centrée dans l'écran ;
+/* Se connaître : la photo de l'équipe en ouverture (même taille qu'avant), centrée dans l'écran ;
    les personnes arrivent une à une au chargement */
 .crowd-band--open {
   min-height: 100svh;

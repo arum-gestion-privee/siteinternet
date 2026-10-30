@@ -145,7 +145,7 @@
 .phero--after {
   padding-top: clamp(4rem, 8vw, 7rem);
 }
-/* le titre puis le texte arrivent l'un après l'autre (classes posées par Nous connaître) */
+/* le titre puis le texte arrivent l'un après l'autre (classes posées par Se connaître) */
 .arrive {
   opacity: 0;
   transform: translateY(48px);

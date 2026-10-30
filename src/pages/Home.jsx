@@ -22,7 +22,7 @@ const FAQ_LD = {
  */
 const PANELS = [
   {
-    kicker: "Nous connaître",
+    kicker: "Se connaître",
     title: TEAM_PAGE.title,
     text: [TEAM_PAGE.text[1]],
     to: "/nous-connaitre",

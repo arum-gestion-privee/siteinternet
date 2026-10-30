@@ -25,7 +25,7 @@ export default function NousConnaitre() {
   return (
     <>
       <Seo
-        title="Nous connaître"
+        title="Se connaître"
         description="Une équipe de 7 personnes dédiée à l'organisation de votre patrimoine : découvrez les femmes et les hommes d'ARUM Gestion Privée."
         jsonLd={TEAM_LD}
       />
@@ -36,7 +36,7 @@ export default function NousConnaitre() {
       <PageHero
         className="phero--accent phero--after"
         step="Présentation"
-        kicker="Nous connaître"
+        kicker="Se connaître"
         title={TEAM_PAGE.title}
         lead={TEAM_PAGE.lead}
         body={TEAM_PAGE.text[0]}
