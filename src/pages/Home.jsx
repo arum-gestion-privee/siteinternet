@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo.jsx";
 import { CtaBand } from "../components/Sections.jsx";
-import { HOME, DIFFERENCE, TEAM_PAGE, APPROACH, BESPOKE, VALUES, fr } from "../content/site.js";
+import { HOME, DIFFERENCE, TEAM, TEAM_PAGE, APPROACH, BESPOKE, VALUES, fr } from "../content/site.js";
 import { FAQ } from "../content/faq.js";
 import "./Home.css";
 
@@ -77,6 +77,8 @@ function useScrollReveal() {
   return ref;
 }
 
+const AL = TEAM.find((m) => m.slug.startsWith("anne-laure"));
+
 export default function Home() {
   const ref = useScrollReveal();
   return (
@@ -113,6 +115,22 @@ export default function Home() {
               Initier un échange <span className="hx__arrow" aria-hidden="true" />
             </Link>
           </div>
+        </section>
+
+        {/* Anne-Laure, debout devant la vue des bureaux, sous le même filtre bleu que le paysage */}
+        <section className="hx__portrait" data-step={AL.name}>
+          <svg width="0" height="0" aria-hidden="true" focusable="false" className="hx__defs">
+            <filter id="hx-blue" colorInterpolationFilters="sRGB">
+              <feColorMatrix type="matrix" values="0.5840 0.2825 0.0285 0 0.0350  0.0840 0.7825 0.0285 0 0.0550  0.0797 0.2682 0.5271 0 0.1250  0 0 0 1 0" />
+            </filter>
+          </svg>
+          <figure className="hx__al" data-reveal>
+            <img src={AL.photo} alt={`${AL.name}, ${AL.role}`} width="531" height="775" loading="lazy" />
+            <figcaption>
+              <strong>{AL.name}</strong>
+              <span>{AL.role}</span>
+            </figcaption>
+          </figure>
         </section>
 
         {/* un écran par page du site */}

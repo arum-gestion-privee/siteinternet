@@ -178,7 +178,7 @@ export const TEAM = [
     photo: "/img/equipe/genevieve.webp",
     quote: "Dans un environnement en constante évolution, un conseil sur-mesure est indispensable.",
     bio: [
-      "Geneviève Werner, Senior Advisor & Associée fondatrice, est conseil de l'équipe en charge des allocations financières pour les clients d'ARUM Gestion Privée. Gestionnaire d'actifs depuis plus de 35 ans, Geneviève a créé et dirigé des sociétés de gestion et connaît personnellement les meilleurs gérants des fonds de la Place. Geneviève garantit, avec un haut niveau de performance, l'adéquation de la gestion des fonds qui nous sont confiés. Son calme, son sens du travail, de la précision et de l'anticipation sont particulièrement appréciés par nos clients.",
+      "Geneviève Werner, Senior Advisor & Associée fondatrice, est conseil de l'équipe dirigeante sur les allocations financières pour les clients d'ARUM Gestion Privée. Gestionnaire d'actifs depuis plus de 35 ans, Geneviève a créé et dirigé des sociétés de gestion et connaît personnellement les meilleurs gérants des fonds de la Place. Geneviève garantit, avec un haut niveau de performance, l'adéquation de la gestion des fonds qui nous sont confiés. Son calme, son sens du travail, de la précision et de l'anticipation sont particulièrement appréciés par nos clients.",
       "Animée depuis toujours par l'esprit de famille, Geneviève aime jouer au tennis avec ses enfants et petits-enfants, profiter de la montagne aussi bien en été qu'en hiver, et dévorer les biographies des grands personnages de notre Histoire.",
     ],
   },
@@ -203,7 +203,7 @@ export const TEAM_PAGE = {
     "Vos réflexions sur les sujets patrimoniaux, souvent intimes, sont parfois difficiles à aborder et peuvent évoluer au gré de vos parcours de vie : notre équipe est constamment à votre écoute, anticipe vos interrogations et se rend totalement disponible.",
     "Créée en 2014, l'équipe d'ARUM Gestion Privée compte aujourd'hui 7 personnes, chacune dédiée au service de nos clients et dotée d'un haut niveau de technicité et de valeur ajoutée dans son domaine d'expertise. Cette équipe, c'est le poumon d'ARUM Gestion Privée.",
   ].map(fr),
-  join: fr("Et vous spécialiser dans la stratégie patrimoniale ?"),
+  join: fr("Et vous spécialiser dans la stratégie patrimoniale"),
 };
 
 export const APPROACH = {
@@ -214,7 +214,7 @@ export const APPROACH = {
   familyOffice: fr(
     "Nous sommes pour vous, votre « family-office » qui vous accompagne de manière personnalisée à chaque étape de votre vie.",
   ),
-  offerTitle: fr("Expertise, approche transversale, sur-mesure, une offre en 3 temps."),
+  offerTitle: fr("Expertise, approche transversale, sur-mesure, une démarche en 3 temps."),
   offerPhoto: { photo: "/img/equipe/sandrine-anne-laure.webp", names: "Anne-Laure Boccon-Gibod & Sandrine Cauvin" },
   steps: [
     {

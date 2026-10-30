@@ -5,7 +5,7 @@ import { Partners, CtaBand } from "../components/Sections.jsx";
 import { APPROACH } from "../content/site.js";
 
 /*
- * Ouverture en enchaînement (ARUM rime avec Agir en confiance), puis l'offre en trois temps.
+ * Ouverture en enchaînement (ARUM rime avec Agir en confiance), puis la démarche en trois temps.
  */
 export default function AgirEnConfiance() {
   // la présentation de l'offre n'arrive, en fondu, qu'une fois le défilement commencé
@@ -14,7 +14,7 @@ export default function AgirEnConfiance() {
     <>
       <Seo
         title="Agir en confiance"
-        description="Expertise, approche transversale, sur-mesure : l'offre en trois temps d'ARUM Gestion Privée, votre family-office."
+        description="Expertise, approche transversale, sur-mesure : la démarche en trois temps d’ARUM Gestion Privée, votre family-office."
       />
       {/* ouverture centrée comme Le sur-mesure, qui se lit : ARUM rime avec Agir en confiance */}
       <section className="sm-open" data-step="Agir en confiance">
@@ -30,7 +30,7 @@ export default function AgirEnConfiance() {
         <div className="shell">
           {/* construit comme « Discernement » de Hottinger Gaultier : filet, grand titre, texte,
               puis les trois temps en grandes phrases centrées qui s'éclairent au passage */}
-          <div className="approach first-in" data-step="Une offre en 3 temps">
+          <div className="approach first-in" data-step="Une démarche en 3 temps">
             <h2>{APPROACH.offerTitle}</h2>
             <p>{APPROACH.lead[1]}</p>
           </div>

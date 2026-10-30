@@ -907,3 +907,94 @@
     width: min(50vw, 220px);
   }
 }
+
+/* Anne-Laure entre la promesse et « Nous connaître » : debout en bas de l'écran, légèrement à gauche pour
+   laisser voir l'Arc de Triomphe, teintée du même bleu que la photo, fondue dans le bas, légende à sa droite */
+.hx__defs {
+  position: absolute;
+}
+.hx__portrait {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.hx__al {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  margin: 0 18vw 0 0;
+}
+.hx__al img {
+  height: min(82svh, 760px);
+  width: auto;
+  filter: url(#hx-blue);
+  -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+}
+.hx__al figcaption {
+  display: grid;
+  gap: 0.25rem;
+  margin-bottom: 30svh;
+  color: #fff;
+  white-space: nowrap;
+}
+.hx__al figcaption strong {
+  font-family: var(--font-accent);
+  font-size: clamp(1.3rem, 1rem + 1vw, 1.8rem);
+  font-weight: 500;
+}
+.hx__al figcaption span {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+/* apparition : elle monte doucement et la légende suit */
+.hx__al img,
+.hx__al figcaption {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 1.6s var(--ease-out-expo),
+    transform 1.8s var(--ease-out-expo);
+}
+.hx__al figcaption {
+  transition-delay: 0.4s;
+}
+.hx__al.is-in img,
+.hx__al.is-in figcaption {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hx__al img,
+  .hx__al figcaption {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+@media (max-width: 700px) {
+  .hx__portrait {
+    min-height: 80svh;
+  }
+  .hx__al {
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hx__al img {
+    height: 62svh;
+  }
+  .hx__al figcaption {
+    order: -1;
+    margin: 0;
+    text-align: center;
+  }
+}
