@@ -31,8 +31,8 @@ export default function SurMesure() {
       <section className="section section--navy">
         <div className="shell">
         <ol className="path">
-          <li className="path__step" data-step="Une relation de confiance">
-            <h2>Notre objectif : construire avec vous une relation de confiance</h2>
+          <li className="path__step" data-step="Une relation de proximité">
+            <h2>Notre objectif : construire avec vous une relation de proximité</h2>
             <p className="path__text">{DIFFERENCE.text}</p>
           </li>
           <li className="path__step" data-step="Ce qui nous différencie">
