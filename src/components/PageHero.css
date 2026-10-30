@@ -225,7 +225,7 @@
   font-size: clamp(1.9rem, 1.2rem + 2.6vw, 3.4rem);
   line-height: 1.15;
   letter-spacing: -0.005em;
-  color: #d29965;
+  color: var(--copper-light);
 }
 .mhero__l2 {
   max-width: 32ch;
