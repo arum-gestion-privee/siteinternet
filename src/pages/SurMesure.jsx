@@ -1,5 +1,5 @@
 import Seo from "../components/Seo.jsx";
-import { CenteredHero } from "../components/PageHero.jsx";
+import { MotifHero } from "../components/PageHero.jsx";
 import { useArrive, useLight } from "../components/useArrive.js";
 import "../components/PageHero.css"; // apparitions au défilement
 import { Quote, Comparison, ObjectiveTabs, CtaBand } from "../components/Sections.jsx";
@@ -18,8 +18,11 @@ export default function SurMesure() {
         title="Le sur-mesure"
         description="Transmettre, protéger, organiser, optimiser : un conseil patrimonial sur-mesure, pensé sur plusieurs générations."
       />
-      {/* ouverture centrée : le titre et son texte, puis le symbole ARUM en petit */}
-      <CenteredHero title="Le sur-mesure" text={`${HOME.unique} ${HOME.uniqueEnd}`} />
+      <MotifHero
+        title="Le sur-mesure"
+        line1="S’adapter à votre situation,"
+        line2="être disponible, et mettre nos compétences pluridisciplinaires à votre service"
+      />
 
       <section className="section section--navy">
         <div className="shell first-in" data-step="Citation d'Anne-Laure Boccon-Gibod">

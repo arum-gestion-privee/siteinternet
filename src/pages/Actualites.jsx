@@ -1,5 +1,5 @@
 import Seo from "../components/Seo.jsx";
-import { CenteredHero } from "../components/PageHero.jsx";
+import { MotifHero } from "../components/PageHero.jsx";
 import { useArrive } from "../components/useArrive.js";
 import { NewsList, CtaBand } from "../components/Sections.jsx";
 
@@ -9,9 +9,9 @@ export default function Actualites() {
   return (
     <>
       <Seo title="Nos décryptages" description="Fiscalité, transmission, dirigeants, immobilier : les analyses d'ARUM Gestion Privée." />
-      <CenteredHero
-        title="Nos décryptages"
-        text="Fiscalité, transmission, statut du dirigeant, immobilier : nos analyses de l’actualité juridique et financière."
+      <MotifHero
+        line1="Nos décryptages"
+        line2="Fiscalité, transmission, statut du dirigeant, immobilier : nos analyses de l’actualité juridique et financière."
       />
       <section className="section section--navy">
         <div className="shell first-in">

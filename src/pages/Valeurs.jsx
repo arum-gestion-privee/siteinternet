@@ -1,9 +1,9 @@
 import Seo from "../components/Seo.jsx";
-import { CenteredHero } from "../components/PageHero.jsx";
+import { MotifHero } from "../components/PageHero.jsx";
 import { useArrive, useLight } from "../components/useArrive.js";
 import { IconLinkedIn } from "../components/icons.jsx";
 import { Portrait, CtaBand } from "../components/Sections.jsx";
-import { VALUES, TEAM, HOME_PEOPLE, DIFFERENCE, fr } from "../content/site.js";
+import { VALUES, TEAM, HOME_PEOPLE, fr } from "../content/site.js";
 
 export default function Valeurs() {
   const al = TEAM.find((m) => m.slug.startsWith("anne-laure"));
@@ -20,7 +20,7 @@ export default function Valeurs() {
         title="Des valeurs de famille"
         description="L'intérêt du client, le professionnalisme et l'honnêteté : un cabinet libre en droit, libre d'esprit."
       />
-      <CenteredHero title="Des valeurs de famille" text={fr(DIFFERENCE.tagline)} />
+      <MotifHero title="Des valeurs de famille" line1="Nous sommes une grande famille," line2={fr("heureux de vous accueillir parmi nous !")} />
 
       <section className="section section--navy">
         <div className="shell split first-in" data-step="Citation d'Anne-Laure Boccon-Gibod">

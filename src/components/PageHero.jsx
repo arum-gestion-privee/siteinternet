@@ -46,3 +46,22 @@ export function CenteredHero({ title, text }) {
     </section>
   );
 }
+
+/**
+ * Ouverture « phrase » (Agir en confiance, Le sur-mesure, Des valeurs de famille, Nos décryptages) : le grand
+ * symbole ARUM au trait fin derrière, une première ligne en orange clair, une seconde en blanc italique.
+ * Sans `title`, la première ligne sert de titre de la page ; sinon le titre reste lisible par les moteurs.
+ */
+export function MotifHero({ title, line1, line2, step }) {
+  const First = title ? "p" : "h1";
+  return (
+    <section className="mhero" data-step={step ?? title ?? line1}>
+      <img className="mhero__motif" src="/brand/motif.png" alt="" aria-hidden="true" width="295" height="411" />
+      <div className="shell mhero__inner">
+        {title && <h1 className="sr-only">{title}</h1>}
+        <First className="mhero__l1">{line1}</First>
+        {line2 && <p className={"mhero__l2" + (line2.length > 90 ? " mhero__l2--long" : "")}>{line2}</p>}
+      </div>
+    </section>
+  );
+}
