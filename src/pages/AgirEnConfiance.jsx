@@ -28,7 +28,9 @@ export default function AgirEnConfiance() {
           {/* construit comme « Discernement » de Hottinger Gaultier : filet, grand titre, texte,
               puis les trois temps en grandes phrases centrées qui s'éclairent au passage */}
           <div className="approach first-in" data-step="Une démarche en 3 temps">
-            <h2>{APPROACH.offerTitle}</h2>
+            <blockquote className="approach__quote">
+              <p>{APPROACH.offerTitle}</p>
+            </blockquote>
             <p>{APPROACH.lead[1]}</p>
           </div>
 

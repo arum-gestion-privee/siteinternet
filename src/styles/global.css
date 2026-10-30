@@ -2611,3 +2611,26 @@ h3,
 .path__quote {
   text-align: left;
 }
+
+/* Agir en confiance : la démarche en 3 temps présentée en citation (guillemets orange, Playfair italique) */
+.approach__quote {
+  margin: 0;
+}
+.approach__quote::before {
+  content: "“";
+  display: block;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-accent);
+  font-size: 5rem;
+  line-height: 0.6;
+  color: var(--copper-light);
+}
+.section--navy .approach .approach__quote p {
+  max-width: 24ch;
+  margin-inline: auto;
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: clamp(2rem, 1.4rem + 2.4vw, 3.4rem);
+  line-height: 1.15;
+  color: #fff;
+}
