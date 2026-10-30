@@ -203,7 +203,7 @@ export const TEAM_PAGE = {
     "Vos réflexions sur les sujets patrimoniaux, souvent intimes, sont parfois difficiles à aborder et peuvent évoluer au gré de vos parcours de vie : notre équipe est constamment à votre écoute, anticipe vos interrogations et se rend totalement disponible.",
     "Créée en 2014, l'équipe d'ARUM Gestion Privée compte aujourd'hui 7 personnes, chacune dédiée au service de nos clients et dotée d'un haut niveau de technicité et de valeur ajoutée dans son domaine d'expertise. Cette équipe, c'est le poumon d'ARUM Gestion Privée.",
   ].map(fr),
-  join: fr("Vous souhaitez vous spécialiser dans la stratégie patrimoniale ?"),
+  join: fr("Et vous spécialiser dans la stratégie patrimoniale ?"),
 };
 
 export const APPROACH = {
