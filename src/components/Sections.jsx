@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import LiquidButton from "./LiquidButton.jsx";
 import { IconArrow } from "./icons.jsx";
-import { DIFFERENCE, OBJECTIVES, NEWS, FIGURES, AGREMENTS, PARTNERS, REGULATORY, CONTACT } from "../content/site.js";
+import { DIFFERENCE, OBJECTIVES, NEWS, FIGURES, AGREMENTS, PARTNERS, REGULATORY, CONTACT, TEAM } from "../content/site.js";
 
 export function Kicker({ children, light = false }) {
   return <p className={"kicker" + (light ? " kicker--light" : "")}>{children}</p>;
@@ -323,5 +323,27 @@ export function LicencesBand() {
         <Agrements />
       </div>
     </section>
+  );
+}
+
+/** Toute l'équipe réunie (Nous connaître, Initier un échange), Anne-Laure au centre, sous un filtre bleu. */
+const CROWD = ["vincent", "marie", "patrick", "anne-laure", "genevieve", "sandrine", "isabelle"].map((k) =>
+  TEAM.find((m) => m.slug.startsWith(k)),
+);
+export function TeamCrowd({ className = "", step, eager = false }) {
+  return (
+    <div className={"crowd-band " + className} data-step={step} role="img" aria-label="L'équipe d'ARUM Gestion Privée">
+      {/* filtre bleu (duotone bleu nuit / bleu clair, à moitié mêlé aux couleurs d'origine) */}
+      <svg width="0" height="0" aria-hidden="true" focusable="false" className="crowd__defs">
+        <filter id="crowd-blue" colorInterpolationFilters="sRGB">
+          <feColorMatrix type="matrix" values="0.5840 0.2825 0.0285 0 0.0350  0.0840 0.7825 0.0285 0 0.0550  0.0797 0.2682 0.5271 0 0.1250  0 0 0 1 0" />
+        </filter>
+      </svg>
+      <div className="crowd">
+        {CROWD.map((m, i) => (
+          <img key={m.slug} src={m.photo} alt="" loading={eager ? "eager" : "lazy"} className={`crowd__p crowd__p--${i}`} />
+        ))}
+      </div>
+    </div>
   );
 }

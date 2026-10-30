@@ -1,6 +1,7 @@
 import Seo from "../components/Seo.jsx";
 import PageHero from "../components/PageHero.jsx";
 import { ContactForm } from "../components/Forms.jsx";
+import { TeamCrowd } from "../components/Sections.jsx";
 import { IconPhone, IconMail, IconPin } from "../components/icons.jsx";
 import { CONTACT } from "../content/site.js";
 
@@ -13,6 +14,8 @@ export default function Contact() {
         title="Parlons de votre patrimoine"
         lead="Un premier échange, sans engagement, pour comprendre votre situation, vos projets et vos objectifs."
       />
+      {/* l'équipe, sous le titre */}
+      <TeamCrowd className="crowd-band--contact" eager />
       <section className="section section--navy section--contact" data-step="Nous écrire">
         <div className="shell contact">
           <a className="contact__card reveal" href={CONTACT.phoneHref}>

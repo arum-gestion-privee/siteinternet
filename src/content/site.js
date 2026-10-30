@@ -64,9 +64,9 @@ export const DIFFERENCE = {
 };
 
 export const HOME_PEOPLE = {
-  duo: { photo: "/img/equipe/al-genevieve.webp", names: "Anne-Laure Boccon-Gibod & Geneviève Werner", roles: "Présidente et Directrice Associée" },
+  duo: { photo: "/img/equipe/al-genevieve.webp", names: "Anne-Laure Boccon-Gibod & Geneviève Werner", roles: "Présidente et Senior Advisor & Associée fondatrice" },
   sandrine: { photo: "/img/equipe/sandrine.webp", names: "Sandrine Cauvin", roles: "Directeur des Investissements" },
-  partners: { photo: "/img/equipe/al-patrick.webp", names: "Anne-Laure Boccon-Gibod & Patrick Werner", roles: "Présidente et Directeur Associé" },
+  partners: { photo: "/img/equipe/al-patrick.webp", names: "Anne-Laure Boccon-Gibod & Patrick Werner", roles: "Présidente et Senior Advisor & Associé fondateur" },
   marie: { photo: "/img/equipe/marie.webp", names: "Marie Fernandes", roles: "Responsable Middle Office", quote: fr("Être à votre écoute et anticiper vos interrogations.") },
 };
 
@@ -135,30 +135,6 @@ export const TEAM = [
     ],
   },
   {
-    slug: "genevieve-werner",
-    linkedin: "https://www.linkedin.com/in/genevieve-werner-conseil-patrimonial/",
-    name: "Geneviève Werner",
-    role: "Directrice Associée",
-    photo: "/img/equipe/genevieve.webp",
-    quote: "Dans un environnement en constante évolution, un conseil sur-mesure est indispensable.",
-    bio: [
-      "Geneviève Werner, Directrice Associée, est conseil de l'équipe en charge des allocations financières pour les clients d'ARUM Gestion Privée. Gestionnaire d'actifs depuis plus de 35 ans, Geneviève a créé et dirigé des sociétés de gestion et connaît personnellement les meilleurs gérants des fonds de la Place. Geneviève garantit, avec un haut niveau de performance, l'adéquation de la gestion des fonds qui nous sont confiés. Son calme, son sens du travail, de la précision et de l'anticipation sont particulièrement appréciés par nos clients.",
-      "Animée depuis toujours par l'esprit de famille, Geneviève aime jouer au tennis avec ses enfants et petits-enfants, profiter de la montagne aussi bien en été qu'en hiver, et dévorer les biographies des grands personnages de notre Histoire.",
-    ],
-  },
-  {
-    slug: "patrick-werner",
-    linkedin: "https://www.linkedin.com/in/patrick-werner-a60314105/",
-    name: "Patrick Werner",
-    role: "Directeur Associé",
-    photo: "/img/equipe/patrick.webp",
-    quote: "Définir une stratégie patrimoniale et la mettre en œuvre exige un état d'esprit différent de celui de la banque traditionnelle.",
-    bio: [
-      "Patrick Werner, entrepreneur, Inspecteur des Finances, créateur et ancien Président du Directoire de la Banque Postale, ancien Directeur Général du Groupe d'assurances Victoire (marque Abeille), ancien Expert-comptable, est conseiller de la Présidente. Fort de ses expériences de dirigeant, Patrick a acquis une parfaite maîtrise des activités bancaires et assurantielles, notamment dans le domaine de la gestion patrimoniale, à travers le lancement réussi de La Banque Postale Gestion Privée.",
-      "Membre du Club des Cent, Patrick est passionné de gastronomie et de tous les sports (il est d'ailleurs aussi Président de l'Académie des Sports). Il pratique notamment le tennis en famille.",
-    ],
-  },
-  {
     slug: "vincent-muguet",
     linkedin: "https://www.linkedin.com/in/vincent-muguet-32353019b/",
     name: "Vincent Muguet",
@@ -192,6 +168,30 @@ export const TEAM = [
     bio: [
       "Isabelle évolue depuis 20 ans au service des PME. Elle a travaillé pendant 10 ans au sein d'une société de gestion de patrimoine en tant qu'assistante administrative et commerciale. Elle a rejoint l'équipe d'ARUM Gestion Privée en novembre 2025, en tant que Chargée Middle Office aux côtés de Marie dans l'accompagnement de nos clients.",
       "Isabelle aime consacrer son temps libre à partager des moments simples avec ses proches. La marche dans la nature lui apporte équilibre et sérénité. Son péché mignon : le sucré, notamment les pasteis de nata et les éclairs au café.",
+    ],
+  },
+  {
+    slug: "genevieve-werner",
+    linkedin: "https://www.linkedin.com/in/genevieve-werner-conseil-patrimonial/",
+    name: "Geneviève Werner",
+    role: "Senior Advisor & Associée fondatrice",
+    photo: "/img/equipe/genevieve.webp",
+    quote: "Dans un environnement en constante évolution, un conseil sur-mesure est indispensable.",
+    bio: [
+      "Geneviève Werner, Senior Advisor & Associée fondatrice, est conseil de l'équipe en charge des allocations financières pour les clients d'ARUM Gestion Privée. Gestionnaire d'actifs depuis plus de 35 ans, Geneviève a créé et dirigé des sociétés de gestion et connaît personnellement les meilleurs gérants des fonds de la Place. Geneviève garantit, avec un haut niveau de performance, l'adéquation de la gestion des fonds qui nous sont confiés. Son calme, son sens du travail, de la précision et de l'anticipation sont particulièrement appréciés par nos clients.",
+      "Animée depuis toujours par l'esprit de famille, Geneviève aime jouer au tennis avec ses enfants et petits-enfants, profiter de la montagne aussi bien en été qu'en hiver, et dévorer les biographies des grands personnages de notre Histoire.",
+    ],
+  },
+  {
+    slug: "patrick-werner",
+    linkedin: "https://www.linkedin.com/in/patrick-werner-a60314105/",
+    name: "Patrick Werner",
+    role: "Senior Advisor & Associé fondateur",
+    photo: "/img/equipe/patrick.webp",
+    quote: "Définir une stratégie patrimoniale et la mettre en œuvre exige un état d'esprit différent de celui de la banque traditionnelle.",
+    bio: [
+      "Patrick Werner, entrepreneur, Inspecteur des Finances, créateur et ancien Président du Directoire de la Banque Postale, ancien Directeur Général du Groupe d'assurances Victoire (marque Abeille), ancien Expert-comptable, est conseiller de la Présidente. Fort de ses expériences de dirigeant, Patrick a acquis une parfaite maîtrise des activités bancaires et assurantielles, notamment dans le domaine de la gestion patrimoniale, à travers le lancement réussi de La Banque Postale Gestion Privée.",
+      "Membre du Club des Cent, Patrick est passionné de gastronomie et de tous les sports (il est d'ailleurs aussi Président de l'Académie des Sports). Il pratique notamment le tennis en famille.",
     ],
   },
 ].map((m) => ({ ...m, quote: fr(m.quote), bio: m.bio.map(fr) }));

@@ -69,10 +69,11 @@
   display: block;
   padding: 0.5rem 1rem;
   border-radius: var(--radius-pill);
-  font-family: var(--font-label);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 400;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
   color: #fff;
   white-space: nowrap;
   transition: background-color var(--dur-fast) var(--ease-out-expo), color var(--dur-fast);
