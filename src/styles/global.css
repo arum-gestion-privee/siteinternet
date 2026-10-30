@@ -2597,7 +2597,7 @@ h3,
 
 /* Initier un échange : la photo de l'équipe sous le titre, un peu moins haute */
 .crowd-band--contact {
-  padding-top: 0;
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
   margin-bottom: clamp(3rem, 7vw, 6rem);
 }
 .crowd-band--contact .crowd {
