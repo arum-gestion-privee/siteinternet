@@ -81,7 +81,11 @@
 .lnav__link:hover {
   background: rgba(255, 255, 255, 0.14);
 }
-/* Rubrique en cours : même couleur que les autres (choix de l'utilisateur). */
+/* Rubrique en cours : titre en orange dans la liquid bar et dans le menu mobile */
+.lnav__link.active,
+.mmenu__nav a.active {
+  color: var(--copper-light);
+}
 
 .lnav__actions {
   display: flex;
