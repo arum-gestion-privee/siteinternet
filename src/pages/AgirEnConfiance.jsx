@@ -2,7 +2,7 @@ import Seo from "../components/Seo.jsx";
 import { MotifHero } from "../components/PageHero.jsx";
 import { useArrive } from "../components/useArrive.js";
 import "../components/PageHero.css"; // rubrique, phrase d'accroche, apparitions
-import { Partners, CtaBand } from "../components/Sections.jsx";
+import { Partners, Portrait, CtaBand } from "../components/Sections.jsx";
 import { APPROACH } from "../content/site.js";
 
 /*
@@ -31,7 +31,11 @@ export default function AgirEnConfiance() {
             <blockquote className="approach__quote">
               <p>{APPROACH.offerTitle}</p>
             </blockquote>
-            <p>{APPROACH.lead[1]}</p>
+            {/* le texte de l'approche à gauche, Anne-Laure et Sandrine à droite */}
+            <div className="approach__duo">
+              <p>{APPROACH.lead[1]}</p>
+              <Portrait photo={APPROACH.offerPhoto.photo} names={APPROACH.offerPhoto.names} roles="Présidente et Directeur des Investissements" />
+            </div>
           </div>
 
           <ol className="phrases">
