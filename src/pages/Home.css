@@ -885,7 +885,7 @@
   border-top: 4.5px solid transparent;
   border-bottom: 4.5px solid transparent;
 }
-/* le bleu nuit remonte sur la photo par un fondu doux, puis porte le bloc « Initier un échange » */
+/* le bleu nuit remonte sur la photo par un fondu doux, puis porte le bloc « Initions un échange » */
 .hx .cta {
   margin-top: 10vh;
   padding-top: calc(14vh + clamp(4rem, 8vw, 6rem));

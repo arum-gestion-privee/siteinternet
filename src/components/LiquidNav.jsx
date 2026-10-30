@@ -90,7 +90,7 @@ export default function LiquidNav() {
         </div>
         <nav className="mmenu__nav shell" aria-label="Menu">
           <ul>
-            {[...NAV, { to: "/contact", label: "Initier un échange" }].map((item) => (
+            {[...NAV, { to: "/contact", label: "Initions un échange" }].map((item) => (
               <li key={item.to}>
                 <NavLink to={item.to}>{item.label}</NavLink>
               </li>

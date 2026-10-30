@@ -1928,7 +1928,7 @@ h3,
 }
 
 /* ===========================================================================
-   Clôture « Initier un échange » et tuiles de renvoi (construction Hottinger Gaultier)
+   Clôture « Initions un échange » et tuiles de renvoi (construction Hottinger Gaultier)
    =========================================================================== */
 .cta .panel.cta__inner {
   display: grid;
@@ -2598,7 +2598,7 @@ h3,
   }
 }
 
-/* Initier un échange : la photo de l'équipe sous le titre, un peu moins haute */
+/* Initions un échange : la photo de l'équipe sous le titre, un peu moins haute */
 .crowd-band--contact {
   padding-top: clamp(2.5rem, 5vw, 4.5rem);
   margin-bottom: clamp(3rem, 7vw, 6rem);

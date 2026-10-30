@@ -25,7 +25,7 @@ export function Quote({ text, name, role, photo, light = false, center = false }
   );
 }
 
-/** Portrait légendé (noms + fonctions), avec un appel facultatif vers « Initier un échange ». */
+/** Portrait légendé (noms + fonctions), avec un appel facultatif vers « Initions un échange ». */
 export function Portrait({ photo, names, roles, cta = null, className = "" }) {
   return (
     <figure className={"portrait " + className}>
@@ -279,10 +279,10 @@ export function NewsList({ limit, items = NEWS }) {
 }
 
 /**
- * Clôture des pages intérieures, construite comme chez Hottinger Gaultier : « Initier un échange »,
+ * Clôture des pages intérieures, construite comme chez Hottinger Gaultier : « Initions un échange »,
  * une phrase, les coordonnées du cabinet et un lien « Nous écrire ».
  */
-export function CtaBand({ title = "Initier un échange", text }) {
+export function CtaBand({ title = "Initions un échange", text }) {
   return (
     <section className="cta">
       <div className="shell">
@@ -326,7 +326,7 @@ export function LicencesBand() {
   );
 }
 
-/** Toute l'équipe réunie (Se connaître, Initier un échange), Anne-Laure au centre, sous un filtre bleu. */
+/** Toute l'équipe réunie (Se connaître, Initions un échange), Anne-Laure au centre, sous un filtre bleu. */
 const CROWD = ["vincent", "marie", "patrick", "anne-laure", "genevieve", "sandrine", "isabelle"].map((k) =>
   TEAM.find((m) => m.slug.startsWith(k)),
 );

@@ -8,9 +8,9 @@ import { CONTACT } from "../content/site.js";
 export default function Contact() {
   return (
     <>
-      <Seo title="Initier un échange" description="Contactez ARUM Gestion Privée, 82 avenue Marceau, Paris 8e : 01 75 43 66 50." />
+      <Seo title="Initions un échange" description="Contactez ARUM Gestion Privée, 82 avenue Marceau, Paris 8e : 01 75 43 66 50." />
       <PageHero
-        kicker="Initier un échange"
+        kicker="Initions un échange"
         title="Parlons de votre patrimoine"
         lead="Un premier échange, sans engagement, pour comprendre votre situation, vos projets et vos objectifs."
       />

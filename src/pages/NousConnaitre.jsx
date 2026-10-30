@@ -88,12 +88,12 @@ export default function NousConnaitre() {
         </section>
       ))}
 
-      {/* Deux appels côte à côte : « Initier un échange » à gauche, candidatures spontanées à droite */}
+      {/* Deux appels côte à côte : « Initions un échange » à gauche, candidatures spontanées à droite */}
       <section className="section section--navy member-band">
         <div className="shell duo-cta">
           <div className="panel duo-cta__card reveal">
             <div>
-              <h2>Initier un échange</h2>
+              <h2>Initions un échange</h2>
               <p>Un premier échange, sans engagement, pour comprendre votre situation, vos projets et vos objectifs.</p>
             </div>
             <LiquidButton as="link" to="/contact" variant="copper" iconRight={<IconArrow />}>

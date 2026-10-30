@@ -110,7 +110,7 @@ export default function Home() {
             </h2>
             <p className="hx__text">{HOME.intro}</p>
             <Link className="hx__link" to="/contact">
-              Initier un échange <span className="hx__arrow" aria-hidden="true" />
+              Initions un échange <span className="hx__arrow" aria-hidden="true" />
             </Link>
           </div>
         </section>
