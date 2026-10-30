@@ -89,7 +89,7 @@ Bas de toutes les pages : `LicencesBand` (Nos agréments, dans `App.jsx`) puis l
 6. Formulaires internes (Typeform abandonné) : brancher Brevo (voir « Formulaires »), relire la mention
    « Confidentialité » mise à jour.
 7. Hébergeur à confirmer dans les mentions légales (Cloudflare par défaut).
-8. Partenaires : Rohan Invest retiré ; BNP Paribas Cardif, Generali Luxembourg, Wealins, AG2R La Mondiale France
+8. Partenaires : Rohan Invest retiré ; BNP Paribas Cardif, Generali Luxembourg, Wealins, AG2R La Mondiale France, Swissquote
    ajoutés avec leurs logos (convertis en blanc sur fond transparent, comme les autres).
 10. Accueil refait comme celui de Hottinger Gaultier : vue des bureaux (Arc de Triomphe, `public/img/accueil`) en fond
     fixe teinté bleu nuit, symbole ARUM seul au centre, puis un écran par page (rubrique, titre, résumé, lien) qui

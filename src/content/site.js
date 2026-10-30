@@ -364,5 +364,6 @@ export const PARTNERS = [
   { name: "Generali Luxembourg", logo: "/img/partenaires/generali-luxembourg.png" },
   { name: "Wealins", logo: "/img/partenaires/wealins.png" },
   { name: "AG2R La Mondiale France", logo: "/img/partenaires/ag2r-la-mondiale-france.png" },
+  { name: "Swissquote", logo: "/img/partenaires/swissquote.png" },
 ];
 
