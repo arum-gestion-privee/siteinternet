@@ -40,6 +40,7 @@ export default function NousConnaitre() {
         title={TEAM_PAGE.title}
         lead={TEAM_PAGE.lead}
         body={TEAM_PAGE.text[0]}
+        quote
         motif={false}
       />
 

@@ -163,3 +163,32 @@
 .phero__aside > .arrive:nth-child(2) {
   transition-delay: 0.55s;
 }
+/* introduction présentée en citation (Se connaître) : guillemets orange, filet à gauche, texte en Playfair */
+.phero__quote {
+  position: relative;
+  margin: 0;
+  padding-left: clamp(1.25rem, 2vw, 1.75rem);
+  border-left: 2px solid var(--copper-light);
+}
+.phero__quote::before {
+  content: "“";
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-accent);
+  font-size: 4.5rem;
+  line-height: 0.6;
+  color: var(--copper-light);
+}
+.phero__quote .phero__lead {
+  font-family: var(--font-accent);
+  font-size: clamp(1.25rem, 1.05rem + 0.6vw, 1.6rem);
+  font-weight: 500;
+  line-height: 1.4;
+}
+.phero__quote .phero__body {
+  margin-top: var(--space-md);
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--step-0);
+  line-height: 1.65;
+}
