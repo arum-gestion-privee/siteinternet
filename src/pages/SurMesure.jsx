@@ -42,6 +42,10 @@ export default function SurMesure() {
             <h2>{fr(DIFFERENCE.title)}</h2>
             <Comparison />
           </li>
+          {/* la citation de Geneviève Werner, juste avant la stratégie */}
+          <li className="path__quote" data-step="Citation de Geneviève Werner">
+            <Quote text={gw.quote} name={gw.name} role={gw.role} photo="/img/equipe/genevieve-sur-mesure.webp" light center />
+          </li>
           <li className="path__step" data-step="Une stratégie ajustée à vos objectifs">
             <h2>Une stratégie ajustée à vos objectifs</h2>
             <p className="path__text path__text--lead">{HOME.strategy}</p>
@@ -54,12 +58,6 @@ export default function SurMesure() {
         </div>
       </section>
 
-      {/* pour finir, la citation de Geneviève Werner */}
-      <section className="section section--navy">
-        <div className="shell" data-step="Citation de Geneviève Werner">
-          <Quote text={gw.quote} name={gw.name} role={gw.role} photo="/img/equipe/genevieve-sur-mesure.webp" light center />
-        </div>
-      </section>
       <CtaBand />
     </>
   );

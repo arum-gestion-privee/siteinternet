@@ -2606,3 +2606,8 @@ h3,
 .crowd-band--contact .crowd {
   height: clamp(220px, 30vw, 400px);
 }
+
+/* citation dans le parcours du sur-mesure : alignée à gauche comme les autres citations */
+.path__quote {
+  text-align: left;
+}
