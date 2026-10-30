@@ -330,9 +330,9 @@ export function LicencesBand() {
 const CROWD = ["vincent", "marie", "patrick", "anne-laure", "genevieve", "sandrine", "isabelle"].map((k) =>
   TEAM.find((m) => m.slug.startsWith(k)),
 );
-export function TeamCrowd({ className = "", step, eager = false }) {
+export function TeamCrowd({ className = "", step, eager = false, reveal = false }) {
   return (
-    <div className={"crowd-band " + className} data-step={step} role="img" aria-label="L'équipe d'ARUM Gestion Privée">
+    <div className={"crowd-band " + className} data-step={step} data-reveal={reveal || undefined} role="img" aria-label="L'équipe d'ARUM Gestion Privée">
       {/* filtre bleu (duotone bleu nuit / bleu clair, à moitié mêlé aux couleurs d'origine) */}
       <svg width="0" height="0" aria-hidden="true" focusable="false" className="crowd__defs">
         <filter id="crowd-blue" colorInterpolationFilters="sRGB">
