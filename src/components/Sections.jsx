@@ -146,8 +146,8 @@ const OBJECTIVE_ICONS = {
 };
 
 /**
- * Les quatre objectifs en onglets (Le sur-mesure) : la liste à gauche, l'objectif choisi détaillé à droite.
- * Chaque onglet garde l'ancre d'origine (/sur-mesure#transmettre…), qui l'ouvre directement.
+ * Les quatre objectifs en menu dépliant (Le sur-mesure) : un clic sur un objectif fait apparaître son texte.
+ * Chaque objectif garde l'ancre d'origine (/sur-mesure#transmettre…), qui l'ouvre directement.
  */
 export function ObjectiveTabs() {
   const { hash } = useLocation();
@@ -156,37 +156,35 @@ export function ObjectiveTabs() {
     const id = hash.slice(1);
     if (OBJECTIVES.some((o) => o.id === id)) setActive(id);
   }, [hash]);
-  const current = OBJECTIVES.find((o) => o.id === active);
   return (
-    <div className="otabs">
-      <div className="otabs__list" role="tablist" aria-label="Vos objectifs">
-        {OBJECTIVES.map((o, i) => (
-          <button
-            key={o.id}
-            type="button"
-            role="tab"
-            aria-selected={o.id === active}
-            aria-controls="otabs-panel"
-            className="otabs__tab"
-            onClick={() => setActive(o.id)}
-          >
-            <span className="otabs__n">{String(i + 1).padStart(2, "0")}</span>
-            <span className="otabs__verb" id={o.id}>
-              {o.verb}
-            </span>
-            <span className="otabs__object">{o.object}</span>
-          </button>
-        ))}
-      </div>
-      <div className="otabs__panel" id="otabs-panel" role="tabpanel" aria-labelledby={active} key={active}>
-        <span className="otabs__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
-            {OBJECTIVE_ICONS[current.id]}
-          </svg>
-        </span>
-        <p>{current.text}</p>
-      </div>
-    </div>
+    <ul className="ofold" aria-label="Vos objectifs">
+      {OBJECTIVES.map((o) => {
+        const open = o.id === active;
+        return (
+          <li key={o.id} className={"ofold__item" + (open ? " is-open" : "")}>
+            <button
+              type="button"
+              id={o.id}
+              className="ofold__head"
+              aria-expanded={open}
+              aria-controls={`ofold-${o.id}`}
+              onClick={() => setActive(open ? null : o.id)}
+            >
+              <span className="ofold__verb">{o.verb}</span>
+              <span className="ofold__object">{o.object}</span>
+            </button>
+            <div className="ofold__body" id={`ofold-${o.id}`} role="region" aria-labelledby={o.id} hidden={!open}>
+              <span className="ofold__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+                  {OBJECTIVE_ICONS[o.id]}
+                </svg>
+              </span>
+              <p>{o.text}</p>
+            </div>
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 

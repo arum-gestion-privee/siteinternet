@@ -2440,7 +2440,7 @@ h3,
   font-weight: 500;
 }
 .path .compare,
-.path .otabs {
+.path .ofold {
   width: 100%;
   margin-top: var(--space-lg);
   text-align: left;
@@ -2453,115 +2453,74 @@ h3,
   opacity: 1;
 }
 
-/* les quatre objectifs en onglets : la liste à gauche, l'objectif choisi dans un bloc en verre à droite */
-.otabs {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(1.5rem, 4vw, 4rem);
-  align-items: center;
-}
-.otabs__list {
-  display: grid;
-}
-.otabs__tab {
-  position: relative;
-  display: grid;
-  grid-template-columns: 2.5rem 1fr;
-  align-items: baseline;
-  column-gap: 1rem;
-  padding: 1.15rem 0 1.15rem 1rem;
+/* les quatre objectifs en menu dépliant : lignes centrées séparées par un filet ; l'objectif ouvert
+   s'éclaire sur un fond en verre et laisse apparaître son texte */
+.ofold {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.ofold__item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background-color var(--dur-base);
+}
+.ofold__item.is-open {
+  background: rgba(255, 255, 255, 0.05);
+}
+.ofold__head {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  width: 100%;
+  padding: clamp(1.4rem, 3vw, 2rem) 1rem;
   background: none;
   color: #fff;
-  text-align: left;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.55;
   transition: opacity var(--dur-base);
 }
-.otabs__tab:last-child {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-/* repère orange à gauche de l'objectif choisi */
-.otabs__tab::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 1.15rem;
-  bottom: 1.15rem;
-  width: 2px;
-  background: var(--copper-light);
-  transform: scaleY(0);
-  transition: transform var(--dur-base) var(--ease-out-expo);
-}
-.otabs__tab:hover,
-.otabs__tab[aria-selected="true"] {
+.ofold__head:hover,
+.ofold__item.is-open .ofold__head {
   opacity: 1;
 }
-.otabs__tab[aria-selected="true"]::before {
-  transform: scaleY(1);
+.ofold__head:focus:not(:focus-visible) {
+  outline: none;
 }
-.otabs__n {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  font-variant-numeric: tabular-nums;
-  color: var(--copper-light);
-}
-.otabs__verb {
+.ofold__verb {
   font-family: var(--font-accent);
-  font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem);
+  font-size: clamp(1.8rem, 1.3rem + 1.8vw, 2.8rem);
   font-weight: 500;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
+  line-height: 1.1;
 }
-.otabs__object {
-  grid-column: 2;
-  margin-top: 0.15rem;
-  font-size: var(--step--1);
+.ofold__object {
+  font-size: var(--step-0);
   color: var(--on-navy-dim);
 }
-.otabs__panel {
+.ofold__body {
   display: grid;
-  align-content: center;
+  justify-items: center;
   gap: var(--space-md);
-  padding: clamp(1.5rem, 3vw, 2.25rem);
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.06);
-  color: #fff;
-  animation: otabs-in 0.6s var(--ease-out-expo) both;
+  padding: 0 1rem clamp(1.6rem, 3vw, 2.4rem);
+  animation: ofold-in 0.6s var(--ease-out-expo) both;
 }
-.otabs__icon {
-  display: grid;
-  place-items: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 1px solid rgba(210, 153, 101, 0.55);
+.ofold__body[hidden] {
+  display: none;
+}
+.ofold__icon {
   color: var(--copper-light);
 }
-.otabs__icon svg {
-  width: 28px;
-  height: 28px;
+.ofold__icon svg {
+  width: 30px;
+  height: 30px;
 }
-.otabs__panel p {
+.section--navy .ofold__body p {
+  max-width: 54ch;
+  text-align: center;
   font-size: var(--step-1);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.92);
-}
-@keyframes otabs-in {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-}
-@media (max-width: 860px) {
-  .otabs {
-    grid-template-columns: 1fr;
-  }
-}
-.otabs__tab:focus:not(:focus-visible) {
-  outline: none;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* fil de lecture (toutes les pages sauf Nos décryptages) : trait court à gauche de l'écran, un point par partie,
@@ -2695,4 +2654,18 @@ h3,
   font-style: italic;
   font-size: var(--step-1);
   color: var(--copper-light);
+}
+
+/* Des valeurs de famille : titre au-dessus des trois chapitres */
+.section--navy .chapters__title {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  font-size: clamp(2.2rem, 1.5rem + 2.8vw, 4rem);
+  color: var(--copper-light);
+}
+@keyframes ofold-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 }

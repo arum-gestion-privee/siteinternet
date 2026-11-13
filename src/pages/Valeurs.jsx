@@ -42,6 +42,9 @@ export default function Valeurs() {
 
       {/* trois chapitres numérotés : le numéro à gauche, le titre et l'essentiel en blanc, le développement en gris */}
       <section className="section section--navy">
+        <div className="shell">
+          <h2 className="chapters__title">Expertise et Liberté</h2>
+        </div>
         <ol className="shell chapters">
           <li className="chapter" data-step="Un état d'esprit différent">
             <span className="chapter__n">01</span>

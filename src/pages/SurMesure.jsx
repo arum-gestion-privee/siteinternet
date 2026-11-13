@@ -44,14 +44,11 @@ export default function SurMesure() {
           </li>
           {/* la citation de Geneviève Werner, juste avant la stratégie */}
           <li className="path__quote" data-step="Citation de Geneviève Werner">
-            <Quote text={gw.quote} name={gw.name} role={gw.role} photo="/img/equipe/genevieve-sur-mesure.webp" light center />
+            <Quote text={fr(`${BESPOKE.generations} ${BESPOKE.generationsText}`)} name={gw.name} role={gw.role} photo="/img/equipe/genevieve-sur-mesure.webp" light center />
           </li>
           <li className="path__step" data-step="Une stratégie ajustée à vos objectifs">
             <h2>Une stratégie ajustée à vos objectifs</h2>
             <p className="path__text path__text--lead">{HOME.strategy}</p>
-            <p className="path__text">
-              {BESPOKE.generations} {BESPOKE.generationsText}
-            </p>
             <ObjectiveTabs />
           </li>
         </ol>
