@@ -2181,8 +2181,8 @@ h3,
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding-top: clamp(7rem, 12vw, 9rem);
+  justify-content: center;
+  padding-top: clamp(6rem, 10vw, 8rem);
 }
 /* titre au-dessus de la photo d'équipe, en orange terre battue */
 .crowd__title {
