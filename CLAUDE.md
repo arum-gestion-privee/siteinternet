@@ -58,7 +58,7 @@ modification validée y parte directement.
 ## Formulaires (contact, candidature, « Recevez notre actualité »)
 `src/components/Forms.jsx` → fonctions Cloudflare Pages `functions/api/{contact,candidature,actualites}.js` → Brevo.
 **À configurer avant la mise en ligne** (Cloudflare Pages → Settings → Environment variables) : `BREVO_API_KEY`
-(secret), `MAIL_TO`, `MAIL_FROM` (expéditeur validé dans Brevo), `BREVO_LIST_ID` (liste « Actualités »).
+(secret), `MAIL_FROM` (expéditeur validé dans Brevo), `MAIL_TO` facultatif (par défaut contact@arumgestionprivee.com), `BREVO_LIST_ID` (liste « Actualités »).
 Sur l'aperçu GitHub Pages les fonctions n'existent pas : l'envoi échoue proprement (message + courriel).
 Bas de toutes les pages : `LicencesBand` (Nos agréments, dans `App.jsx`) puis le pied de page, qui contient « Recevez notre actualité » (`NewsSignup`, version compacte).
 

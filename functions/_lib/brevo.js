@@ -1,7 +1,7 @@
 // Envoi des formulaires du site via Brevo (prestataire français d'envoi de courriels).
 // Variables à définir dans Cloudflare Pages (Settings → Environment variables), en « secret » pour la clé :
 //   BREVO_API_KEY   clé API Brevo
-//   MAIL_TO         adresse qui reçoit les messages (ex. contact@arumgestionprivee.com)
+//   MAIL_TO         facultatif : adresse qui reçoit les messages (par défaut contact@arumgestionprivee.com)
 //   MAIL_FROM       expéditeur validé dans Brevo (ex. site@arumgestionprivee.com)
 //   BREVO_LIST_ID   n° de la liste Brevo « Actualités »
 
@@ -45,7 +45,8 @@ export async function brevo(env, path, payload) {
 export const sendMail = (env, { subject, text, replyTo, attachment }) =>
   brevo(env, "smtp/email", {
     sender: { email: env.MAIL_FROM, name: "Site ARUM Gestion Privée" },
-    to: [{ email: env.MAIL_TO }],
+    // les messages du site arrivent sur contact@arumgestionprivee.com (MAIL_TO peut le remplacer)
+    to: [{ email: env.MAIL_TO || "contact@arumgestionprivee.com" }],
     replyTo,
     subject,
     textContent: text,
