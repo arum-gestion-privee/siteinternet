@@ -5,7 +5,7 @@ export const SITE_ORIGIN = import.meta.env.VITE_SITE_ORIGIN || "https://www.arum
 export const ORG_ID = `${SITE_ORIGIN}/#organisation`;
 const BASE = "ARUM Gestion Privée";
 const DEFAULT_DESC =
-  "ARUM Gestion Privée, cabinet de conseil en gestion de patrimoine à Paris 8e depuis 2014 : organisation, protection, optimisation et transmission du patrimoine des entrepreneurs et des familles.";
+  "ARUM Gestion Privée, société de conseil en gestion de patrimoine à Paris 8e depuis 2014 : organisation, protection, optimisation et transmission du patrimoine des entrepreneurs et des familles.";
 const DEFAULT_IMAGE = "/og-arum.jpg";
 
 /**
@@ -48,7 +48,7 @@ export default function Seo({ title, description = DEFAULT_DESC, noindex = false
 
   return (
     <Head>
-      {/* Onglet du navigateur : uniquement le nom du cabinet (choix de l'utilisateur) */}
+      {/* Onglet du navigateur : uniquement le nom de la société (choix de l'utilisateur) */}
       <title>{BASE}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />

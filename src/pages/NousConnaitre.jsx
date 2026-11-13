@@ -94,7 +94,7 @@ export default function NousConnaitre() {
           <div className="panel duo-cta__card reveal">
             <div>
               <h2>Initions un échange</h2>
-              <p>Un premier échange, sans engagement, pour comprendre votre situation, vos projets et vos objectifs.</p>
+              <p>Un premier échange pour comprendre votre situation patrimoniale, vos projets et vos objectifs.</p>
             </div>
             <LiquidButton as="link" to="/contact" variant="copper" iconRight={<IconArrow />}>
               Nous écrire

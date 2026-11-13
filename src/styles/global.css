@@ -1965,14 +1965,14 @@ h3,
   padding-bottom: 0.4rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.45);
   font-family: var(--font-label);
-  font-size: 0.86rem;
+  font-size: var(--step-1);
   font-weight: 600;
   color: #fff;
   transition: border-color var(--dur-fast), gap var(--dur-fast);
 }
 .cta__link svg {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
 }
 .cta__link:hover {
   gap: 0.9rem;
@@ -2040,8 +2040,9 @@ h3,
 .crowd {
   position: relative;
   margin: 0 auto;
+  /* hauteur proportionnelle à la largeur : les personnes des extrémités restent entières */
   width: min(1240px, 100%);
-  height: clamp(260px, 36vw, 460px);
+  aspect-ratio: 100 / 37;
   overflow: hidden;
 }
 .crowd__p {
@@ -2604,7 +2605,7 @@ h3,
   margin-bottom: clamp(3rem, 7vw, 6rem);
 }
 .crowd-band--contact .crowd {
-  height: clamp(220px, 30vw, 400px);
+  width: min(1080px, 100%);
 }
 
 /* citation dans le parcours du sur-mesure : alignée à gauche comme les autres citations */

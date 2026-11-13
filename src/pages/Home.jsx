@@ -38,7 +38,7 @@ const PANELS = [
   {
     kicker: "Le sur-mesure",
     title: HOME.unique,
-    text: [HOME.uniqueEnd, HOME.introBis, HOME.strategy],
+    text: [`${HOME.uniqueEnd} ${HOME.introBis}`, HOME.strategy],
     to: "/sur-mesure",
     link: "Découvrir le sur-mesure",
   },
@@ -95,13 +95,16 @@ export default function Home() {
           <span className="hx__tint" />
         </div>
 
-        {/* ouverture : le symbole ARUM seul, au centre */}
+        {/* ouverture : le logo ARUM complet (symbole, ARUM, Gestion Privée), au centre */}
         <section className="hx__intro" data-step="Accueil">
           <h1 className="sr-only">ARUM Gestion Privée</h1>
-          <img className="hx__logo" src="/brand/symbole.svg" alt="" width="194" height="245" />
+          <div className="hx__logo" aria-hidden="true">
+            <img className="hx__symbol" src="/brand/symbole.svg" alt="" width="194" height="245" />
+            <img className="hx__name" src="/brand/nom-blanc.png" alt="" width="633" height="190" />
+          </div>
         </section>
 
-        {/* premier écran : la promesse du cabinet */}
+        {/* premier écran : la promesse de la société */}
         <section className="hx__panel" data-step="ARUM Gestion Privée">
           <div className="hx__content" data-reveal>
             <p className="hx__kicker">ARUM Gestion Privée</p>

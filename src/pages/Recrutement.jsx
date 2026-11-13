@@ -6,7 +6,7 @@ import { TEAM_PAGE } from "../content/site.js";
 export default function Recrutement() {
   return (
     <>
-      <Seo title="Recrutement" description="Candidature spontanée chez ARUM Gestion Privée, cabinet de conseil en gestion de patrimoine à Paris 8e." />
+      <Seo title="Recrutement" description="Candidature spontanée chez ARUM Gestion Privée, société de conseil en gestion de patrimoine à Paris 8e." />
       <PageHero kicker="Recrutement" title="Vous souhaitez nous rejoindre ?" lead={TEAM_PAGE.join} />
       <section className="section section--navy section--contact" data-step="Votre candidature">
         <div className="shell form-shell">

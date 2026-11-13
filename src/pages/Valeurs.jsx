@@ -18,7 +18,7 @@ export default function Valeurs() {
     <>
       <Seo
         title="Des valeurs de famille"
-        description="L'intérêt du client, le professionnalisme et l'honnêteté : un cabinet libre en droit, libre d'esprit."
+        description="L'intérêt du client, le professionnalisme et l'honnêteté : une société libre en droit, libre d'esprit."
       />
       <MotifHero title="Des valeurs de famille" line1="Nous sommes une grande famille," line2={fr("heureux de vous accueillir parmi nous !")} />
 

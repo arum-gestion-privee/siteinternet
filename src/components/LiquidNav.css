@@ -5,6 +5,10 @@
   z-index: var(--z-nav);
   padding-block: clamp(0.9rem, 2vw, 1.4rem);
 }
+/* Accueil : la barre et le logo restent en haut de l'écran pendant le défilement */
+.lnav--fixed {
+  position: fixed;
+}
 
 .lnav__inner {
   display: grid;

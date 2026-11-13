@@ -12,7 +12,7 @@ export default function Contact() {
       <PageHero
         kicker="Initions un échange"
         title="Parlons de votre patrimoine"
-        lead="Un premier échange, sans engagement, pour comprendre votre situation, vos projets et vos objectifs."
+        lead="Un premier échange pour comprendre votre situation patrimoniale, vos projets et vos objectifs."
       />
       {/* l'équipe, sous le titre */}
       <TeamCrowd className="crowd-band--contact" eager />

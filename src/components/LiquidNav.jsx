@@ -38,7 +38,7 @@ export default function LiquidNav() {
   }, [open]);
 
   return (
-    <header className="lnav">
+    <header className={"lnav" + (pathname === "/" ? " lnav--fixed" : "")}>
       <div className="lnav__inner shell">
         <Logo />
 

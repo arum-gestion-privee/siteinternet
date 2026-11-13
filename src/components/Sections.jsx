@@ -280,7 +280,7 @@ export function NewsList({ limit, items = NEWS }) {
 
 /**
  * Clôture des pages intérieures, construite comme chez Hottinger Gaultier : « Initions un échange »,
- * une phrase, les coordonnées du cabinet et un lien « Nous écrire ».
+ * une phrase, les coordonnées de la société et un lien « Nous écrire ».
  */
 export function CtaBand({ title = "Initions un échange", text }) {
   return (
@@ -290,7 +290,7 @@ export function CtaBand({ title = "Initions un échange", text }) {
           <div>
             <h2>{title}</h2>
             {text !== false && (
-              <p>{text || "Un premier échange, sans engagement, pour comprendre votre situation, vos projets et vos objectifs."}</p>
+              <p>{text || "Un premier échange pour comprendre votre situation patrimoniale, vos projets et vos objectifs."}</p>
             )}
           </div>
           <div className="cta__side">

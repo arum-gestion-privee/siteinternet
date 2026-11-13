@@ -51,12 +51,12 @@ writeFileSync(
   `User-agent: *\nAllow: /\nDisallow: /404\n\n${AI_BOTS.map((b) => `User-agent: ${b}\nAllow: /`).join("\n\n")}\n\nSitemap: ${ORIGIN}/sitemap.xml\n`,
 );
 
-// llms.txt : résumé factuel du cabinet pour les assistants IA (convention llmstxt.org).
+// llms.txt : résumé factuel de la société pour les assistants IA (convention llmstxt.org).
 const { HOME, TEAM, OBJECTIVES, APPROACH, VALUES, CONTACT, NEWS } = await import("../src/content/site.js");
 const { FAQ } = await import("../src/content/faq.js");
 const llms = `# ARUM Gestion Privée
 
-> Cabinet de conseil en gestion de patrimoine fondé en 2014, situé 82 avenue Marceau, 75008 Paris. Il accompagne les entrepreneurs et les familles (plus de 100 accompagnés) dans l'organisation, la protection, l'optimisation et la transmission de leur patrimoine privé et professionnel. Équipe de 7 personnes, plus de 50 ans d'expérience cumulée.
+> Société de conseil en gestion de patrimoine fondée en 2014, située 82 avenue Marceau, 75008 Paris. Elle accompagne les entrepreneurs et les familles (plus de 100 accompagnés) dans l'organisation, la protection, l'optimisation et la transmission de leur patrimoine privé et professionnel. Équipe de 7 personnes, plus de 50 ans d'expérience cumulée.
 
 ${HOME.intro} ${HOME.strategy}
 
@@ -65,7 +65,7 @@ ${HOME.intro} ${HOME.strategy}
 - Immatriculée à l'ORIAS sous le n° 14003105 : conseiller en investissements financiers (CIF) adhérent de la CNCGP, association agréée par l'AMF ; courtier en assurance ; courtier en opérations de banque et en services de paiement.
 - Carte de transaction immobilière (carte T) CPI 7501 2017 000 017 572, CCI Paris Île-de-France.
 - Ne peut recevoir aucun fonds, effet ou valeur.
-- Cabinet non lié à un groupe bancaire, d'assurance ou de gestion.
+- Société non liée à un groupe bancaire, d'assurance ou de gestion.
 
 ## Approche
 ${APPROACH.steps.map((s) => `- ${s.title} : ${s.text[0]}`).join("\n")}

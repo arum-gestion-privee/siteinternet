@@ -128,7 +128,7 @@ export function JobForm() {
   );
 }
 
-/** Inscription aux actualités du cabinet, version compacte intégrée au pied de page. */
+/** Inscription aux actualités de la société, version compacte intégrée au pied de page. */
 export function NewsSignup() {
   const { state, onSubmit } = useSubmit("actualites");
   return (
