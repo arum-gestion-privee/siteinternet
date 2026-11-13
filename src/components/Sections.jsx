@@ -231,13 +231,16 @@ export function Agrements() {
 
 export function Partners() {
   return (
-    <ul className="partners">
-      {PARTNERS.map((p) => (
-        <li key={p.name}>
-          {p.logo ? <img src={p.logo} alt={p.name} loading="lazy" /> : <span className="partners__name">{p.name}</span>}
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className="partners">
+        {PARTNERS.map((p) => (
+          <li key={p.name}>
+            {p.logo ? <img src={p.logo} alt={p.name} loading="lazy" /> : <span className="partners__name">{p.name}</span>}
+          </li>
+        ))}
+      </ul>
+      <p className="partners__more">parmi d’autres encore</p>
+    </>
   );
 }
 
@@ -330,7 +333,7 @@ export function LicencesBand() {
 const CROWD = ["vincent", "marie", "patrick", "anne-laure", "genevieve", "sandrine", "isabelle"].map((k) =>
   TEAM.find((m) => m.slug.startsWith(k)),
 );
-export function TeamCrowd({ className = "", step, eager = false, reveal = false }) {
+export function TeamCrowd({ className = "", step, eager = false, reveal = false, title }) {
   return (
     <div className={"crowd-band " + className} data-step={step} data-reveal={reveal || undefined} role="img" aria-label="L'équipe d'ARUM Gestion Privée">
       {/* filtre bleu (duotone bleu nuit / bleu clair, à moitié mêlé aux couleurs d'origine) */}
@@ -339,6 +342,7 @@ export function TeamCrowd({ className = "", step, eager = false, reveal = false 
           <feColorMatrix type="matrix" values="0.5840 0.2825 0.0285 0 0.0350  0.0840 0.7825 0.0285 0 0.0550  0.0797 0.2682 0.5271 0 0.1250  0 0 0 1 0" />
         </filter>
       </svg>
+      {title && <p className="crowd__title">{title}</p>}
       <div className="crowd">
         {CROWD.map((m, i) => (
           <img key={m.slug} src={m.photo} alt="" loading={eager ? "eager" : "lazy"} className={`crowd__p crowd__p--${i}`} />

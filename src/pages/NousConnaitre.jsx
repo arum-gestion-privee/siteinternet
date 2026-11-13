@@ -31,7 +31,7 @@ export default function NousConnaitre() {
       />
 
       {/* on arrive sur toute l'équipe réunie, sous un filtre bleu ; le titre et le texte apparaissent en défilant */}
-      <TeamCrowd className="crowd-band--open" step="L'équipe" eager />
+      <TeamCrowd className="crowd-band--open" step="L'équipe" eager title="Une équipe engagée à vos côtés" />
 
       <PageHero
         className="phero--accent phero--after"
