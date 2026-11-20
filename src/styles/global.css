@@ -2422,6 +2422,9 @@ h3,
   justify-items: center;
   gap: var(--space-lg);
 }
+.section--navy .path__step h2 {
+  color: var(--copper-light);
+}
 .path__step h2 {
   max-width: 24ch;
   font-size: clamp(2rem, 1.4rem + 2.2vw, 3.2rem);
@@ -2489,6 +2492,7 @@ h3,
   outline: none;
 }
 .ofold__verb {
+  color: var(--copper-light);
   font-family: var(--font-accent);
   font-size: clamp(1.8rem, 1.3rem + 1.8vw, 2.8rem);
   font-weight: 500;
@@ -2594,7 +2598,7 @@ h3,
   font-family: var(--font-accent);
   font-size: 5rem;
   line-height: 0.6;
-  color: var(--copper-light);
+  color: #fff;
 }
 .section--navy .approach .approach__quote p {
   max-width: 24ch;
@@ -2603,7 +2607,7 @@ h3,
   font-style: italic;
   font-size: clamp(2rem, 1.4rem + 2.4vw, 3.4rem);
   line-height: 1.15;
-  color: #fff;
+  color: var(--copper-light);
 }
 .approach__duo {
   display: grid;

@@ -840,7 +840,7 @@
   font-family: var(--font-accent);
   font-style: italic;
   font-size: clamp(1.6rem, 1.3rem + 1vw, 2.3rem);
-  color: #fff;
+  color: var(--copper-light);
 }
 .hx__title {
   margin-top: var(--space-md);
